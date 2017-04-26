@@ -38,7 +38,7 @@
             <property name="JDBC.Driver" value="org.postgresql.Driver"/>
             <property name="JDBC.ConnectionURL" value="jdbc:postgresql://localhost:5432/seven"/>
             <property name="JDBC.Username" value="postgres"/>
-            <property name="JDBC.Password" value="admin"/>
+            <property name="JDBC.Password" value="root"/>
         </dataSource>
     </transactionManager>
 

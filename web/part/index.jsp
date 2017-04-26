@@ -15,6 +15,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <link href="../css/estilo.css" rel="stylesheet" type="text/css" />
+        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <title>Centro de Controle :: Participante</title>
         <script language="javascript" src="../jquery/jquery-1.10.2.js"></script>
         <script language="javascript" src="../jquery/jquery-ui-1.10.4.custom.min.js"></script>
@@ -25,7 +26,7 @@
         <div id="container">
             <div id="top">
                 <%-- Incluindo Menu --%>
-                <%@include file="part_menu.jsp" %>
+                <%@include file="part_menu.jsp" %> 
             </div>
             <div id="content">
                 <div id="content_left">
@@ -62,7 +63,7 @@
                     <br/>
                 </div>
             </div>
-            <div id="footer"></div>
+            <%@include file="../footer.jsp" %>
         </div>
     </body>
 </html>

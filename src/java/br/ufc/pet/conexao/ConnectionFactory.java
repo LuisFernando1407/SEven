@@ -19,7 +19,7 @@ public class ConnectionFactory {
         try {
             Class.forName("org.postgresql.Driver");
             
-          return DriverManager.getConnection("jdbc:postgresql://localhost:5432/seven", "postgres", "admin");
+          return DriverManager.getConnection("jdbc:postgresql://localhost:5432/seven", "postgres", "root");
           //  return DriverManager.getConnection("jdbc:postgresql://arruda.quixada.ufc.br:5432/seven_db", "seven_user", "!@seven!@");
         } catch (Exception ex) {
             throw new Exception(ex.getMessage());

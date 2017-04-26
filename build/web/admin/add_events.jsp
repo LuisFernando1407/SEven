@@ -4,7 +4,7 @@
     Author     : fernando
 --%>
 <%-- 
-    Document   : part_menu
+    Document   : add_events
     Modified in : 25/04/2017, 18:02:49
     Author     : Fagner Pinheiro
 --%>
@@ -93,7 +93,7 @@
         <script language="javascript" src="../jquery/jquery-ui-1.10.4.custom.min.js"></script>
         <script src="../bootstrap/js/bootstrap.min.js"></script>
       
-        <title>Centro de Controle :: Administrador</title>
+        <title>SEven</title>
     </head>
     <body>
               
@@ -138,7 +138,7 @@
                          </div>
                          <div class="form-group">
                             <input class="form-control" id="max_at" type="text" name="limite_de_atividades_por_participante" placeholder="Maximo de atividades por participante"  value="<%=limiteDeAtividadesPorParticipante%>" onkeypress="return validaNumerosSilencioso(event)"/>
-                            <label for="max_at"><span class="label label-success">Digite 0 (zero) para ilimitado</span></label>
+                            <label for="max_at"><span class="label label-warning text-uppercase">Digite 0 (zero) para ilimitado</span></label>
                          </div>
                     </div>
                     <div class="col-lg-6">                        

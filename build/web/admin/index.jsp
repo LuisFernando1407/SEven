@@ -31,7 +31,7 @@
                 <%-- Incluindo o Menu --%>
                 <%@include file="admin_menu.jsp" %>
                     <h1 class="titulo">Olá, <%= nomeSaudacao%></h1>
-                    <p>Esta é a página inicial do Administrador. Quando desejar retornar a esta página, clique na opção <span class="label label-info"><em>Home</em></span> no menu acima.</p>
+                    <p>Esta é a página inicial do Administrador. Quando desejar retornar a esta página, clique na opção <span class="text-uppercase label label-info"><em>Home</em></span> no menu acima.</p>
                     </br>
                <div class="table-responsive">
                 <div style="height:330px; overflow: auto;">
@@ -53,10 +53,10 @@
                             <td><%=E.getSigla()%></td>
                             <td><%=E.getNome()%></td>
                             <td><%=br.ufc.pet.util.UtilSeven.treatToString(E.getInicioPeriodoInscricao()) + "</br>" + br.ufc.pet.util.UtilSeven.treatToString(E.getFimPeriodoInscricao())%></td>
-                            <td><a href="../ServletCentral?comando=CmdBuscarEvento&id=<%=E.getId()%>"><span class="label label-success">Alterar</span></a></td>
-                            <td><a href="../ServletCentral?comando=CmdExcluirEvento&id=<%=E.getId()%>" onclick="return confirmarExclucao()"><span class="label label-danger">Excluir</span></a></td>
-                            <td><a href="../ServletCentral?comando=CmdEncerrarEvento&id=<%=E.getId()%>" onclick="return confirm('Deseja realmente encerrar Evento?')"><span class="label label-warning">Encerrar</span></a></td>
-                            <td><a href="../ServletCentral?comando=CmdVisualizarProgramacao&id=<%=E.getId()%>" title="Programacao" ><span class="label label-info">Visualizar</span></a> </td>
+                            <td><a href="../ServletCentral?comando=CmdBuscarEvento&id=<%=E.getId()%>"><span class="text-uppercase label label-success">Alterar</span></a></td>
+                            <td><a href="../ServletCentral?comando=CmdExcluirEvento&id=<%=E.getId()%>" onclick="return confirmarExclucao()"><span class="text-uppercase label label-danger">Excluir</span></a></td>
+                            <td><a href="../ServletCentral?comando=CmdEncerrarEvento&id=<%=E.getId()%>" onclick="return confirm('Deseja realmente encerrar Evento?')"><span class=" text-uppercase label label-warning">Encerrar</span></a></td>
+                            <td><a href="../ServletCentral?comando=CmdVisualizarProgramacao&id=<%=E.getId()%>" title="Programacao" ><span class="text-uppercase label label-info">Visualizar</span></a> </td>
                         </tr>
                         <% }%>
                     </tbody>

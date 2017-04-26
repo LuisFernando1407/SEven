@@ -494,6 +494,12 @@ footer img{
 .table>thead:first-child>tr:first-child>th {
     text-align: center !important;
 }
+.scroll-table{
+   overflow: auto;
+   width: auto;
+   height: 300px;
+    
+}
 .table-responsive {
     min-height: .01%;
     overflow-x: auto;

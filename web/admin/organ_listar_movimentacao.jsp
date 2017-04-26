@@ -3,6 +3,11 @@
     Created on : 26/03/2010, 16:35:48
     Author     : fernando/fagner
 --%>
+<%-- 
+    Document   : part_menu
+    Modified in : 24/04/2017, 16:42:49
+    Author     : Fagner Pinheiro
+--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="br.ufc.pet.evento.Evento" %>
 <%@page import="br.ufc.pet.services.EventoService"%>
@@ -36,8 +41,8 @@
                      <div class="panel-body">      
                         
                       <form action="" >
-                        <input type="hidden" name="comando"/>
-                        <input type="hidden" name="idUsuario"/> 
+                        <input type="hidden" name="idUsuario"/>
+ -                      <input type="hidden" name="idEvento"/>
                          
                             <table class="table table-hover text-center" id="data_table">
                                 <%@include file="/error.jsp"%>

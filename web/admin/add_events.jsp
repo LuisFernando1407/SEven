@@ -91,8 +91,9 @@
         <title>Centro de Controle :: Administrador</title>
     </head>
     <body>
+              
         <div id="container-admin-add-event">
-
+                 
                 <%-- Incluindo o Menu --%>
                 <%@include file="admin_menu.jsp" %>
           
@@ -102,6 +103,10 @@
                 <%if (men != null) {%>
                 <center style="color: red"><label><%=men%></label></center>
                 <%}%>
+                
+              
+                <div class="row">
+                   <div class = "col-lg-5 col-lg-offset-1">
                     <form action="../ServletCentral?comando=CmdAdicionarEvento&operacao_evento=<%=evento == null ? 0 : evento.getId()%>" method="post">
        
                          <div class="form-group">
@@ -113,6 +118,7 @@
                          <div class="form-group">
                             <input class="form-control" type="text" name="tema_evento" placeholder="Tema" value="<%=tema%>" />
                          </div>
+                         
                          <div class="form-group">
                             <input class="form-control" type="text" id="data_initial"  placeholder="Início do evento" maxlength="10" name="inicio_evento" value="<%=inicioEvento%>" onkeypress="return formataData(this,event)"/>
                          </div>
@@ -127,24 +133,27 @@
                          </div>
                          <div class="form-group">
                             <input class="form-control" id="max_at" type="text" name="limite_de_atividades_por_participante" placeholder="Maximo de atividades por participante"  value="<%=limiteDeAtividadesPorParticipante%>" onkeypress="return validaNumerosSilencioso(event)"/>
-                            <label for="max_at"><span class="label label-warning">Digite 0 (zero) para ilimitado</span></label>
+                            <label for="max_at"><span class="label label-success">Digite 0 (zero) para ilimitado</span></label>
                          </div>
-                
-                        <label>O evento é gratuito?</label><br />
+                    </div>
+                    <div class="col-lg-6">                        
+                        <div class="form-group">
+                            <label for="text_a">Descrição</label>
+                            <textarea id="text_a" class="form-control" cols="1" rows="10" name="descricao"><%=descricao%></textarea>  
+                       </div> 
+                       <label>O evento é gratuito?</label><br />
                         <label class="radio-inline">
                             <input type="radio" name="gratuito" value="true" id="inlineRadio1"> Sim
                         </label>
                         <label class="radio-inline">
                             <input type="radio" name="gratuito" value="false" id="inlineRadio2" checked> Não
                         </label><br><br>
-                        <div class="form-group">
-                            <label for="text_a">Descrição</label>
-                            <textarea id="text_a" class="form-control" cols="1" rows="10" name="descricao"><%=descricao%></textarea>  
-                       </div>
-                       <div align="center"><button type="submit" class="btn btn-default" onclick="return confirmarCadastrado()">Cadastrar</button></div>
                     </form>
-            <a href="javascript:history.back();" class="btn btn-default"><span aria-hidden="true">&larr;</span> Voltar</a>
-        </div>
+                   <div align="center"><a href="javascript:history.back();" class="btn btn-default"><span aria-hidden="true">&larr;</span> Voltar</a>
+                   <button type="submit" class="btn btn-default" onclick="return confirmarCadastrado()">Cadastrar</button></div>
+                   </div>   
+                </div>                
+           </div>
         <%@include file="../footer.jsp" %>
     </body>
 </html>

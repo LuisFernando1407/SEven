@@ -17,20 +17,30 @@
         <title>SEven</title>
     </head>
     <body>
-        <div id="container">
+        <div id="container">           
+            <%@include file="menu_index.jsp"%>    
+            
+         <div class="margin-contato"> 
+            <div class="panel panel-default"> 
+             <img id="img-centro-pet" src="imagens/PET.png"/>
+             <img id="img-centro" src="imagens/favicon.png"/>
            
-            <%@include file="menu_index.jsp"%>
-             <img id="img-centro-pet" src="imagens/PET.png"/><img id="img-centro" src="imagens/favicon.png"/>
-             <div id="content">
-            <div class="text-center-contact">
-            <address>
-                 <strong>Universidade Federal do Ceará - Campus Quixadá</strong><br>
+        
+            
+            <div id="content">  
+              <div class="text-center-contact">
+                <address>
+                 <span class="text-bold">Universidade Federal do Ceará - Campus Quixadá</span><br>
                  Estrada do Cedro, KM 5, 63900000 - Quixadá - CE<br/>
-                <em><a href="mailto: <pet-ufc-si_quixada@googlegroups.com>,"> pet-ufc-si_quixada@googlegroups.com</a></em>
-            </address>
+                 <em><a href="mailto: <pet-ufc-si_quixada@googlegroups.com>,"> pet-ufc-si_quixada@googlegroups.com</a></em>
+                 </address>
+               </div>
             </div>
-            </div>
+            </div>  
+         </div>   
+         
         </div>
+            
         <%@include file="footer.jsp" %>
      
     </body>

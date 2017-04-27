@@ -36,7 +36,7 @@
             <%-- Incluindo o Menu --%>
             <%@include file="admin_menu.jsp" %>
             <div id="content">
-                <h1 class="titulo"><strong>Evento:</strong> <%=event.getNome()%></h1>        
+                <h1 class="titulo"><span class="text-bold">Evento:</span> <%=event.getNome()%></h1>     
                 
               
                   <div class="panel panel-default">
@@ -50,7 +50,7 @@
                             <table class="table table-hover text-center" id="data_table">
                                 <%@include file="/error.jsp"%>
                                 <%if (orgs == null || orgs.size() == 0) {%>
-                                <label><center>Evento sem organizadores no momento!</center></label><br/>
+                                <h4 class="text-center"> Evento sem organizadores no momento!</h4></center><br/>
                                         <%} else {%>
                                 <thead>
                                     <tr>
@@ -79,15 +79,14 @@
                            </div>
                           </div>  
                       </form>   
-                    </div>          
-                </div>
+                    </div> 
                             
                    <a class="btn btn-default" href="" 
                       title="" onclick="history.back(); return false;" class="voltar">← Voltar</a>
                         
                    <a  class="btn btn-default pull-right" href="admin_buscar_organ.jsp" 
-                      title="Adicionar Organizador">Adicionar Organizador</a>    
-                
+                      title="Adicionar Organizador">Adicionar Organizador</a>  
+                </div>
         </div>
         <%@include file="../footer.jsp" %>
     </body>

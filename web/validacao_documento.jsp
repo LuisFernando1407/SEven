@@ -38,11 +38,13 @@
                 
                         <div class="panel panel-default">
                             <div class="panel-heading text-center">Sobre a validação</div>
-                            <div class="panel-body">
+                            <div class="panel-body">                              
                                 <div class="row">
+                                   <div class="col-lg-12">  
                                     <div class="text-center-validate">
                                         Para validar um documento gerado pelo SEven, Informe o código de validação, localizado na parte inferior do documento.
                                     </div>
+                                   </div>    
                                 </div>
                               
                             </div>

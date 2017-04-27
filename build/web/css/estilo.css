@@ -10,6 +10,16 @@ body {
 .par {
     background: #CCC;
 }
+.text-bold{
+    font-weight: bold !important;
+}
+.font-md{
+    font-size: medium;
+}
+
+.font-lg{
+    font-size: large;
+}
 
 .impar {
     background: #FFF;
@@ -140,8 +150,9 @@ body {
     text-align: center;
     margin: 10px 0 0;
     display: block;
-    background: #CCC;
+    background: #ccc;
 }
+
 
 #content p {
     font-size: 14px;
@@ -375,6 +386,12 @@ body {
     width: 100%;
     height: 60px;
 }
+.space-top{
+    margin-top: 10px;
+}
+.footer-top {
+  margin-top: 40px;
+}
 
 
 /** Classes Auxiliares **/
@@ -445,15 +462,14 @@ footer img{
     margin: 0 0 20px;
 }
 #img-centro{
-      width:100px;
-      height:100px;
+     width:170px;
+      height:140px;
       position:absolute;
       top:50%;
       left:50%;
-      width: 10%;
-      height: 12.5%;
-      margin-top:-250px;
-      margin-right: 200px;
+      margin-top: -140px;
+      margin-left: 20px;
+   
 }
 .text-center-footer{
     text-align: center;
@@ -483,13 +499,13 @@ footer img{
   align-items: center;
 }
 #img-centro-pet{
-      width:100px;
-      height:100px;
+      width:200px;
+      height:200px;
       position:absolute;
       top:50%;
       left:50%;
-      margin-top:-250px;
-      margin-left: -200px;
+      margin-top: -160px;
+      margin-left: -220px;
 }
 .table>thead:first-child>tr:first-child>th {
     text-align: center !important;
@@ -589,4 +605,8 @@ h1{
 .well{
     background-color: #2e8392 !important;
     color: #fff;
+}
+
+.margin-contato{
+    margin-top: 90px;
 }

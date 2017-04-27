@@ -3,6 +3,11 @@
     Created on : 02/07/2013, 09:35:48
     Author     : mardson
 --%>
+<%-- 
+    Document   : edit_events
+    Modified in : 27/04/2017, 19:04:49
+    Author     : Fagner Pinheiro
+--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="br.ufc.pet.evento.Evento" %>
 <%@page import=" br.ufc.pet.util.UtilSeven" %>

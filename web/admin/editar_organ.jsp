@@ -3,6 +3,11 @@
     Created on : 26/03/2010, 16:35:48
     Author     : fernando
 --%>
+<%-- 
+    Document   : edi_organ
+    Modified in : 27/04/2017, 21:04:49
+    Author     : Fagner Pinheiro
+--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="br.ufc.pet.evento.Evento" %>
 <%@page import="br.ufc.pet.evento.Usuario" %>

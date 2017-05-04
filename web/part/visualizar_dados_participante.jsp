@@ -3,7 +3,11 @@
     Created on : 02/02/2011, 22:28:03
     Author     : ismaily
 --%>
-
+<%-- 
+    Document   : visualizar_dados_participante
+    Modified in : 
+    Author     : 
+--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
@@ -60,6 +64,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <link href="../css/estilo.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="Script.js"> </script>
+        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <title>Visualizar Dados Cadastrais</title>
     </head>
     <body>
@@ -99,7 +104,7 @@
                 </form>
                 <p><a href="" title="" onclick="history.back(); return false;" class="voltar">Voltar</a></p>
             </div>
-            <div id="footer"></div>
         </div>
+        <%@include file="../footer.jsp" %>
     </body>
 </html>

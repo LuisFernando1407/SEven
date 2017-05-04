@@ -4,7 +4,7 @@
     Author     : fernando
 --%>
 <%-- 
-    Document   : part_menu
+    Document   : add_events
     Modified in : 25/04/2017, 18:02:49
     Author     : Fagner Pinheiro
 --%>
@@ -93,7 +93,7 @@
         <script language="javascript" src="../jquery/jquery-ui-1.10.4.custom.min.js"></script>
         <script src="../bootstrap/js/bootstrap.min.js"></script>
       
-        <title>Centro de Controle :: Administrador</title>
+        <title>SEven</title>
     </head>
     <body>
               
@@ -131,32 +131,34 @@
                             <input class="form-control" id="data_finish" type="text" placeholder="Fim do evento" maxlength="10" name="fim_evento" value="<%=fimEvento%>" onkeypress="return formataData(this,event)"/>
                          </div>
                          <div class="form-group">
-                            <input class="form-control" id="data_initial_pi" type="text" placeholder="Início do Periodo de Inscrição" maxlength="10" name="inicio_periodo_inscricao" value="<%=inicioIn%>" onkeypress="return formataData(this,event)"/>
+                            <input class="form-control" id="data_initial_pi" type="text" placeholder="Início do periodo de inscrição" maxlength="10" name="inicio_periodo_inscricao" value="<%=inicioIn%>" onkeypress="return formataData(this,event)"/>
                          </div>
                          <div class="form-group">
-                            <input class="form-control" id="data_finish_pi" type="text" placeholder="Fim do Periodo de Inscrição" maxlength="10" name="fim_periodo_inscricao" value="<%=fimIn%>" onkeypress="return formataData(this,event)"/>
+                            <input class="form-control" id="data_finish_pi" type="text" placeholder="Fim do periodo de inscrição" maxlength="10" name="fim_periodo_inscricao" value="<%=fimIn%>" onkeypress="return formataData(this,event)"/>
                          </div>
                          <div class="form-group">
                             <input class="form-control" id="max_at" type="text" name="limite_de_atividades_por_participante" placeholder="Maximo de atividades por participante"  value="<%=limiteDeAtividadesPorParticipante%>" onkeypress="return validaNumerosSilencioso(event)"/>
-                            <label for="max_at"><span class="label label-success">Digite 0 (zero) para ilimitado</span></label>
+                            <label for="max_at"><span class="label label-warning text-uppercase">Digite 0 (zero) para ilimitado</span></label>
                          </div>
                     </div>
-                    <div class="col-lg-6">                        
+                    <div class="col-lg-6">  
                         <div class="form-group">
                             <label for="text_a">Descrição</label>
                             <textarea id="text_a" class="form-control" cols="1" rows="10" name="descricao"><%=descricao%></textarea>  
-                       </div> 
+                       </div>                          
                        <label>O evento é gratuito?</label><br />
                         <label class="radio-inline">
                             <input type="radio" name="gratuito" value="true" id="inlineRadio1"> Sim
                         </label>
                         <label class="radio-inline">
                             <input type="radio" name="gratuito" value="false" id="inlineRadio2" checked> Não
-                        </label><br><br>
+                        </label><br><br>                              
                     </form>
-                   <div align="center"><a href="javascript:history.back();" class="btn btn-default"><span aria-hidden="true">&larr;</span> Voltar</a>
-                   <button type="submit" class="btn btn-default" onclick="return confirmarCadastrado()">Cadastrar</button></div>
-                   </div>   
+                   <div class="text-center">
+                     <a href="javascript:history.back();" class="btn btn-default"><span aria-hidden="true">&larr;</span> Voltar</a>
+                     <button type="submit" class="btn btn-default" onclick="return confirmarCadastrado()">Cadastrar</button>
+                   </div>
+                 </div>                          
                 </div>                
            </div>
         <%@include file="../footer.jsp" %>

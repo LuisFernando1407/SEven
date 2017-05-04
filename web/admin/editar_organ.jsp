@@ -3,6 +3,11 @@
     Created on : 26/03/2010, 16:35:48
     Author     : fernando
 --%>
+<%-- 
+    Document   : edi_organ
+    Modified in : 27/04/2017, 21:04:49
+    Author     : Fagner Pinheiro
+--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="br.ufc.pet.evento.Evento" %>
 <%@page import="br.ufc.pet.evento.Usuario" %>
@@ -29,34 +34,46 @@
     %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon"/>
         <link href="../css/estilo.css" rel="stylesheet" type="text/css" />
-        <title>Centro de Controle :: Administrador</title>
+        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <title>SEven</title>
+        
     </head>
     <body>
         <div id="container">
-            <div id="top">
+           
                 <%-- Incluindo o Menu --%>
                 <%@include file="admin_menu.jsp" %>
-            </div>
-            <div id="content">
-                <h1 class="titulo">Edição de organizador do evento <%=event.getNome()%></h1>
+        
+            <div id="content">  
+            
                 <form action="../ServletCentral" method="post" class="cadastro">
                     <input type="hidden" name="comando" value="CmdEditarOrganizador"/>
-                    <fieldset>
-                        <h2 class="titulo">Permissões do organizador:</h2>
-                        <label>Nome:  <%=u.getNome()%></label><br />
-                        <label>Email: <%=u.getEmail()%>  </label><br />
-                        <label>Telefone: <%=u.getFone()%></label><br />
-                        <label>Instituição: <%=u.getInstituicao()%></label><br/>
-                        <label>Cidade: <%=u.getCidade()%></label><br />
-                        <input type="checkbox"  <%=manterAtvi%> name="manterAtv" class="chk_box" /><label>Manter Atividade</label><br />
-                        <input type="checkbox"  <%=manterMod%> name="manterMod" class="chk_box" /><label>Mater Módulo Financeiro</label><br />
-                    </fieldset>
-                    <input type="submit" value="Enviar" class="button" />
-                    <a href="" title="" onclick="history.back(); return false;" class="voltarCadastro">Voltar</a>
-                </form>
-            </div>
-            <div id="footer"></div>
+                    
+                 <div class="space-top panel panel-default">
+                  <div class="panel-heading text-center">Permissão do usúario</div>
+                   <div class="panel-body">  
+                       <div class="col-lg-12 space-top">                   
+                        <label>Nome:</label>  <%=u.getNome()%><br />
+                        <label>Email:</label> <%=u.getEmail()%><br />
+                        <label>Telefone:</label> <%=u.getFone()%><br />
+                        <label>Instituição:</label> <%=u.getInstituicao()%><br/>
+                        <label>Cidade:</label> <%=u.getCidade()%></label><br />
+                      <input type="checkbox"  <%=manterAtvi%> name="manterAtv" class="chk_box" /> Manter Atividade<br/>
+                      <input type="checkbox"  <%=manterMod%> name="manterMod" class="chk_box" /> Mater Módulo Financeiro<br/><br/>
+                      </div> 
+                   </div>
+                  </div>   
+                    <div class="text-center">
+                     <button type="submit" class="btn btn-default">Alterar</button> 
+                    </div>
+                </form> 
+                   
+                <a href="" title="" onclick="history.back(); return false;" class="btn btn-default pull-left">← Voltar</a>
+          </div>
+                
         </div>
+              <div class="footer-top"><%@include file="../footer.jsp" %></div>                
     </body>
 </html>

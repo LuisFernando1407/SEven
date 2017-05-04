@@ -1,13 +1,15 @@
+ 
 <%--
     Document   : index
     Created on : 26/03/2010, 16:35:48
-    Author     : fernando/fagner
+    Author     : fernando
 --%>
 <%-- 
-    Document   : part_menu
+    Document   : organ_listar_movimentacao
     Modified in : 24/04/2017, 16:42:49
     Author     : Fagner Pinheiro
 --%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="br.ufc.pet.evento.Evento" %>
 <%@page import="br.ufc.pet.services.EventoService"%>
@@ -34,28 +36,27 @@
             <%-- Incluindo o Menu --%>
             <%@include file="admin_menu.jsp" %>
             <div id="content">
-                <h1 class="titulo"><strong>Evento:</strong> <%=event.getNome()%></h1>        
+                <h1 class="titulo"><span class="text-bold"></span> <%=event.getNome()%></h1>     
                 
+                 <%@include file="/error.jsp"%>
                   <div class="panel panel-default">
-                     <div class="panel-heading text-center">Organizadores do Evento</div>
+                     <div class="panel-heading text-center">Organizadores deste evento</div>
                      <div class="panel-body">      
                         
-                      <form action="" >
+                      <form action="">
                         <input type="hidden" name="idUsuario"/>
- -                      <input type="hidden" name="idEvento"/>
-                         
+                        <input type="hidden" name="idEvento"/>
+                         <div class="scroll-table"> 
                             <table class="table table-hover text-center" id="data_table">
-                                <%@include file="/error.jsp"%>
                                 <%if (orgs == null || orgs.size() == 0) {%>
-                                <label><center>Evento sem organizadores no momento!</center></label><br/>
+                                <h4 class="text-center"> Evento sem organizadores no momento!</h4></center><br/>
                                         <%} else {%>
                                 <thead>
                                     <tr>
                                         <th>Nome</th>
                                         <th>Alterar</th> 
                                         <th>Excluir</th>
-                                    </tr>
-                                    
+                                    </tr>                                    
                                 </thead>
                                 <tbody>
                                     <%for (Organizador org : orgs) {%>
@@ -63,27 +64,28 @@
                                         <td><%=org.getUsuario().getNome()%></td>
                                         <td>
                                             <a href="../ServletCentral?comando=CmdExibirOrganizadorEditar&idUsuario=<%=org.getUsuario().getId()%>" 
-                                               title="Alterar Eventos"><span class="label label-success ">Alterar<span></a>
+                                               title="Alterar Eventos"><span class="text-uppercase label label-success ">Alterar<span></a>
                                         </td>
                                         <td>
                                             <a href="../ServletCentral?comando=CmdExcluirOrganizador&idUsuario=<%=org.getUsuario().getId()%>" 
-                                               title="Excluir Eventos" onclick="return confirmarExclucao()"><span class="label label-danger">Excluir</span></a>
+                                               title="Excluir Eventos" onclick="return confirmarExclucao()"><span class="text-uppercase label label-danger">Excluir</span></a>
                                         </td>
                                     </tr>
                                     <%}%>
                                 </tbody>
                                 <%}%>
                             </table> 
+                           </div>
+                          </div>  
                       </form>   
-                    </div>          
-                </div>
+                    </div> 
                             
                    <a class="btn btn-default" href="" 
                       title="" onclick="history.back(); return false;" class="voltar">← Voltar</a>
                         
-                   <a  class="btn btn-default" href="admin_buscar_organ.jsp" 
-                      title="Adicionar Organizador">Adicionar Organizador</a>    
-                
+                   <a  class="btn btn-default pull-right" href="admin_buscar_organ.jsp" 
+                      title="Adicionar Organizador">Adicionar Organizador</a>  
+                </div>
         </div>
         <%@include file="../footer.jsp" %>
     </body>

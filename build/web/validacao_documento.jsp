@@ -3,6 +3,11 @@
     Created on : 26/03/2010, 16:35:48
     Author     : fernando
 --%>
+<%-- 
+    Document   : add_organ_novo
+    Modified in : 27/04/2017, 19:04:49
+    Author     : Fagner Pinheiro
+--%>
 <%@page import="br.ufc.pet.evento.Atividade"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="br.ufc.pet.util.UtilSeven"%>
@@ -38,11 +43,13 @@
                 
                         <div class="panel panel-default">
                             <div class="panel-heading text-center">Sobre a validação</div>
-                            <div class="panel-body">
+                            <div class="panel-body">                              
                                 <div class="row">
+                                   <div class="col-lg-12">  
                                     <div class="text-center-validate">
                                         Para validar um documento gerado pelo SEven, Informe o código de validação, localizado na parte inferior do documento.
                                     </div>
+                                   </div>    
                                 </div>
                               
                             </div>

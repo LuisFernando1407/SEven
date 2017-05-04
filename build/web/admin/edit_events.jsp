@@ -3,6 +3,11 @@
     Created on : 02/07/2013, 09:35:48
     Author     : mardson
 --%>
+<%-- 
+    Document   : edit_events
+    Modified in : 27/04/2017, 19:04:49
+    Author     : Fagner Pinheiro
+--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="br.ufc.pet.evento.Evento" %>
 <%@page import=" br.ufc.pet.util.UtilSeven" %>
@@ -103,6 +108,9 @@
                 <%if (men != null) {%>
                 <center style="color: red"><label><%=men%></label></center>
                 <%}%>
+                
+                <div class="row">
+                  <div class = "col-lg-5 col-lg-offset-1">
                     <form action="../ServletCentral?comando=CmdAdicionarEvento&operacao_evento=<%=evento == null ? 0 : evento.getId()%>" method="post">
        
                          <div class="form-group">
@@ -115,41 +123,43 @@
                             <input class="form-control" type="text" name="tema_evento" placeholder="Tema" value="<%=tema%>" />
                          </div>
                          <div class="form-group">
-                            <label for="data_initial">Início do evento</label>
-                            <input class="form-control" type="text" id="data_initial" name="inicio_evento" maxlength="10" value="<%=inicioEvento%>" onkeypress="return formataData(this,event)"/>
+                             <input class="form-control" type="text" id="data_initial" name="inicio_evento" placeholder="Inicio do evento" maxlength="10" value="<%=inicioEvento%>" onkeypress="return formataData(this,event)"/>
                          </div>
                          <div class="form-group">
-                            <label for="data_finish">Fim do evento</label>
-                            <input class="form-control" id="data_finish" type="text" name="fim_evento" maxlength="10" value="<%=fimEvento%>" onkeypress="return formataData(this,event)"/>
+                            <input class="form-control" id="data_finish" type="text" name="fim_evento" placeholder="Fim do evento " maxlength="10" value="<%=fimEvento%>" onkeypress="return formataData(this,event)"/>
                          </div>
                          <div class="form-group">
-                            <label for="data_initial_pi">Inicio do Periodo de Inscrição</label>
-                            <input class="form-control" id="data_initial_pi" type="text" name="inicio_periodo_inscricao" maxlength="10" value="<%=inicioIn%>" onkeypress="return formataData(this,event)"/>
+                            <input class="form-control" id="data_initial_pi" type="text" name="inicio_periodo_inscricao" placeholder="Inicio do periodo de inscrição" maxlength="10" value="<%=inicioIn%>" onkeypress="return formataData(this,event)"/>
                          </div>
                          <div class="form-group">
-                            <label for="data_finish_pi">Fim do Periodo de Inscrição</label>
-                            <input class="form-control" id="data_finish_pi" type="text" name="fim_periodo_inscricao" maxlength="10" value="<%=fimIn%>" onkeypress="return formataData(this,event)"/>
+                            <input class="form-control" id="data_finish_pi" type="text" name="fim_periodo_inscricao" placeholder="Fim do periodo de inscrição" maxlength="10" value="<%=fimIn%>" onkeypress="return formataData(this,event)"/>
                          </div>
                          <div class="form-group">
                             <input class="form-control" id="max_at" type="text" name="limite_de_atividades_por_participante" placeholder="Maximo de atividades por participante"  value="<%=limiteDeAtividadesPorParticipante%>" onkeypress="return validaNumerosSilencioso(event)"/>
-                            <label for="max_at"><span class="label label-warning">Digite 0 (zero) para ilimitado</span></label>
+                            <label for="max_at"><span class="text-uppercase label label-warning">Digite 0 (zero) para ilimitado</span></label>
                          </div>
-                
+                   </div>
+                   <div class="col-lg-6">  
+                       <div class="form-group">
+                            <label for="text_a">Descrição</label>
+                            <textarea id="text_a" class="form-control" cols="1" rows="10" name="descricao"><%=descricao%></textarea>  
+                       </div> 
                         <label>O evento é gratuito?</label><br />
                         <label class="radio-inline">
                             <input type="radio" name="gratuito" value="true" id="inlineRadio1"> Sim
                         </label>
                         <label class="radio-inline">
                             <input type="radio" name="gratuito" value="false" id="inlineRadio2" checked> Não
-                        </label><br><br>
-                        <div class="form-group">
-                            <label for="text_a">Descrição</label>
-                            <textarea id="text_a" class="form-control" cols="1" rows="10" name="descricao"><%=descricao%></textarea>  
-                       </div>
-                       <div align="center"><button type="submit" class="btn btn-default" onclick="return confirmarCadastrado()">Alterar</button></div>
+                        </label><br><br>                                              
                     </form>
-            <a href="javascript:history.back();" class="btn btn-default"><span aria-hidden="true">&larr;</span> Voltar</a>
-        </div>
+                  </div>  
+                   <div class="text-center">  
+                       <a href="javascript:history.back();" class="btn btn-default"><span aria-hidden="true">&larr;</span> Voltar</a>
+                       <button type="submit" class="btn btn-default" onclick="return confirmarCadastrado()">Alterar</button>
+                  </div>         
+         </div> 
+ 
+       
         <%@include file="../footer.jsp"%>
     </body>
 </html>

@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/part/part_visualizar_inscricoes.jsp</file>
             <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/css/estilo.css</file>
             <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/part/part_confirmar_inscricao.jsp</file>
@@ -18,6 +19,13 @@
             <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/part/part_menu.jsp</file>
             <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/part/part_buscar_evento.jsp</file>
             <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/part/gerencia_conta.jsp</file>
+=======
+            <file>file:/C:/Users/James_Bond/Documents/NetBeansProjects/SEven/web/admin/admin_add_organ_novo.jsp</file>
+            <file>file:/C:/Users/James_Bond/Documents/NetBeansProjects/SEven/web/validacao_documento.jsp</file>
+            <file>file:/C:/Users/James_Bond/Documents/NetBeansProjects/SEven/web/contato.jsp</file>
+            <file>file:/C:/Users/James_Bond/Documents/NetBeansProjects/SEven/web/admin/edit_events.jsp</file>
+            <file>file:/C:/Users/James_Bond/Documents/NetBeansProjects/SEven/web/admin/editar_organ.jsp</file>
+>>>>>>> e36c549f680086d9e671864fac52565458722559
         </group>
     </open-files>
 </project-private>

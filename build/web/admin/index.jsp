@@ -33,8 +33,13 @@
                     <h1 class="titulo">Olá, <%= nomeSaudacao%></h1>
                     <p>Esta é a página inicial do Administrador. Quando desejar retornar a esta página, clique na opção <span class="text-uppercase label label-info"><em>Home</em></span> no menu acima.</p>
                     </br>
+<<<<<<< HEAD
              
              <div class="table-responsive">
+=======
+                <%@include file="/error.jsp" %>
+               <div class="table-responsive">
+>>>>>>> 34448360fef3da383f2d61cb3f618f7f4a3da42c
                 <div style="height:330px; overflow: auto;">
                 <table class="table table-hover">
                     <thead>

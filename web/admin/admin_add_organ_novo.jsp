@@ -19,8 +19,8 @@
     <head>
         <script type="text/javascript"  language="javascript" src="../Script.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon"/> 
         <link href="../css/estilo.css" rel="stylesheet" type="text/css" />
-        <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon"/>        
         <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <title>SEven</title> 
         <script src="../bootstrap/js/bootstrap.min.js"></script>
@@ -32,7 +32,7 @@
           <%@include file="admin_menu.jsp" %>  
            <div id="content">
            
-              <div class="panel panel-default">
+             <div class="panel panel-default">
                 <div class="panel-heading text-center"><%=en.getNome()%> <br> Dados do organizador</div>
                 <div class="panel-body"> 
                     

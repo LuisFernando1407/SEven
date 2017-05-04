@@ -3,7 +3,11 @@
     Created on : 25/05/2010, 15:35:29
     Author     : Caio
 --%>
-
+<%-- 
+    Document   : part_confirmar_inscricao
+    Modified in : 
+    Author     : 
+--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
 <%@page import="br.ufc.pet.evento.Atividade"%>
@@ -21,6 +25,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <link href="../css/estilo.css" rel="stylesheet" type="text/css" />
+        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <title>Centro de Controle :: Administrador</title>
     </head>
     <body>
@@ -69,7 +74,7 @@
                     <a href="" title="" onclick="history.back(); return false;" class="voltarCadastro">Voltar</a>
                 </form>
             </div>
-            <div id="footer"></div>
         </div>
+        <%@include file="../footer.jsp" %>
     </body>
 </html>

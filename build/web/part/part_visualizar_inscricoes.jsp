@@ -1,7 +1,12 @@
 <%--
-    Document   : index
+    Document   : part_visualizar_inscricoes
     Created on : 26/03/2010, 16:35:48
     Author     : Caio
+--%>
+<%-- 
+    Document   : part_visualizar_inscricoes
+    Modified in : 
+    Author     : 
 --%>
 <%@page import="br.ufc.pet.services.UsuarioService"%>
 <%@page import="br.ufc.pet.evento.InscricaoAtividade"%>
@@ -33,6 +38,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <link href="../css/estilo.css" rel="stylesheet" type="text/css" />
         <link href="../css/modal.css" rel="stylesheet" type="text/css" />
+        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <title>Centro de Controle :: Administrador</title>
         <script language="javascript" src="../jquery/jquery-1.10.2.js"></script>
         <script language="javascript" src="../jquery/jquery-ui-1.10.4.custom.min.js"></script>
@@ -143,5 +149,6 @@
                 <br><br>
             </div>
         </div>
+        <%@include file="../footer.jsp" %>
     </body>
 </html>

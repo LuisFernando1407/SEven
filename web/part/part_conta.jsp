@@ -3,7 +3,11 @@
     Created on : 31/01/2011, 18:36:28
     Author     : ismaily
 --%>
-
+<%-- 
+    Document   : part_conta
+    Modified in : 
+    Author     : 
+--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="br.ufc.pet.evento.Participante" %>
 <%@page import="br.ufc.pet.util.UtilSeven" %>
@@ -60,6 +64,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <link href="../css/estilo.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="../Script.js"> </script>
+        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <title>Editar Conta</title>
     </head>
     <body>
@@ -115,7 +120,7 @@
                     <a href="" title="" onclick="history.back(); return false;" class="voltarCadastro">Voltar</a>
                 </form>
             </div>
-            <div id="footer"></div>
         </div>
+        <%@include file="../footer.jsp" %>
     </body>
 </html>

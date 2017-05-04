@@ -18,7 +18,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <link href="../css/estilo.css" rel="stylesheet" type="text/css" />
-         <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon"/>
+        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <title>SEven</title>
         <script language="javascript" src="../jquery/jquery-1.10.2.js"></script>
         <script language="javascript" src="../jquery/jquery-ui-1.10.4.custom.min.js"></script>
@@ -27,11 +28,11 @@
     </head>
     <body>
         <div id="container">
-            <div id="top">
+<!--            <div id="top">-->
                 <%-- Incluindo o Menu --%>
                  <%@include file="admin_menu.jsp" %>
    
-            </div>
+         
             <div id="content">
                 <h1 class="titulo">Adicionar organizador ao evento <%=event.getNome()%></h1>
                 <p style="font-size: medium;">Você pode tornar organizador um usuário já cadastrado ou cadastrar um novo organizador.</p>

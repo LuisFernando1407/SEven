@@ -148,7 +148,7 @@ public class CmdAdicionarEvento implements Comando {
                 if (es.adicionar(E)) {
                     admin.addEvento(E);
                     session.setAttribute("sucesso", "Evento adicionado com sucesso");
-                    return "/admin/manege_events.jsp";
+                    return "/admin/index.jsp";
                 } else {
                     session.setAttribute("erro", "Erro ao adicionar evento");
                 }
@@ -180,6 +180,6 @@ public class CmdAdicionarEvento implements Comando {
 
             }
         }
-        return "/admin/manege_events.jsp";
+        return "/admin/index.jsp";
     }
 }

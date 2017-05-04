@@ -19,8 +19,8 @@
     <head>
         <script type="text/javascript"  language="javascript" src="../Script.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon"/> 
         <link href="../css/estilo.css" rel="stylesheet" type="text/css" />
-        <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon"/>        
         <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <title>SEven</title> 
         <script src="../bootstrap/js/bootstrap.min.js"></script>
@@ -32,7 +32,7 @@
           <%@include file="admin_menu.jsp" %>  
            <div id="content">
            
-              <div class="panel panel-default">
+             <div class="panel panel-default">
                 <div class="panel-heading text-center"><%=en.getNome()%> <br> Dados do organizador</div>
                 <div class="panel-body"> 
                     
@@ -110,16 +110,18 @@
                           <input type="checkbox" name="manterAtividade" class="chk_box"/> Manter Atividade<br/>
                           <input type="checkbox" name="manterModulo" class="chk_box"/> Manter Módulo Financeiro<br/>                 
                         </div>
-                       </div>    
+                       </div> 
+                         <input type="submit" value="Enviar" class="btn btn-default pull-right space-top" onclick="return confirmarCadastrado()"/>
                       </div>           
                   </div>
                 </div>
+                    
                </form> 
                     
               </div>
              </div>  
              <a href="" title=""  class="btn btn-default" onclick="history.back(); return false;" class="voltarCadastro">← Voltar</a>
-             <input type="submit" value="Enviar" class="btn btn-default pull-right" onclick="return confirmarCadastrado()"/>
+             
            </div>
         </div>    
         <div class="footer-top">        

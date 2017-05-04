@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <!--
 DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 
@@ -38,6 +39,8 @@ made subject to such option by the copyright holder.
 
 Contributor(s):
 -->
+=======
+>>>>>>> fb4b0b13de767225aa546ca2a79fc499985f86d2
 <project default="-deploy-ant" basedir=".">
     <target name="-init" if="deploy.ant.enabled">
         <property file="${deploy.ant.properties.file}"/>
@@ -55,7 +58,7 @@ Contributor(s):
                     <isset property="tomcat.password"/>
                 </not>
             </condition>
-        </fail>
+        </fail>    
     </target>
     <target name="-deploy-ant" if="deploy.ant.enabled" depends="-init,-check-credentials">
         <echo message="Deploying ${deploy.ant.archive} to ${Context(path)}"/>

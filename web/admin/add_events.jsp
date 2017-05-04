@@ -104,12 +104,11 @@
           
            
                 <h1 class="title-register"> <%=comando%> Evento</h1><hr>
-                <%@include file="/error.jsp" %>
                 <%if (men != null) {%>
                 <center style="color: red"><label><%=men%></label></center>
                 <%}%>
                 
-              
+                <!-- Adicionar Evento -->
                 <div class="row">
                    <div class = "col-lg-5 col-lg-offset-1">
                     <form action="../ServletCentral?comando=CmdAdicionarEvento&operacao_evento=<%=evento == null ? 0 : evento.getId()%>" method="post">
@@ -146,19 +145,20 @@
                             <label for="text_a">Descrição</label>
                             <textarea id="text_a" class="form-control" cols="1" rows="10" name="descricao"><%=descricao%></textarea>  
                        </div>                          
-                       <label>O evento é gratuito?</label><br />
+                        <label>O evento é gratuito?</label><br />
                         <label class="radio-inline">
                             <input type="radio" name="gratuito" value="true" id="inlineRadio1"> Sim
                         </label>
                         <label class="radio-inline">
                             <input type="radio" name="gratuito" value="false" id="inlineRadio2" checked> Não
                         </label><br><br>                              
-                    </form>
+                   
                    <div class="text-center">
                      <a href="javascript:history.back();" class="btn btn-default"><span aria-hidden="true">&larr;</span> Voltar</a>
                      <button type="submit" class="btn btn-default" onclick="return confirmarCadastrado()">Cadastrar</button>
                    </div>
-                 </div>                          
+                 </div>  
+                </form>
                 </div>                
            </div>
         <%@include file="../footer.jsp" %>

@@ -28,6 +28,6 @@ public class CmdEncerrarEvento implements Comando{
         }else{
         session.setAttribute("erro", "Erro ao encerrar evento!");
         }
-        return "/admin/manege_events.jsp";
+        return "/admin/index.jsp";
     }
 }

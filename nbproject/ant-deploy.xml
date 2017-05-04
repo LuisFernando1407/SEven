@@ -2,7 +2,11 @@
 <!--
 DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 
+<<<<<<< HEAD
 Copyright (c) 2008, 2016 Oracle and/or its affiliates. All rights reserved.
+=======
+Copyright (c) 2006, 2016 Oracle and/or its affiliates. All rights reserved.
+>>>>>>> dbac9d69ba2d69c912a80f09d87fa8e84873a94d
 
 Oracle and Java are registered trademarks of Oracle and/or its affiliates.
 Other names may be trademarks of their respective owners.
@@ -39,6 +43,7 @@ made subject to such option by the copyright holder.
 Contributor(s):
 -->
 <project default="-deploy-ant" basedir=".">
+<<<<<<< HEAD
     <target name="-init-cl-deployment-env" if="deploy.ant.enabled">
         <property file="${deploy.ant.properties.file}" />
         <available file="${deploy.ant.docbase.dir}/WEB-INF/sun-web.xml" property="sun.web.present"/>
@@ -146,5 +151,40 @@ Contributor(s):
         <get username="${gfv3.username}" password="${gfv3.password}" src="${gfv3.admin.url}/__asadmin/undeploy?name=${ant.project.name}"
             dest="${gfv3.results.file}"/>
         <delete file="${gfv3.results.file}"/>
+=======
+    <target name="-init" if="deploy.ant.enabled">
+        <property file="${deploy.ant.properties.file}"/>
+        <tempfile property="temp.module.folder" prefix="tomcat" destdir="${java.io.tmpdir}"/>
+        <unwar src="${deploy.ant.archive}" dest="${temp.module.folder}">
+            <patternset includes="META-INF/context.xml"/>
+        </unwar>
+        <xmlproperty file="${temp.module.folder}/META-INF/context.xml"/>
+        <delete dir="${temp.module.folder}"/>
+    </target>
+    <target name="-check-credentials" if="deploy.ant.enabled" depends="-init">
+        <fail message="Tomcat password has to be passed as tomcat.password property.">
+            <condition>
+                <not>
+                    <isset property="tomcat.password"/>
+                </not>
+            </condition>
+        </fail>
+    </target>
+    <target name="-deploy-ant" if="deploy.ant.enabled" depends="-init,-check-credentials">
+        <echo message="Deploying ${deploy.ant.archive} to ${Context(path)}"/>
+        <taskdef name="deploy" classname="org.apache.catalina.ant.DeployTask"
+                 classpath="${tomcat.home}/server/lib/catalina-ant.jar"/>
+        <deploy url="${tomcat.url}/manager" username="${tomcat.username}"
+                password="${tomcat.password}" path="${Context(path)}"
+                war="${deploy.ant.archive}"/>
+        <property name="deploy.ant.client.url" value="${tomcat.url}${Context(path)}"/>
+    </target>
+    <target name="-undeploy-ant" if="deploy.ant.enabled" depends="-init,-check-credentials">
+        <echo message="Undeploying ${Context(path)}"/>
+        <taskdef name="undeploy"  classname="org.apache.catalina.ant.UndeployTask"
+                classpath="${tomcat.home}/server/lib/catalina-ant.jar"/>
+        <undeploy url="${tomcat.url}/manager" username="${tomcat.username}" 
+                  password="${tomcat.password}" path="${Context(path)}"/>
+>>>>>>> dbac9d69ba2d69c912a80f09d87fa8e84873a94d
     </target>
 </project>

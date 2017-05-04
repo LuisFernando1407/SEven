@@ -3,6 +3,11 @@
     Created on : 26/03/2010, 16:35:48
     Author     : fernando
 --%>
+<%-- 
+    Document   : index
+    Modified in : 
+    Author     : 
+--%>
 <%@page import="br.ufc.pet.evento.Participante"%>
 <%
     java.util.ArrayList<br.ufc.pet.evento.Evento> eventos = (java.util.ArrayList<br.ufc.pet.evento.Evento>) session.getAttribute("eventosAbertos");
@@ -24,23 +29,21 @@
     </head>
     <body>
         <div id="container">
-            <div id="top">
-                <%-- Incluindo Menu --%>
-                <%@include file="part_menu.jsp" %> 
-            </div>
+            <%-- Incluindo Menu --%>
+            <%@include file="part_menu.jsp" %>
             <div id="content">
-                <div id="content_left">
+                <div class="container col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <h1 class="titulo">Olá, <%= nomeSaudacao%></h1>
                     <p>Esta é a página inicial do Participante. Quando desejar retornar a esta página, clique na opção 'Home' no menu acima.</p>
                     <%@include file="../error.jsp" %>
                 </div>
-                <div id="content_right">
+                <div class="container col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <h1 style="text-align: center; margin-top: 8.5px; font-size: 18px;"class="titulo">Tentando se inscrever em um evento? </h1>
-                    <p style="text-align: center">Utilize o menu no topo da página ou solicite rapidamente uma nova inscrição clicando nos links rápidos abaixo!</p>
+                    <p class="text-center">Utilize o menu no topo da página ou solicite rapidamente uma nova inscrição clicando nos links rápidos abaixo!</p>
                     <%if (eventos == null || eventos.size() == 0) {%>
                     <label>Sem eventos abertos no momento</label>
                     <%} else {%>
-                    <table id="data_table">
+                    <table id="data_table" class="table table-hover">
                         <thead>
                             <tr>
                                 <th>Evento</th>
@@ -63,7 +66,7 @@
                     <br/>
                 </div>
             </div>
-            <%@include file="../footer.jsp" %>
         </div>
+        <%@include file="../footer.jsp" %>
     </body>
 </html>

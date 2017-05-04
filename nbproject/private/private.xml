@@ -2,6 +2,34 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group/>
+=======
+        <group>
+<<<<<<< HEAD
+            <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/part/part_visualizar_inscricoes.jsp</file>
+            <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/css/estilo.css</file>
+            <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/part/part_confirmar_inscricao.jsp</file>
+            <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/part/visualizar_dados_participante.jsp</file>
+            <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/part/part_visualizar_inscricao.jsp</file>
+            <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/part/part_fazer_inscricao.jsp</file>
+            <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/part/part_gerar_boleto_pagamento.jsp</file>
+            <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/css/modal.css</file>
+            <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/admin/index.jsp</file>
+            <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/part/index.jsp</file>
+            <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/part/part_conta.jsp</file>
+            <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/index.jsp</file>
+            <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/part/part_menu.jsp</file>
+            <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/part/part_buscar_evento.jsp</file>
+            <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/part/gerencia_conta.jsp</file>
+=======
+            <file>file:/C:/Users/James_Bond/Documents/NetBeansProjects/SEven/web/admin/admin_add_organ_novo.jsp</file>
+            <file>file:/C:/Users/James_Bond/Documents/NetBeansProjects/SEven/web/validacao_documento.jsp</file>
+            <file>file:/C:/Users/James_Bond/Documents/NetBeansProjects/SEven/web/contato.jsp</file>
+            <file>file:/C:/Users/James_Bond/Documents/NetBeansProjects/SEven/web/admin/edit_events.jsp</file>
+            <file>file:/C:/Users/James_Bond/Documents/NetBeansProjects/SEven/web/admin/editar_organ.jsp</file>
+>>>>>>> e36c549f680086d9e671864fac52565458722559
+        </group>
+>>>>>>> dbac9d69ba2d69c912a80f09d87fa8e84873a94d
     </open-files>
 </project-private>

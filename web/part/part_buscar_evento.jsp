@@ -1,7 +1,12 @@
 <%--
-    Document   : index
+    Document   : part_buscar_evento
     Created on : 26/03/2010, 16:35:48
     Author     : fernando
+--%>
+<%-- 
+    Document   : part_buscar_evento
+    Modified in : 
+    Author     : 
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
@@ -14,6 +19,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <link href="../css/estilo.css" rel="stylesheet" type="text/css" />
+        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <title>Centro de Controle :: Administrador</title>
         <script language="javascript" src="../jquery/jquery-1.10.2.js"></script>
         <script language="javascript" src="../jquery/jquery-ui-1.10.4.custom.min.js"></script>
@@ -61,7 +67,7 @@
                 <p><a href="" title="" onclick="history.back();
                         return false;" class="voltar">Voltar</a></p>
             </div>
-            <div id="footer"></div>
         </div>
+        <%@include file="../footer.jsp" %>
     </body>
 </html>

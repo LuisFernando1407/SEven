@@ -3,6 +3,11 @@
     Created on : 14/07/2010, 09:41:33
     Author     : welligton
 --%>
+<%-- 
+    Document   : part_gerar_boleto_pagamento
+    Modified in : 
+    Author     : 
+--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="br.ufc.pet.evento.Inscricao" %>
 <%@page import="java.util.*"%>
@@ -20,6 +25,7 @@
     %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <title>Boleto</title>
     </head>
     <body>
@@ -39,7 +45,7 @@
                     <%}%>
                 </div>
             </div>
-            <div id="footer"></div>
         </div>
+        <%@include file="../footer.jsp" %>
     </body>
 </html>

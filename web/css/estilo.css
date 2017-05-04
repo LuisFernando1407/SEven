@@ -591,7 +591,8 @@ a{
 #container-admin-add-event{
     display: block;
     width: auto;
-
+    margin-top: 50px;
+    height: 100px;
 }
 
 #container-admin-manege-org{

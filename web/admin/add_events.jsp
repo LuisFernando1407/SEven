@@ -158,8 +158,8 @@
                      <button type="submit" class="btn btn-default" onclick="return confirmarCadastrado()">Cadastrar</button>
                    </div>
                  </div>  
-                </form>
-                </div>                
+                </div> 
+              </form>
            </div>
         <%@include file="../footer.jsp" %>
     </body>

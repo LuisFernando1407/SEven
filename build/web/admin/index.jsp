@@ -64,7 +64,8 @@
                 </table>
                 </div>
                    <div align="right"><a class="btn btn-default" href="add_events.jsp" role="button">Criar novo evento</a></div>
-        </div>           
+        </div>          
+                    
         <div class="footer-top">
           <%@include file="../footer.jsp" %>
         </div>

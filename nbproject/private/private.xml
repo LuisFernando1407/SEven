@@ -4,6 +4,7 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/part/part_visualizar_inscricoes.jsp</file>
             <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/css/estilo.css</file>
             <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/part/index.jsp</file>
@@ -11,11 +12,18 @@
             <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/part/part_menu.jsp</file>
             <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/admin/index.jsp</file>
 =======
+=======
+            <file>file:/C:/Users/James_Bond/Documents/NetBeansProjects/SEven/web/admin/admin_add_organ_novo.jsp</file>
+>>>>>>> 7317d272af4f42d641c443ee1063f1ba22b4cd09
             <file>file:/C:/Users/James_Bond/Documents/NetBeansProjects/SEven/web/css/estilo.css</file>
-            <file>file:/C:/Users/James_Bond/Documents/NetBeansProjects/SEven/web/admin/organ_listar_movimentacao.jsp</file>
+            <file>file:/C:/Users/James_Bond/Documents/NetBeansProjects/SEven/web/admin/edit_events.jsp</file>
             <file>file:/C:/Users/James_Bond/Documents/NetBeansProjects/SEven/web/admin/index.jsp</file>
             <file>file:/C:/Users/James_Bond/Documents/NetBeansProjects/SEven/web/admin/admin_buscar_organ.jsp</file>
+<<<<<<< HEAD
 >>>>>>> fb4b0b13de767225aa546ca2a79fc499985f86d2
+=======
+            <file>file:/C:/Users/James_Bond/Documents/NetBeansProjects/SEven/web/admin/add_events.jsp</file>
+>>>>>>> 7317d272af4f42d641c443ee1063f1ba22b4cd09
         </group>
     </open-files>
 </project-private>

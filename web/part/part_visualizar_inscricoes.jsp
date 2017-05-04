@@ -38,94 +38,95 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <link href="../css/estilo.css" rel="stylesheet" type="text/css" />
         <link href="../css/modal.css" rel="stylesheet" type="text/css" />
+        <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon"/>
         <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <title>Centro de Controle :: Administrador</title>
+        <title>SEven</title>
         <script language="javascript" src="../jquery/jquery-1.10.2.js"></script>
         <script language="javascript" src="../jquery/jquery-ui-1.10.4.custom.min.js"></script>
-        <script type="text/javascript" src="../jquery/jquery.dataTables.js"></script>
-        <script type="text/javascript" src="../jquery/initDataTable.js"></script>
         <script src="../Script.js" ></script>
     </head>
     <body>
         <div id="container">
-            <div id="top">
-                <%-- Incluindo Menu --%>
-                <%@include file="part_menu.jsp" %>
-            </div>
+            <%-- Incluindo Menu --%>
+            <%@include file="part_menu.jsp" %>
             <%@include file="/error.jsp"%>
             <div id="content">
-                <h1 class="titulo">Visualizar Minhas Inscrições</h1>
-                <p><a href="../ServletCentral?comando=CmdListarEventosAbertos" title="Nova Inscrição">Nova Inscrição</a></p>
-                <%if (array == null || array.isEmpty()) {%>
-                <center><label>Não há inscrições cadastradas</label></center>
-                    <%} else {%>
-                <table id="data_table">
-                    <thead>
-                        <tr>
-                            <th>Tipo</th>
-                            <th>Nome do Evento</th>
-                            <th>Status do Pagamento</th>
-                            <th>Gerar boleto</th>
-                            <th>Gerar certificado</th>
-                            <th>Editar</th>
-                            <th>Excluir</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <%
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">Visualizar Minhas Inscrições</div>
+                    <div class="panel-body">
+                        <%if (array == null || array.isEmpty()) {%>
+                        <center><label>Não há inscrições cadastradas</label></center>
+                            <%} else {%>
 
-                            AtividadeService as = new AtividadeService();
-                            ArrayList<InscricaoAtividade> ias = new ArrayList<InscricaoAtividade>();
-                            for (Inscricao i : array) {
-                                boolean liberarCertificado = false;
-                                ias = as.getIncricaoAtividadeByInscricao(i.getId());
-                                if (ias != null) {
-                                    for (int cont = 0; cont < ias.size(); cont++) {
-                                        System.out.println(ias.get(cont).isConfirmaCertificado());
-                                        if (ias.get(cont).isConfirmaCertificado()) {
-                                            liberarCertificado = true;
-                                            break;
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Tipo</th>
+                                    <th>Nome do Evento</th>
+                                    <th>Status do Pagamento</th>
+                                    <th>Gerar boleto</th>
+                                    <th>Gerar certificado</th>
+                                    <th>Visualizar</th>
+                                    <th>Excluir</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <%
+
+                                    AtividadeService as = new AtividadeService();
+                                    ArrayList<InscricaoAtividade> ias = new ArrayList<InscricaoAtividade>();
+                                    for (Inscricao i : array) {
+                                        boolean liberarCertificado = false;
+                                        ias = as.getIncricaoAtividadeByInscricao(i.getId());
+                                        if (ias != null) {
+                                            for (int cont = 0; cont < ias.size(); cont++) {
+                                                System.out.println(ias.get(cont).isConfirmaCertificado());
+                                                if (ias.get(cont).isConfirmaCertificado()) {
+                                                    liberarCertificado = true;
+                                                    break;
+                                                }
+                                            }
                                         }
-                                    }
-                                }
 
-                        %>
-                        <tr>
-                            <td><%=i.getModalidade().getTipo()%></td>
-                            <td><%=i.getEvento().getNome()%></td>
-                            <%
-                                if (i.isConfirmada()) {
-                                    estado = "Efetuado";
-                                } else {
-                                    estado = "Não Efetuado";
-                                }
-                            %>
-                            <td><%=estado%></td>
-                            <% if (!i.isConfirmada()) {%>
-                            <td><a href="../ServletCentral?comando=CmdGerarBoletoPagamento&id=<%=i.getId()%>"title="">Gerar Boleto</a></td>
-                            <% } else {%>
-                            <td> - </td>
-                            <% }%>
-                            <% if (liberarCertificado) {%>
-                            <td><a href="../ServletCentral?comando=CmdGerarCertificado&insc_id=<%=i.getId()%>" title="Gerar Certificado" onclick="return clickGerarCerticiado(<%=p.getUsuario().isCertificadoGerado()%>, <%=i.getId()%>);" >Gerar Certificado</a> </td>
-                            <% } else {%>
-                            <td> Indisponível </td>
-                            <% }%>
-                            <% if (!i.isConfirmada()) {%><%--link chama o comando de visualização/edição--%>
-                            <td><a href="../ServletCentral?comando=CmdVisualizarInscricao&iId=<%=i.getId()%>" title="Visualizar/Editar">Visualizar/Editar</a></td>
-                            <% } else {%>
-                            <td> - </td>
-                            <% }%>
-                            <td><a href="../ServletCentral?comando=CmdExcluirInscricao&iId=<%=i.getId()%>" onclick="return confirm('ATENÇÃO: Se você excluir uma inscrição que já foi paga ela não estará mais no sistema e você não poderá recuperar a quantia gasta. Você também poderá perder as vagas e os certificados relacionados com esta inscrição. Tem certeza que dejesa excluir esta inscrição?');" title="Excluir">Excluir</a></td>
-                        </tr>
-                        <%}%> 
-                    </tbody>
-                </table>
-                <%}%>
-                <div id="list">  
+                                %>
+                                <tr>
+                                    <td><%=i.getModalidade().getTipo()%></td>
+                                    <td><%=i.getEvento().getNome()%></td>
+                                    <%
+                                        if (i.isConfirmada()) {
+                                            estado = "Efetuado";
+                                        } else {
+                                            estado = "Não Efetuado";
+                                        }
+                                    %>
+                                    <td><%=estado%></td>
+                                    <% if (!i.isConfirmada()) {%>
+                                    <td><a href="../ServletCentral?comando=CmdGerarBoletoPagamento&id=<%=i.getId()%>"title=""><span class="text-uppercase label label-success">Gerar Boleto</span></a></td>
+                                    <% } else {%>
+                                    <td> - </td>
+                                    <% }%>
+                                    <% if (liberarCertificado) {%>
+                                    <td><a href="../ServletCentral?comando=CmdGerarCertificado&insc_id=<%=i.getId()%>" title="Gerar Certificado" onclick="return clickGerarCerticiado(<%=p.getUsuario().isCertificadoGerado()%>, <%=i.getId()%>);" ><span class=" text-uppercase label label-warning">Gerar Certificado</span></a> </td>
+                                    <% } else {%>
+                                    <td> Indisponível </td>
+                                    <% }%>
+                                    <% if (!i.isConfirmada()) {%><%--link chama o comando de visualização/edição--%>
+                                    <td><a href="../ServletCentral?comando=CmdVisualizarInscricao&iId=<%=i.getId()%>" title="Visualizar/Editar"><span class="text-uppercase label label-info">Visualizar</span></a></td>
+                                    <% } else {%>
+                                    <td> - </td>
+                                    <% }%>
+                                    <td><a href="../ServletCentral?comando=CmdExcluirInscricao&iId=<%=i.getId()%>" onclick="return confirm('ATENÇÃO: Se você excluir uma inscrição que já foi paga ela não estará mais no sistema e você não poderá recuperar a quantia gasta. Você também poderá perder as vagas e os certificados relacionados com esta inscrição. Tem certeza que dejesa excluir esta inscrição?');" title="Excluir"><span class="text-uppercase label label-danger">Excluir</span></a></td>
+                                </tr>
+                                <%}%> 
+                            </tbody>
+                        </table>
+                        <%}%>
+                        <div id="list">  
+                        </div>
+                    </div>
                 </div>
-            </div>         
-            <div id="footer"></div>
+                <a href="../ServletCentral?comando=CmdListarEventosAbertos" title="Nova Inscrição" class="btn btn-default">Nova Inscrição</a>
+            </div>
         </div>
 
         <div id="openModal" class="modalDialog">
@@ -147,8 +148,10 @@
                     <button id="btModalSim" class="btModal" >SIM</button>
                 </a>
                 <br><br>
-            </div>
-        </div>
-        <%@include file="../footer.jsp" %>
-    </body>
-</html>
+                        </div>
+                        </div>
+                        <div class="footer-top">        
+                            <%@include file="../footer.jsp" %>
+                        </div>
+                        </body>
+                        </html>

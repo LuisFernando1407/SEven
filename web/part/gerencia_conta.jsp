@@ -5,8 +5,8 @@
 --%>
 <%-- 
     Document   : gerencia_conta
-    Modified in : 
-    Author     : 
+    Modified in : 04/05/2017, 13:56:25
+    Author     : João Mateus
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="br.ufc.pet.evento.Participante" %>
@@ -60,8 +60,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <link href="../css/estilo.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="Script.js"></script>
+        <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon"/>
         <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <title>Gerenciar Conta</title>
+        <title>SEven</title>
     </head>
     <body>
         <div id="container" class="container-fluid">
@@ -99,6 +100,8 @@
                 </div>
             </div>
         </div>
-        <%@include file="../footer.jsp" %>
+        <div class="footer-top">        
+             <%@include file="../footer.jsp" %>
+        </div> 
     </body>
 </html>

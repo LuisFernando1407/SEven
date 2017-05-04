@@ -122,7 +122,7 @@
              <input type="submit" value="Enviar" class="btn btn-default pull-right" onclick="return confirmarCadastrado()"/>
            </div>
         </div>    
-        <div class="footer-top">         
+        <div class="footer-top">        
              <%@include file="../footer.jsp" %>
         </div>  
     </body>

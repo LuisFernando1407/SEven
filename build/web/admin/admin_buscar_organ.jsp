@@ -36,28 +36,38 @@
                 <h1 class="titulo">Adicionar organizador ao evento <%=event.getNome()%></h1>
                 <p style="font-size: medium;">Você pode tornar organizador um usuário já cadastrado ou cadastrar um novo organizador.</p>
                 <div id="content_right">
-                    <p style="margin-top: 5px;"><a style="font-size: medium; color: #0E464E;" href="admin_add_organ_novo.jsp" title="Criar Organizador ainda não cadastrado" class="adicionar">Criar Organizador ainda não cadastrado</a></p>
+                  
                 </div>
                 <div id="content_left">
-                    <h2 class="titulo" style="width: 435px;">Busca de usuários pelo nome ou parte do nome:</h2>
-                    <form action="../ServletCentral" method="post" class="box_destaque cadastro">
-                        <input type="hidden" name="comando" value="CmdBuscarUsuario"/>
-                        <fieldset>
-                            <label>Nome:</label><br />
-                            <input type="text" name="nome" class="buscar" /><br/>
-                            <input type="submit" value="Buscar" class="button" style="margin-left: 20px;" />
-                        </fieldset>
-                    </form>
+                    <div class="panel panel-default">
+                        <div class="panel-heading text-center">Busca de usuários pelo nome ou parte do nome</div>
+                        <div class="panel-body ">
+                             <form action="../ServletCentral" method="post" class=" col-lg-12 space-top">
+                              <input type="hidden" name="comando" value="CmdBuscarUsuario"/>
+                                 <div class="form-group">
+                                     <input type="text" name="nome" class="form-control" placeholder="Nome" selected />
+                                 </div> 
+                                   <div class="form-group">
+                                     <input type="submit" value="Buscar" class="btn btn-default"  /> 
+                                     <a  href="admin_add_organ_novo.jsp" title="Criar Organizador ainda não cadastrado" class="btn btn-default pull-right">Criar Organizador ainda não cadastrado</a>
+                                   </div>
+                            </form>     
+                                
+                         </div>  
+                    </div>
+                </div>
                     <form action="" >
                         <input type="hidden" name="comando"/>
                         <input type="hidden" name="idUsuario"/>
                         <%@include file="/error.jsp"%>
+                    </form>
+                   
                         <table id="data_table" class="table table-hover text-center">
 
                             <%if (users != null && users.size() > 0) {%>
                             <thead>
                                 <tr>
-                                    <th>Nome do usuário</th>
+                                    <th class="panel-cor"> Nome do usuário</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -71,12 +81,13 @@
                             <%}%>
 
                         </table>
-                    </form>
-                    <p><a href="" title="" onclick="history.back();
-                            return false;" class="voltar">Voltar</a></p>
-                </div>
+                     
+                            <p><a href="" title=""  class="btn btn-default" onclick="history.back(); return false;" class="voltarCadastro">← Voltar</a></p>
+               
             </div>
+            <div class="footer-top">              
               <%@include file="../footer.jsp" %>
-        </div>
+            </div>
+    </div>         
     </body>
 </html>

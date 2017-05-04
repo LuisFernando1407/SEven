@@ -39,6 +39,12 @@ body {
     height: 60px;
 }
 
+#container #gerecia_conta {
+    display: block;
+    width: 930px;
+    height: 22px;
+}
+
 
 #container #top #menu {
     margin-top: 13px;

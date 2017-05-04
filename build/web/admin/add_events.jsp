@@ -145,7 +145,7 @@
                             <label for="text_a">Descrição</label>
                             <textarea id="text_a" class="form-control" cols="1" rows="10" name="descricao"><%=descricao%></textarea>  
                        </div>                          
-                       <label>O evento é gratuito?</label><br />
+                        <label>O evento é gratuito?</label><br />
                         <label class="radio-inline">
                             <input type="radio" name="gratuito" value="true" id="inlineRadio1"> Sim
                         </label>
@@ -158,8 +158,8 @@
                      <button type="submit" class="btn btn-default" onclick="return confirmarCadastrado()">Cadastrar</button>
                    </div>
                  </div>  
-                </form>
-                </div>                
+                </div> 
+              </form>
            </div>
         <%@include file="../footer.jsp" %>
     </body>

@@ -5,57 +5,56 @@
 --%>
 <%-- 
     Document   : part_conta
-    Modified in : 
-    Author     : 
+    Modified in : 04/05/2017, 15:59:59
+    Author     : João Mateus
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="br.ufc.pet.evento.Participante" %>
 <%@page import="br.ufc.pet.util.UtilSeven" %>
 <%@page import="java.util.Date" %>
 <%@include file="../ErroAutenticacaoUser.jsp" %>
-<%
-            String mensagem = (String) request.getAttribute("mensagem");
-            Participante part = (Participante) session.getAttribute("user");
-            String fone = part.getUsuario().getFone();
-            String instituicao = part.getUsuario().getInstituicao();
-            Date dataNascimento = part.getUsuario().getDataNascimento();
-            String sexo = part.getUsuario().getSexo();
-            String rua = part.getUsuario().getRua();
-            String cidade = part.getUsuario().getCidade();
-            String bairro = part.getUsuario().getBairro();
-            String uf = part.getUsuario().getUf();
-            String numero = part.getUsuario().getNumero();
-            String confirSenha = part.getUsuario().getSenha();
-            String data = null;
-            if (fone == null || fone.trim().isEmpty()) {
-                fone = "";
-            }
-            if (cidade == null || cidade.trim().isEmpty()) {
-                cidade = "";
-            }
-            if (instituicao == null || instituicao.trim().isEmpty()) {
-                instituicao = "";
-            }
-            if (sexo == null || sexo.trim().isEmpty()) {
-                sexo = "";
-            }
-            if (rua == null || rua.trim().isEmpty()) {
-                rua = "";
-            }
-            if (bairro == null || bairro.trim().isEmpty()) {
-                bairro = "";
-            }
-            if (uf == null || uf.trim().isEmpty()) {
-                uf = "";
-            }
-            if (numero == null || numero.trim().isEmpty()) {
-                numero = "";
-            }
-            if (dataNascimento == null) {
-                data = "";
-            } else {
-                data = UtilSeven.treatToString(part.getUsuario().getDataNascimento());
-            }
+<%    String mensagem = (String) request.getAttribute("mensagem");
+    Participante part = (Participante) session.getAttribute("user");
+    String fone = part.getUsuario().getFone();
+    String instituicao = part.getUsuario().getInstituicao();
+    Date dataNascimento = part.getUsuario().getDataNascimento();
+    String sexo = part.getUsuario().getSexo();
+    String rua = part.getUsuario().getRua();
+    String cidade = part.getUsuario().getCidade();
+    String bairro = part.getUsuario().getBairro();
+    String uf = part.getUsuario().getUf();
+    String numero = part.getUsuario().getNumero();
+    String confirSenha = part.getUsuario().getSenha();
+    String data = null;
+    if (fone == null || fone.trim().isEmpty()) {
+        fone = "";
+    }
+    if (cidade == null || cidade.trim().isEmpty()) {
+        cidade = "";
+    }
+    if (instituicao == null || instituicao.trim().isEmpty()) {
+        instituicao = "";
+    }
+    if (sexo == null || sexo.trim().isEmpty()) {
+        sexo = "";
+    }
+    if (rua == null || rua.trim().isEmpty()) {
+        rua = "";
+    }
+    if (bairro == null || bairro.trim().isEmpty()) {
+        bairro = "";
+    }
+    if (uf == null || uf.trim().isEmpty()) {
+        uf = "";
+    }
+    if (numero == null || numero.trim().isEmpty()) {
+        numero = "";
+    }
+    if (dataNascimento == null) {
+        data = "";
+    } else {
+        data = UtilSeven.treatToString(part.getUsuario().getDataNascimento());
+    }
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
@@ -63,64 +62,102 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <link href="../css/estilo.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="../Script.js"> </script>
+        <script type="text/javascript" src="../Script.js"></script>
+        <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon"/>
         <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <title>Editar Conta</title>
+        <title>SEven</title>
     </head>
     <body>
         <div id="container">
-            <div id="top">
-                <%@include file="part_menu.jsp" %>
-            </div>
+
+            <%@include file="part_menu.jsp" %>
+
             <div id="content">
-                <h1 class="titulo">Editar Dados Cadastrais</h1>
-                <%if (mensagem != null) {%>
-                <h3><%=mensagem%></h3><br />
-                <% }%>
-                <form action="../ServletCentral" method="post" class="cadastro">
-                    <input type="hidden" name="comando" value="CmdEditarParticipante" />
-                    <fieldset>
-                        <%@include file="../error.jsp" %>
-                        <label style="float: right;">* Campos obrigatórios</label><br/>
-                        <label>Nome (*):</label><br />
-                        <input type="text" maxlength="50" value="<%=part.getUsuario().getNome()%>" name="nome" 
-                            <% if(part.getUsuario().isCertificadoGerado()) {%>   
-                                disabled="disabled"
-                            <% } %>
-                        /><br />
-                        <label>Telefone:</label><br />
-                        <input type="text" maxlength="12" value="<%=fone%>" onkeypress="return formataContato(this, event)" name="fone" /><br />
-                        <label>E-mail (*):</label><br />
-                        <input type="text" maxlength="50" value="<%=part.getUsuario().getEmail()%>" name="email" /><br />
-                        <label>Data de Nascimento:</label><br />
-                        <input type="text" name="dt_nascimento" value="<%=data%>" onkeypress="return formataData(this,event)" maxlength="10"/><br />
-                        <label>Sexo (*):</label><br />
-                        <select id="sexo" name="sexo">
-                            <option value="Masculino">Masculino</option>
-                            <option value="Feminino">Feminino</option>
-                        </select> <br/>
-                        <label>Instituição:</label><br />
-                        <input type="text" maxlength="50" value="<%=instituicao%>" name="instituicao" /><br />
-                        <label>Rua (*):</label><br />
-                        <input type="text" maxlength="50" value="<%=rua%>" name="rua" /><br />
-                        <label>Bairro (*):</label><br />
-                        <input type="text" maxlength="50" value="<%=bairro%>" name="bairro" /><br />
-                        <label>Número (*):</label><br />
-                        <input type="text" maxlength="6" value="<%=numero%>" onkeypress="return validaNumerosSilencioso(event);" name="numero" /><br />
-                        <label>Cidade (*):</label><br />
-                        <input type="text" maxlength="50" value="<%=cidade%>" name="cidade" /><br />
-                        <label>UF (*):</label><br />
-                        <input type="text" maxlength="50" value="<%=uf%>" name="uf" /><br />
-                        <label>Senha (*):</label><br />
-                        <input type="password" maxlength="50" value="<%=confirSenha%>" name="senha" /><br />
-                        <label>Repita a senha (*):</label><br />
-                        <input type="password" maxlength="50" value="<%=confirSenha%>" name="r-senha" /><br />
-                    </fieldset>
-                    <input type="submit" value="Enviar" class="button" />
-                    <a href="" title="" onclick="history.back(); return false;" class="voltarCadastro">Voltar</a>
-                </form>
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">Editar Dados Cadastrais</div>
+                    <div class="panel-body"> 
+                        <%if (mensagem != null) {%>
+                        <h3><%=mensagem%></h3><br />
+                        <% }%>
+
+
+                        <div class = "col-lg-12">
+                            <form action="../ServletCentral" method="post">
+                                <input type="hidden" name="comando" value="CmdEditarParticipante" />
+                                <%@include file="../error.jsp" %>
+                                <br/><div class="pull-left text-uppercase label label-warning">* Campos obrigatórios</div><br/>
+                                <div class="row center-block">
+                                    <div class="form-group">
+                                        <label>Nome (*):</label><br />
+                                        <input type="text" maxlength="50" class="form-control" value="<%=part.getUsuario().getNome()%>" name="nome" 
+                                               <% if (part.getUsuario().isCertificadoGerado()) {%>   
+                                               disabled="disabled"
+                                               <% }%> 
+                                               />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Telefone:</label>
+                                        <input type="text" maxlength="12" value="<%=fone%>" onkeypress="return formataContato(this, event)" name="fone" class="form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>E-mail (*):</label>
+                                        <input type="text" maxlength="50" value="<%=part.getUsuario().getEmail()%>" name="email" class="form-control"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Data de Nascimento:</label>
+                                        <input type="text" name="dt_nascimento" value="<%=data%>" onkeypress="return formataData(this, event)" maxlength="10" class="form-control"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Sexo (*):</label>
+                                        <select class="form-control" id="sexo" name="sexo">
+                                            <option value="Masculino">Masculino</option>
+                                            <option value="Feminino">Feminino</option>
+                                        </select>
+                                    </div>                          
+                                    <div class="form-group">
+                                        <label>Instituição:</label>
+                                        <input type="text" maxlength="50" value="<%=instituicao%>" name="instituicao" class="form-control"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Rua (*):</label>
+                                        <input type="text" maxlength="50" value="<%=rua%>" name="rua" class="form-control"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Bairro (*):</label>
+                                        <input type="text" maxlength="50" value="<%=bairro%>" name="bairro" class="form-control"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Número (*):</label>
+                                        <input type="text" maxlength="6" value="<%=numero%>" onkeypress="return validaNumerosSilencioso(event);" name="numero" class="form-control"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Cidade (*):</label>
+                                        <input type="text" maxlength="50" value="<%=cidade%>" name="cidade" class="form-control"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>UF (*):</label>
+                                        <input type="text" maxlength="50" value="<%=uf%>" name="uf" class="form-control"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Senha (*):</label>
+                                        <input type="password" maxlength="50" value="<%=confirSenha%>" name="senha" class="form-control"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Repita a senha (*):</label>
+                                        <input type="password" maxlength="50" value="<%=confirSenha%>" name="r-senha" class="form-control"/>
+                                    </div>
+                                    <input type="submit" value="Enviar" class="btn btn-default"/>
+                                    <p></p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <a href="" title="" onclick="history.back(); return false;" class="btn btn-default"><span aria-hidden="true">&larr;</span>Voltar</a><br/>
             </div>
         </div>
-        <%@include file="../footer.jsp" %>
+        <div class="footer-top">        
+            <%@include file="../footer.jsp" %>
+        </div>
     </body>
 </html>

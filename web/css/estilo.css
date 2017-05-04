@@ -5,11 +5,20 @@ body {
     padding: 20px;
     margin: 0;
     font-family: Verdana, Tahoma, Arial;
-    padding-bottom: 100px;
 }
 
 .par {
     background: #CCC;
+}
+.text-bold{
+    font-weight: bold !important;
+}
+.font-md{
+    font-size: medium;
+}
+
+.font-lg{
+    font-size: large;
 }
 
 .impar {
@@ -28,13 +37,6 @@ body {
     display: block;
     width: 930px;
     height: 60px;
-    background: url(../imagens/top.png);
-}
-
-#container #gerecia_conta {
-    display: block;
-    width: 930px;
-    height: 22px;
 }
 
 
@@ -149,11 +151,12 @@ body {
     text-align: center;
     margin: 10px 0 0;
     display: block;
-    background: #CCC;
+    background: #ccc;
 }
 
+
 #content p {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 20px;
     text-indent: 20px;
     text-align: justify;
@@ -272,7 +275,7 @@ body {
 }
 
 .box_destaque {
-    background: #EAEAEA;
+ 
 }
 
 #content form.cadastro fieldset {
@@ -383,7 +386,12 @@ body {
     clear: both;
     width: 100%;
     height: 60px;
-    background: url(../imagens/footer2.png);
+}
+.space-top{
+    margin-top: 10px;
+}
+.footer-top {
+  margin-top: 40px;
 }
 
 
@@ -416,7 +424,6 @@ body {
 #img_logo{
      width:850px;
      height:170px;
-     background-image: url(../imagens/top2.png);
      position: relative;
      top: 50px;
      left: 175px;
@@ -456,15 +463,18 @@ footer img{
     margin: 0 0 20px;
 }
 #img-centro{
-      width:100px;
-      height:100px;
+     width:170px;
+      height:140px;
       position:absolute;
       top:50%;
       left:50%;
-      width: 10%;
-      height: 12.5%;
-      margin-top:-250px;
-      margin-right: 200px;
+      margin-top: -140px;
+      margin-left: 20px;
+   
+}
+.panel-cor{
+       background-color: #2e8392 !important;
+       color: white;
 }
 .text-center-footer{
     text-align: center;
@@ -494,16 +504,22 @@ footer img{
   align-items: center;
 }
 #img-centro-pet{
-      width:100px;
-      height:100px;
+      width:200px;
+      height:200px;
       position:absolute;
       top:50%;
       left:50%;
-      margin-top:-250px;
-      margin-left: -200px;
+      margin-top: -160px;
+      margin-left: -220px;
 }
 .table>thead:first-child>tr:first-child>th {
     text-align: center !important;
+}
+.scroll-table{
+   overflow: auto;
+   width: auto;
+   height: 300px;
+    
 }
 .table-responsive {
     min-height: .01%;
@@ -538,7 +554,7 @@ footer img{
 }
 .text-center-contact{
     text-align: center;
-    margin-top: 200px;
+    margin-top: 260px;
 }
 blockquote {
     background-color: rgb(245, 245, 245);
@@ -575,7 +591,7 @@ a{
 #container-admin-add-event{
     display: block;
     width: auto;
-    margin: 55px auto;
+    margin-top: 50px;
     height: 100px;
 }
 
@@ -597,7 +613,6 @@ h1{
     color: #fff;
 }
 
-.calendario{
-    margin-left: auto;
-    margin-right: auto;
+.margin-contato{
+    margin-top: 90px;
 }

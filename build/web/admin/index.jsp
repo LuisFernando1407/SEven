@@ -35,7 +35,7 @@
                     </br>
                 <%@include file="/error.jsp" %>
                <div class="table-responsive">
-                <div style="height:330px; overflow: auto;">
+>
                 <table class="table table-hover">
                     <thead>
                         <tr>
@@ -63,9 +63,11 @@
                     </tbody>
                 </table>
                 </div>
-               </div></br>
-               <div align="right"><a class="btn btn-default" href="add_events.jsp" role="button">Criar novo evento</a></div>
+                   <div align="right"><a class="btn btn-default" href="add_events.jsp" role="button">Criar novo evento</a></div>
+        </div>          
+                    
+        <div class="footer-top">
+          <%@include file="../footer.jsp" %>
         </div>
-       <%@include file="../footer.jsp" %>
     </body>
 </html>

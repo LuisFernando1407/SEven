@@ -156,9 +156,8 @@
                        <button type="submit" class="btn btn-default" onclick="return confirmarCadastrado()">Alterar</button>
                   </div> 
                 </form>
-         </div> 
- 
-       
+              </div>
+         </div>        
         <%@include file="../footer.jsp"%>
     </body>
 </html>

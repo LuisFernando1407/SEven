@@ -8,9 +8,8 @@
 <%@page import="br.ufc.pet.evento.Evento" %>
 <%@include file="../ErroAutenticacaoUser.jsp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<%
-            Administrador admin = (Administrador) session.getAttribute("user");
-            String nomeSaudacao = admin.getUsuario().getNome().split(" ")[0];
+<%    Administrador admin = (Administrador) session.getAttribute("user");
+    String nomeSaudacao = admin.getUsuario().getNome().split(" ")[0];
 %>
 <html>
     <head>
@@ -21,21 +20,21 @@
         <title>SEven</title>
         <script language="javascript" src="../jquery/jquery-1.10.2.js"></script>
         <script language="javascript" src="../jquery/jquery-ui-1.10.4.custom.min.js"></script>
-       
+
         <script src="../bootstrap/js/bootstrap.min.js"></script>
         <script type="text/javascript"  language="javascript" src="../Script.js"></script>
-      
+
     </head>
     <body>
         <div id="container-admin-home">
-                <%-- Incluindo o Menu --%>
-                <%@include file="admin_menu.jsp" %>
-                    <h1 class="titulo">Olá, <%= nomeSaudacao%></h1>
-                    <p>Esta é a página inicial do Administrador. Quando desejar retornar a esta página, clique na opção <span class="text-uppercase label label-info"><em>Home</em></span> no menu acima.</p>
-                    </br>
-                <%@include file="/error.jsp" %>
-               <div class="table-responsive">
->
+            <%-- Incluindo o Menu --%>
+            <%@include file="admin_menu.jsp" %>
+            <h1 class="titulo">Olá, <%= nomeSaudacao%></h1>
+            <p>Esta é a página inicial do Administrador. Quando desejar retornar a esta página, clique na opção <span class="text-uppercase label label-info"><em>Home</em></span> no menu acima.</p>
+            <br/>
+            <%@include file="/error.jsp" %>
+            <div class="table-responsive">
+                >
                 <table class="table table-hover">
                     <thead>
                         <tr>
@@ -62,12 +61,12 @@
                         <% }%>
                     </tbody>
                 </table>
-                </div>
-                   <div align="right"><a class="btn btn-default" href="add_events.jsp" role="button">Criar novo evento</a></div>
+            </div>
+            <div align="right"><a class="btn btn-default" href="add_events.jsp" role="button">Criar novo evento</a></div>
         </div>          
-                    
+
         <div class="footer-top">
-          <%@include file="../footer.jsp" %>
+            <%@include file="../footer.jsp" %>
         </div>
     </body>
 </html>

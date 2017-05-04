@@ -25,15 +25,14 @@
         <title>SEven</title>
         <script language="javascript" src="../jquery/jquery-1.10.2.js"></script>
         <script language="javascript" src="../jquery/jquery-ui-1.10.4.custom.min.js"></script>
-        <script type="text/javascript" src="../jquery/jquery.dataTables.js"></script>
-        <script type="text/javascript" src="../jquery/initDataTable.js"></script>
+
     </head>
     <body>
         <div id="container">
-            <div id="top">
+
                 <%-- Incluindo Menu --%>
                 <%@include file="part_menu.jsp" %> 
-            </div>
+
          
         <div id="content">
           <div class="row">   
@@ -56,16 +55,16 @@
                     <table id="data_table" class="table table-hover">
                         <thead>
                             <tr>
-                                <th>Evento</th>
                                 <th>Sigla</th>
+                                <th>Evento</th>
                                 <th>Programação</th>
                             </tr>
                         </thead>
                         <tbody>
                             <% for (br.ufc.pet.evento.Evento e : eventos) {%>
-                            <tr>
-                                <td> <a href="../ServletCentral?comando=CmdSelecionarEvento&id=<%=e.getId()%>"><%= e.getNome()%></a>  </td>
+                            <tr class="text-center">
                                 <td> <%= e.getSigla()%> </td>
+                                <td> <a href="../ServletCentral?comando=CmdSelecionarEvento&id=<%=e.getId()%>"><%= e.getNome()%></a>  </td>
                                 <td> <a href="../ServletCentral?comando=CmdVisualizarProgramacao&id=<%=e.getId()%>" title="Programacao" > Visualizar</a> </td>
                             </tr>
                             <% }%>

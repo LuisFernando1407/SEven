@@ -18,24 +18,34 @@
 <%@page import="java.util.Date"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html>
+<html  ng-app="app">
     <%
         Evento evento = (Evento) session.getAttribute("evento");
 
     %>
 
     <head>
+        <script type="text/javascript"  language="javascript" src="Script.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <link href="css/estilo.css" rel="stylesheet" type="text/css" />
-        <link rel="shortcut icon" href="imagens/favicon.png" type="image/x-icon"/>
+        <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon"/>
         <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/fullcalendar.min.css" rel="stylesheet" type="text/css"/>
         <title>SEven</title>
-        <script language="javascript" src="jquery/jquery-1.10.2.js"></script>
-        <script language="javascript" src="jquery/jquery-ui-1.10.4.custom.min.js"></script>
-       
+
+	<!-- AJS Calendar -->
+        <script src="angularjs/jquery-3.2.1.min.js"></script>
+        <script src="angularjs/moment.js"></script>
+        <script src="angularjs/fullcalendar.min.js"></script>
+        <script src="angularjs/gcal.js"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="angularjs/angular.min.js"></script>
+        <script src="angularjs/calendar.js"></script>
+        <script src="angularjs/ui-bootstrap-tpls-2.5.0.min.js"></script>
+        <script src="angularjs/controllers/calendarCtrl.js"></script>
     </head>
-    <body>
+    <body ng-controller="MyController">
+        
         <div id="container-visualizar">
             <%@include file="menu_index.jsp"%>
 
@@ -50,11 +60,10 @@
                             if (!h.getDia().equals(diaComum)) {
                                 diaComum = h.getDia();
                                 if (count > 0) {%>
-                <!-- Table utilizado para balancear as tabelas-->
-                </table>
+                <!-- Table utilizado para balancear as tabelas, isso é sim uma gambiarra criado por um cara e que a gente não soube resolver-->
+                <table>
                 
                 <%}%>
-                </br>
                 <div class="well well-sm text-center"><%=UtilSeven.treatToLongString(h.getDia())%></div>
                 <div class="table-responsive">
                 <table class="table table-hover">
@@ -94,10 +103,15 @@
                     </tbody>
                 </table>
                 </div>
-                <%}%>  
-        <div align="left"><a href="javascript:history.back();" class="btn btn-default"><span aria-hidden="true">&larr;</span> Voltar</a></div>
+                <%}%> 
+                </table>
+            <div align="left"><a href="javascript:history.back();" class="btn btn-default"><span aria-hidden="true">&larr;</span> Voltar</a></div>
 
-            </div>
+        </div>
+            
+        <div style="margin-top:50px ;width:65%;" align="center" class="calendario">
+            <div ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="eventSources"></div> 
+        </div>
         <%@include file="footer.jsp" %>
     </body>
 </html>

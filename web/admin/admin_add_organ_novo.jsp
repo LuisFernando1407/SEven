@@ -113,10 +113,9 @@
                        </div> 
                          <input type="submit" value="Enviar" class="btn btn-default pull-right space-top" onclick="return confirmarCadastrado()"/>
                       </div>           
-                  </div>
-                </div>
-                    
-               </form> 
+                  </div>                    
+                </div>                    
+               </form>
                     
               </div>
              </div>  
@@ -124,6 +123,7 @@
              
            </div>
         </div>    
+                    
         <div class="footer-top">         
              <%@include file="../footer.jsp" %>
         </div>  

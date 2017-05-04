@@ -110,16 +110,18 @@
                           <input type="checkbox" name="manterAtividade" class="chk_box"/> Manter Atividade<br/>
                           <input type="checkbox" name="manterModulo" class="chk_box"/> Manter Módulo Financeiro<br/>                 
                         </div>
-                       </div>    
+                       </div> 
+                         <input type="submit" value="Enviar" class="btn btn-default pull-right space-top" onclick="return confirmarCadastrado()"/>
                       </div>           
                   </div>
                 </div>
+                    
                </form> 
                     
               </div>
              </div>  
              <a href="" title=""  class="btn btn-default" onclick="history.back(); return false;" class="voltarCadastro">← Voltar</a>
-             <input type="submit" value="Enviar" class="btn btn-default pull-right" onclick="return confirmarCadastrado()"/>
+             
            </div>
         </div>    
         <div class="footer-top">         

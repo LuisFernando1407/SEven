@@ -39,7 +39,7 @@
                 <div id="content_right">
                   
                 </div>
-                <div id="content_left">
+                <div id="content">
                     <div class="panel panel-default">
                         <div class="panel-heading text-center">Busca de usuários pelo nome ou parte do nome</div>
                         <div class="panel-body ">

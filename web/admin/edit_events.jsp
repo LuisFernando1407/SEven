@@ -104,7 +104,6 @@
           
            
                 <h1 class="title-register"> <%=comando%> Evento</h1><hr>
-                <%@include file="/error.jsp" %>
                 <%if (men != null) {%>
                 <center style="color: red"><label><%=men%></label></center>
                 <%}%>
@@ -151,12 +150,12 @@
                         <label class="radio-inline">
                             <input type="radio" name="gratuito" value="false" id="inlineRadio2" checked> Não
                         </label><br><br>                                              
-                    </form>
                   </div>  
                    <div class="text-center">  
                        <a href="javascript:history.back();" class="btn btn-default"><span aria-hidden="true">&larr;</span> Voltar</a>
                        <button type="submit" class="btn btn-default" onclick="return confirmarCadastrado()">Alterar</button>
-                  </div>         
+                  </div> 
+                </form>
          </div> 
  
        

@@ -36,6 +36,6 @@ public class CmdExcluirEvento implements Comando {
             session.setAttribute("erro", "Erro ao excluir evento");
         }
 
-        return "/admin/manege_events.jsp";
+        return "/admin/index.jsp";
     }
 }

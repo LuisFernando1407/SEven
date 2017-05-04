@@ -128,7 +128,7 @@ public class CmdAlterarEvento implements Comando {
                 
 
         }
-        return "/admin/manege_events.jsp";
+        return "/admin/index.jsp";
 
     }
 }

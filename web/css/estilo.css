@@ -104,6 +104,7 @@ body {
     display: block;
     width: 950px;
     margin: 85px auto;
+    height: 100px;
 }
 
 #container #content #content_left {
@@ -573,8 +574,9 @@ a{
 
 #container-admin-add-event{
     display: block;
-    width: 450px;
+    width: auto;
     margin: 55px auto;
+    height: 100px;
 }
 
 #container-admin-manege-org{

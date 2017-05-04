@@ -28,7 +28,7 @@
         <script type="text/javascript"  language="javascript" src="Script.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <link href="css/estilo.css" rel="stylesheet" type="text/css" />
-        <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon"/>
+        <link rel="shortcut icon" href="imagens/favicon.png" type="image/x-icon"/>
         <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/fullcalendar.min.css" rel="stylesheet" type="text/css"/>
         <title>SEven</title>
@@ -110,7 +110,7 @@
         </div>
             
         <div style="margin-top:50px ;width:65%;" align="center" class="calendario">
-            <div ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="eventSources"></div> 
+            <div ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="eventSources" calendar="myCalendar"></div> 
         </div>
         <%@include file="footer.jsp" %>
     </body>

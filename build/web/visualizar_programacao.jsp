@@ -72,6 +72,7 @@
                 <table>
                 
                 <%}%>
+                 <input id="name" type="hidden" value="<%=a.getNome()%>">
                 <div class="well well-sm text-center"><%=UtilSeven.treatToLongString(h.getDia())%></div>
                 <div class="table-responsive">
                 <table class="table table-hover">
@@ -114,11 +115,10 @@
                 <%}%> 
                 </table>
             <div align="left"><a href="javascript:history.back();" class="btn btn-default"><span aria-hidden="true">&larr;</span> Voltar</a></div>
-
-        </div>
-            
-        <div style="margin-top:50px ;width:65%;" align="center" class="calendario">
-            <div ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="eventSources" calendar="myCalendar"></div> 
+    
+            <div style="margin-top:50px ;width:100%;" align="center" class="calendario">
+                <div ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="eventSources" calendar="myCalendar"></div> 
+            </div>
         </div>
         <%@include file="footer.jsp" %>
     </body>

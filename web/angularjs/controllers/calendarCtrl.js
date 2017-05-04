@@ -13,16 +13,18 @@ app.controller('MyController', function($scope) {
       }
     };
     
+    var name_ex = angular.element('#name').val();
+    console.log(name_ex);
     // For test events
-     var date = new Date();
-     var d = date.getDate();
+    var date = new Date();
+    var d = date.getDate();
     var m = date.getMonth();
     var y = date.getFullYear();
-
      // Clear events and assign the static events source.
      $scope.events = [];
-     $scope.staticEvents = [
-     {title: 'Static 1', start: new Date(y, m, 1), allDay: true},
+     
+    $scope.staticEvents = [
+     {title: name_ex, start: new Date(y, m, 1), allDay: true},
      {title: 'Static 2', start: new Date(y, m, 8), allDay: true},
      {title: 'Static 3', start: new Date(y, m, d), allDay: true}
      ];

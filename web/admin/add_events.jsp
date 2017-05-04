@@ -107,7 +107,7 @@
                 <%if (men != null) {%>
                 <center style="color: red"><label><%=men%></label></center>
                 <%}%>
-                
+                 <%@include file="/error.jsp" %>
                 <!-- Adicionar Evento -->
                 <div class="row">
                    <div class = "col-lg-5 col-lg-offset-1">

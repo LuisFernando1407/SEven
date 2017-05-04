@@ -52,11 +52,19 @@
         
                 <!--<div id="content_left"></div>-->
                 <h1 class="title-register">Programação</h1>
-                <%                    ArrayList<Horario> horarios = br.ufc.pet.util.UtilSeven.getHorariosByEvento(evento.getId());
+                <%                    
+                    ArrayList<Horario> horarios = br.ufc.pet.util.UtilSeven.getHorariosByEvento(evento.getId());
+                   
+                    String[] arrS = new String[horarios.size()];
+                    
+                    for(int i = 0; i < horarios.size(); i++){
+                        arrS[i] = horarios.get(i).exibirFormatoSimples();
+                    }
                     Date diaComum = new Date(0L);
                     int count = 0;
                     for (Horario h : horarios) {
                         for (Atividade a : evento.getAtividades()) {
+                         
                             if (!h.getDia().equals(diaComum)) {
                                 diaComum = h.getDia();
                                 if (count > 0) {%>
@@ -84,7 +92,7 @@
                             <td><%=h.exibirFormatoSimples()%></td>
                             <% String nome = a.getNome();%>
                             <td><%=nome%></td>
-
+                        
                             <% String tipo = a.getTipo().getNome();%>
                             <td><%=tipo%></td>
                             <% String local = a.getLocal();%>

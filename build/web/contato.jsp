@@ -26,7 +26,7 @@
             <%@include file="menu_index.jsp"%>    
             
          <div class="margin-contato"> 
-            <div class="panel panel-default"> 
+           
              <img id="img-centro-pet" src="imagens/PET.png"/>
              <img id="img-centro" src="imagens/favicon.png"/>
            

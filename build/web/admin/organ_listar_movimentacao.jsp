@@ -36,11 +36,11 @@
             <%-- Incluindo o Menu --%>
             <%@include file="admin_menu.jsp" %>
             <div id="content">
-                <h1 class="titulo"><span class="text-bold">Evento:</span> <%=event.getNome()%></h1>     
+                <h1 class="titulo"><span class="text-bold"></span> <%=event.getNome()%></h1>     
                 
-              
+                 <%@include file="/error.jsp"%>
                   <div class="panel panel-default">
-                     <div class="panel-heading text-center">Organizadores do Evento</div>
+                     <div class="panel-heading text-center">Organizadores deste evento</div>
                      <div class="panel-body">      
                         
                       <form action="">
@@ -48,7 +48,6 @@
                         <input type="hidden" name="idEvento"/>
                          <div class="scroll-table"> 
                             <table class="table table-hover text-center" id="data_table">
-                                <%@include file="/error.jsp"%>
                                 <%if (orgs == null || orgs.size() == 0) {%>
                                 <h4 class="text-center"> Evento sem organizadores no momento!</h4></center><br/>
                                         <%} else {%>

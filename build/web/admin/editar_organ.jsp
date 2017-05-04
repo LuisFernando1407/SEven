@@ -47,15 +47,12 @@
                 <%@include file="admin_menu.jsp" %>
         
             <div id="content">  
-              <h1 class="text-center"><span class="text-bold">Editar organizador do evento:</span><br/> <%=event.getNome()%></h1>
-               
-                          
-                
+            
                 <form action="../ServletCentral" method="post" class="cadastro">
                     <input type="hidden" name="comando" value="CmdEditarOrganizador"/>
                     
                  <div class="space-top panel panel-default">
-                  <div class="panel-heading text-center">Permissão do Usúario</div>
+                  <div class="panel-heading text-center">Permissão do usúario</div>
                    <div class="panel-body">  
                        <div class="col-lg-12 space-top">                   
                         <label>Nome:</label>  <%=u.getNome()%><br />
@@ -67,8 +64,10 @@
                       <input type="checkbox"  <%=manterMod%> name="manterMod" class="chk_box" /> Mater Módulo Financeiro<br/><br/>
                       </div> 
                    </div>
-                  </div>                 
-                   <input type="submit" value="Enviar" class="btn btn-default center-block" />                   
+                  </div>   
+                    <div class="text-center">
+                     <button type="submit" class="btn btn-default">Alterar</button> 
+                    </div>
                 </form> 
                    
                 <a href="" title="" onclick="history.back(); return false;" class="btn btn-default pull-left">← Voltar</a>

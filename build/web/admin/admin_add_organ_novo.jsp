@@ -31,10 +31,9 @@
           <%-- Incluindo o Menu --%>
           <%@include file="admin_menu.jsp" %>  
            <div id="content">
-             <h1 class="text-center titulo"><span class="text-bold">Adicionar organizador ao evento:</span><br/><%=en.getNome()%></h1>
-               
+           
               <div class="panel panel-default">
-                <div class="panel-heading text-center">Dados do Usúario</div>
+                <div class="panel-heading text-center"><%=en.getNome()%> <br> Dados do organizador</div>
                 <div class="panel-body"> 
                     
                

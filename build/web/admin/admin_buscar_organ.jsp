@@ -52,7 +52,7 @@
                         <input type="hidden" name="comando"/>
                         <input type="hidden" name="idUsuario"/>
                         <%@include file="/error.jsp"%>
-                        <table id="data_table">
+                        <table id="data_table" class="table table-hover text-center">
 
                             <%if (users != null && users.size() > 0) {%>
                             <thead>

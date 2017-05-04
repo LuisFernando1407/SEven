@@ -33,7 +33,8 @@
                     <h1 class="titulo">Olá, <%= nomeSaudacao%></h1>
                     <p>Esta é a página inicial do Administrador. Quando desejar retornar a esta página, clique na opção <span class="text-uppercase label label-info"><em>Home</em></span> no menu acima.</p>
                     </br>
-               <div class="table-responsive">
+             
+             <div class="table-responsive">
                 <div style="height:330px; overflow: auto;">
                 <table class="table table-hover">
                     <thead>

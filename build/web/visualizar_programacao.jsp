@@ -50,7 +50,7 @@
             <%@include file="menu_index.jsp"%>
 
                 <!--<div id="content_left"></div>-->
-                <h1 class="title-register">Programação</h1>
+                <h1 class="title-register">Programação <br/> <%=evento.getNome()%></h1>
                 <%                    
                     ArrayList<Horario> horarios = br.ufc.pet.util.UtilSeven.getHorariosByEvento(evento.getId());
                    
@@ -67,8 +67,10 @@
                                 diaComum = h.getDia();
                                 if (count > 0) {%>
                 <!-- Table utilizado para balancear as tabelas, isso é sim uma gambiarra criado por um cara e que a gente não soube resolver-->
-                <table>
+                <table class="hidden">
                 <%}%>
+                
+                <div class="hidden">
                 <div class="well well-sm text-center"><%=UtilSeven.treatToLongString(h.getDia())%></div>
                 <div class="table-responsive">
                 <table class="table table-hover">
@@ -94,13 +96,13 @@
                             <% String tipo = a.getTipo().getNome();%>
                             <td><%=tipo%></td>
                             <% String local = a.getLocal();%>
-                            <td><%=local%></td>
+                            <td class="local"><%=local%></td>
                             <%
                                 String nomePessoal = "";
                                 for (ResponsavelAtividade r : a.getResponsaveis()) {
-                                nomePessoal += r.getUsuario().getNome() + "<br>";
+                                nomePessoal += r.getUsuario().getNome();
                             }%>
-                            <td><%=nomePessoal%></td>
+                            <td class="people"><%=nomePessoal%></td>
                         </tr>
                         <%             }
                             }
@@ -109,8 +111,11 @@
                     </tbody>
                 </table>
                 </div>
-                <%}%> 
+                <%}%>
                 </table>
+                <% if(count > 0) {%>
+                   </div>
+                <%}%>
             <div style="margin-top:50px ;width:100%;" align="center" class="calendario">
                 <div ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="eventSources" calendar="myCalendar"></div> 
             </div>

@@ -5,19 +5,34 @@ app.controller('MyController', function($scope, $compile,uiCalendarConfig) {
     var hours = []; 
     var title = [];
     var day = [];
+    var local = [];
+    var minister =  [];
     var tds = document.getElementsByTagName("td");
- 
+    
+    function formatHoursToCalendar (hours){
+        var hi0 = hours.substring(0,2);
+        var hf0 = hours.substring(3,5);
+        
+        var hi1 = hours.substring(9,11);
+        var hf1 = hours.substring(12,14);
+        
+        return {hi: hi0 +':'+ hf0, hf: hi1 +':'+ hf1}; 
+    }
+    
     for (var i = 0; i < tds.length; i++) {
     // If it currently has the ColumnHeader class...
         if (tds[i].className == "hours") {
-            hours.push(tds[i].innerHTML);
+            hours.push(formatHoursToCalendar(tds[i].innerHTML));
         }else if(tds[i].className == "name"){
             title.push(tds[i].innerHTML);
         }else if(tds[i].className == "hidden"){
             day.push(tds[i].innerHTML);
+        }else if(tds[i].className == "local"){
+            local.push(tds[i].innerHTML);
+        }else if(tds[i].className == "people"){
+            minister.push(tds[i].innerHTML);
         }
-    };
-    //console.log(day);   
+    };  
     /* config object */
     $scope.uiConfig = {
       calendar:{
@@ -31,13 +46,14 @@ app.controller('MyController', function($scope, $compile,uiCalendarConfig) {
         },
         height: 450,
         editable: false,
+        defaultView:'agendaWeek',
         },
         eventClick: $scope.alertOnEventClick,
         eventDrop: $scope.alertOnDrop,
         eventResize: $scope.alertOnResize,
         eventRender: $scope.eventRender
     };
-    
+
     var  date = new Date();
     var d = date.getDate();
     var m = date.getMonth();
@@ -50,13 +66,11 @@ app.controller('MyController', function($scope, $compile,uiCalendarConfig) {
             className: 'gcal-event',           // an option!
             currentTimezone: 'America/Chicago' // an option!
     };
-    
      var events = [];
      for(var i = 0; i < title.length; i++){
-           events.push({title: title[i],start: day[i]});
+           events.push({title: title[i] + "\n * " + local[i] + "\n * " + minister[i], start: (day[i] +" "+ hours[i].hi), end: (day[i] + " "+ hours[i].hf)});
       }
      $scope.events = events;
-      console.log($scope.events);
     /* TODO: SETAR TAMANHO */
     /* event source that contains custom events on the scope */
     /*$scope.events = [ 
@@ -141,7 +155,7 @@ app.controller('MyController', function($scope, $compile,uiCalendarConfig) {
                      'tooltip-append-to-body': true});
         $compile(element)($scope);
     };
-
+    
     $scope.changeLang = function() {
       if($scope.changeTo === 'Hungarian'){
         $scope.uiConfig.calendar.dayNames = ["Vasárnap", "Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat"];

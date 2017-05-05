@@ -12,9 +12,6 @@ app.controller('MyController', function($scope) {
         eventResize: $scope.alertOnResize
       }
     };
-    
-    var name_ex = angular.element('#name').val();
-    console.log(name_ex);
     // For test events
     var date = new Date();
     var d = date.getDate();
@@ -24,7 +21,7 @@ app.controller('MyController', function($scope) {
      $scope.events = [];
      
     $scope.staticEvents = [
-     {title: name_ex, start: new Date(y, m, 1), allDay: true},
+     {title: 'Static 1', start: new Date(y, m, 1), allDay: true},
      {title: 'Static 2', start: new Date(y, m, 8), allDay: true},
      {title: 'Static 3', start: new Date(y, m, d), allDay: true}
      ];

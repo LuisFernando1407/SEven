@@ -49,14 +49,12 @@
         <div id="container-visualizar">
             <%@include file="menu_index.jsp"%>
 
-        
                 <!--<div id="content_left"></div>-->
                 <h1 class="title-register">Programação</h1>
                 <%                    
                     ArrayList<Horario> horarios = br.ufc.pet.util.UtilSeven.getHorariosByEvento(evento.getId());
                    
                     String[] arrS = new String[horarios.size()];
-                    
                     for(int i = 0; i < horarios.size(); i++){
                         arrS[i] = horarios.get(i).exibirFormatoSimples();
                     }
@@ -70,9 +68,8 @@
                                 if (count > 0) {%>
                 <!-- Table utilizado para balancear as tabelas, isso é sim uma gambiarra criado por um cara e que a gente não soube resolver-->
                 <table>
-                
+                    <input type="hidden" id="houras"></input>
                 <%}%>
-                 <input id="name" type="hidden" value="<%=a.getNome()%>">
                 <div class="well well-sm text-center"><%=UtilSeven.treatToLongString(h.getDia())%></div>
                 <div class="table-responsive">
                 <table class="table table-hover">
@@ -121,5 +118,6 @@
             </div>
         </div>
         <%@include file="footer.jsp" %>
+      
     </body>
 </html>

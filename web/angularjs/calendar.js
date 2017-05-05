@@ -220,7 +220,7 @@ angular.module('ui.calendar', [])
                     /* Month */
                     var monthPTBR = {
                         0: 'Janeiro', 1: 'Fevereiro', 2: 'Março', 3: 'Abril', 4: 'Maio',
-                        5: 'Junho', 6: 'Julho', 7: 'Agosto', 8: 'Setembro', 9: 'Outrubro',
+                        5: 'Junho', 6: 'Julho', 7: 'Agosto', 8: 'Setembro', 9: 'Outubro',
                         10: 'Novembro', 11: 'Dezembro'
                     };
                     /* SHORTDAY PT-BR */
@@ -300,6 +300,7 @@ angular.module('ui.calendar', [])
                         if (!calendar) {
                             calendar = $(elm).html('');
                         }
+                       
                         calendar.fullCalendar(options);
                         if (attrs.calendar) {
                             uiCalendarConfig.calendars[attrs.calendar] = calendar;
@@ -371,6 +372,7 @@ angular.module('ui.calendar', [])
                         if (newValue !== oldValue) {
                             scope.destroyCalendar();
                             scope.initCalendar();
+                            
                         } else if ((newValue && angular.isUndefined(calendar))) {
                             scope.initCalendar();
                         }

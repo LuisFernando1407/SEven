@@ -1,97 +1,133 @@
 var app = angular.module('app', ['ui.calendar', 'ui.bootstrap']);
 
-app.controller('MyController', function($scope) {
+app.controller('MyController', function($scope, $compile,uiCalendarConfig) {
     /* config object */
     $scope.uiConfig = {
       calendar:{
+        eventRender: function( event, element, view ) {
+        element.attr({ 
+            "tooltip-placement":"top", 
+            "uib-tooltip": event.title, 
+            "tooltip-append-to-body": true 
+        });
+        $compile(element)($scope);
+        },
         height: 450,
         editable: false,
-        defaultView: 'agendaWeek',
-        eventClick: $scope.alertEventOnClick,
+        },
+        eventClick: $scope.alertOnEventClick,
         eventDrop: $scope.alertOnDrop,
-        eventResize: $scope.alertOnResize
-      }
+        eventResize: $scope.alertOnResize,
+        eventRender: $scope.eventRender
     };
-    // For test events
-    var date = new Date();
+    
+    var  date = new Date();
     var d = date.getDate();
     var m = date.getMonth();
     var y = date.getFullYear();
-     // Clear events and assign the static events source.
-     $scope.events = [];
-     
-    $scope.staticEvents = [
-     {title: 'Static 1', start: new Date(y, m, 1), allDay: true},
-     {title: 'Static 2', start: new Date(y, m, 8), allDay: true},
-     {title: 'Static 3', start: new Date(y, m, d), allDay: true}
-     ];
-  
-    // Clear events via splice(0) and then push into events source.
-     $scope.getEventsEmptySplice = function () {
-        console.log('Clearing $scope.events via splice(0)');
-        
-    // Clearing in this manner maintains the two-way data bind.
-    // This can be called over and over, with old events cleared,
-    // and new random events displayed. This no longer works
-    // if getEventsEmptyArray is ever called, due to two-way
-    // data bind being broken within that function.
-    $scope.events.splice(0);
     
-    // Get 3 random days, 1-28
-    var day1 = Math.floor(Math.random() * (28 - 1)) + 1;
-    var day2 = Math.floor(Math.random() * (28 - 1)) + 1;
-    var day3 = Math.floor(Math.random() * (28 - 1)) + 1;
-    
-    // Simulating an AJAX request with $timeout.
-    $timeout(function () {
-      // Create temp events array.
-      var newEvents = [
-        {title: 'Random 1', start: new Date(y, m, day1), allDay: true},
-        {title: 'Random 2', start: new Date(y, m, day2), allDay: true},
-        {title: 'Random 3', start: new Date(y, m, day3), allDay: true}
-      ];
-      // Push newEvents into events, one by one.
-      angular.forEach(newEvents, function (event) {
-        $scope.events.push(event);
-      });
-      console.log('New Events pushed');
-    }, 100);
-  };
+    $scope.changeTo = 'Hungarian';
+    /* event source that pulls from google.com */
+    $scope.eventSource = {
+            url: "http://www.google.com/calendar/feeds/usa__en%40holiday.calendar.google.com/public/basic",
+            className: 'gcal-event',           // an option!
+            currentTimezone: 'America/Chicago' // an option!
+    };
+    /* event source that contains custom events on the scope */
+    $scope.events = [
+      {title: 'All Day Event',start: new Date(y, m, 1)},
+      {title: 'Long Event',start: new Date(y, m, d - 5),end: new Date(y, m, d - 2)},
+      {id: 999,title: 'Repeating Event',start: new Date(y, m, d - 3, 16, 0),allDay: false},
+      {id: 999,title: 'Repeating Event',start: new Date(y, m, d + 4, 16, 0),allDay: false},
+      {title: 'Birthday Party',start: new Date(y, m, d + 1, 19, 0),end: new Date(y, m, d + 1, 22, 30),allDay: false},
+      {title: 'Click for Google',start: new Date(y, m, 28),end: new Date(y, m, 29),url: 'http://google.com/'}
+    ];
+    /* event source that calls a function on every view switch */
+    $scope.eventsF = function (start, end, timezone, callback) {
+      var s = new Date(start).getTime() / 1000;
+      var e = new Date(end).getTime() / 1000;
+      var m = new Date(start).getMonth();
+      var events = [{title: 'Feed Me ' + m,start: s + (50000),end: s + (100000),allDay: false, className: ['customFeed']}];
+      callback(events);
+    };
 
-  // Clear events via empty array and then push into events source.
-  $scope.getEventsEmptyArray = function () {
-    console.log('Clearing $scope.events via assigning empty array');
-    
-    // Clearing in this manner, assigns a new empty array
-    // to $scope.events, and breaks the two-way data bind.
-    // Once this is called, no update of $scope.events will
-    // change the calendar, because the events array in the controller
-    // scope is different from the events array in the calendar
-    // directive isolate scope.
-    $scope.events = [];
-    
-    // Get 3 random days, 1-28
-    var day1 = Math.floor(Math.random() * (28 - 1)) + 1;
-    var day2 = Math.floor(Math.random() * (28 - 1)) + 1;
-    var day3 = Math.floor(Math.random() * (28 - 1)) + 1;
-    
-    // Simulating an AJAX request with $timeout.
-    $timeout(function () {
-      // Create temp events array.
-      var newEvents = [
-        {title: 'Random 1', start: new Date(y, m, day1), allDay: true},
-        {title: 'Random 2', start: new Date(y, m, day2), allDay: true},
-        {title: 'Random 3', start: new Date(y, m, day3), allDay: true}
-      ];
-      // Push newEvents into events, one by one.
-      angular.forEach(newEvents, function (event) {
-        $scope.events.push(event);
+    $scope.calEventsExt = {
+       color: '#f00',
+       textColor: 'yellow',
+       events: [ 
+          {type:'party',title: 'Lunch',start: new Date(y, m, d, 12, 0),end: new Date(y, m, d, 14, 0),allDay: false},
+          {type:'party',title: 'Lunch 2',start: new Date(y, m, d, 12, 0),end: new Date(y, m, d, 14, 0),allDay: false},
+          {type:'party',title: 'Click for Google',start: new Date(y, m, 28),end: new Date(y, m, 29),url: 'http://google.com/'}
+        ]
+    };
+    /* alert on eventClick */
+  /* alert on eventClick */
+    $scope.alertOnEventClick = function( date, jsEvent, view){
+        $scope.alertMessage = (date.title + ' was clicked ');
+    };
+    /* alert on Drop */
+     $scope.alertOnDrop = function(event, delta, revertFunc, jsEvent, ui, view){
+       $scope.alertMessage = ('Event Dropped to make dayDelta ' + delta);
+    };
+    /* alert on Resize */
+    $scope.alertOnResize = function(event, delta, revertFunc, jsEvent, ui, view ){
+       $scope.alertMessage = ('Event Resized to make dayDelta ' + delta);
+    };
+    /* add and removes an event source of choice */
+    $scope.addRemoveEventSource = function(sources,source) {
+      var canAdd = 0;
+      angular.forEach(sources,function(value, key){
+        if(sources[key] === source){
+          sources.splice(key,1);
+          canAdd = 1;
+        }
       });
-      console.log('New Events pushed');
-    }, 100);
-  };
+      if(canAdd === 0){
+        sources.push(source);
+      }
+    };
+    /* add custom event*/
+    $scope.addEvent = function() {
+      $scope.events.push({
+        title: 'Open Sesame',
+        start: new Date(y, m, 28),
+        end: new Date(y, m, 29),
+        className: ['openSesame']
+      });
+    };
+    /* remove event */
+    $scope.remove = function(index) {
+      $scope.events.splice(index,1);
+    };
+    /* Change View */
+    $scope.changeView = function(view,calendar) {
+      uiCalendarConfig.calendars[calendar].fullCalendar('changeView',view);
+    };
+    /* Change View */
+    $scope.renderCalender = function(calendar) {
+      if(uiCalendarConfig.calendars[calendar]){
+        uiCalendarConfig.calendars[calendar].fullCalendar('render');
+      }
+    };
+     /* Render Tooltip */
+    $scope.eventRender = function( event, element, view ) { 
+        element.attr({'tooltip': event.title,
+                     'tooltip-append-to-body': true});
+        $compile(element)($scope);
+    };
 
-  // Assign the 2 sources to $scope.eventSources for calendar.
-  $scope.eventSources = [$scope.staticEvents, $scope.events];
+    $scope.changeLang = function() {
+      if($scope.changeTo === 'Hungarian'){
+        $scope.uiConfig.calendar.dayNames = ["Vasárnap", "Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat"];
+        $scope.uiConfig.calendar.dayNamesShort = ["Vas", "Hét", "Kedd", "Sze", "Csüt", "Pén", "Szo"];
+        $scope.changeTo= 'English';
+      } else {
+        $scope.uiConfig.calendar.dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        $scope.uiConfig.calendar.dayNamesShort = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        $scope.changeTo = 'Hungarian';
+      }
+    };
+    /* event sources array*/
+    $scope.eventSources = [$scope.events, $scope.eventSource, $scope.eventsF];
 });
 

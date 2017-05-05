@@ -24,6 +24,7 @@
         <title>SEven</title>
         <script language="javascript" src="../jquery/jquery-1.10.2.js"></script>
         <script language="javascript" src="../jquery/jquery-ui-1.10.4.custom.min.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
     </head>
     <body>
         <div id="container">
@@ -33,12 +34,12 @@
             
             <div id="content">
                 <%@include file="/error.jsp"%>
-                <h1 class="titulo">Selecionar Evento para Inscrição</h1>
+          
                 <center>
-                    <div style="width: 50%;">
+                    <div style="margin-top:30px; width: 100%;">
 
                         <div class="panel panel-default">
-                            <div class="panel-heading text-center">Eventos abertos</div>
+                            <div class="panel-heading text-center">Eventos abertos para inscrição</div>
                             <div class="panel-body">
                                 <table id="data_table" class="table table-hover">
                                     <% if (ae == null || ae.isEmpty()) {%>
@@ -53,7 +54,7 @@
                                     </thead>
                                     <tbody>
                                         <% for (Evento e : ae) {%>
-                                        <tr>
+                                        <tr class="text-center">
                                             <td><%= e.getSigla()%></td>
                                             <td><a href="../ServletCentral?comando=CmdSelecionarEvento&id=<%=e.getId()%>" title=""><%= e.getNome()%></a></td>
                                             <td> <a href="../ServletCentral?comando=CmdVisualizarProgramacao&id=<%=e.getId()%>" title="Programacao" ><span class="text-uppercase label label-info">Visualizar</span></a> </td>
@@ -65,7 +66,8 @@
                             </div>
                         </div>
                     </div>
-                            </center> 
+                            </center>
+                        
                             <a href="" title="" onclick="history.back();return false;" class="btn btn-default"><span aria-hidden="true">&larr;</span>Voltar</a>
                         </div>
                     </div>

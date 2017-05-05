@@ -59,7 +59,7 @@
         <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <title>SEven</title>
         <script language="javascript" src="../jquery/jquery-1.10.2.js"></script>
-        <script language="javascript" src="../jquery/jquery-ui-1.10.4.custom.min.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
 
     </head>
     <body>
@@ -76,10 +76,10 @@
                         session.setAttribute("erro", "Atenção: erro interno - não foram recuperados os tipos de atividade com sucesso.");
                     }
                 %>
-                <%@include file="/error.jsp"%>
+             
                 
-                 <h1 class="titulo"><span class="text-bold">Inscrição no evento: </span><%=e.getNome()%></h1>
-               
+                 <h1 class="titulo"><%=e.getNome()%></h1>
+                  <%@include file="/error.jsp"%>
                  <div class="panel panel-default space-top">
                       <div class="panel-cor panel-heading text-center">Tabela de preços</div>
                     <div class="panel-body">                       
@@ -139,9 +139,9 @@
                                 <hr style="height: 10px; border: 0; box-shadow: 0 10px 10px -10px #8c8b8b inset;"/>
 
                                 <%if (oferta == null || oferta.isEmpty()) {%>
-                                <p style="margin-left: 40px;" >Este evento não contém atividades selecionáveis.</p>
+                                <p>Este evento não contém atividades selecionáveis.</p>
                                 <%} else {%>
-                                <p style="margin-left: 40px;" >Oferta de atividades opcionais:</p>
+                                <p>Oferta de atividades opcionais:</p>
                            
                                 
                                 <table class="data_table table table-hover">
@@ -183,11 +183,11 @@
                                 <hr style="height: 10px; border: 0; box-shadow: 0 10px 10px -10px #8c8b8b inset;"/>
 
                                 <%if (modalidades.isEmpty()) {%>
-                                <p style="margin-left: 40px;" >Nenhuma modalidade de inscrição cadastrada.</p>
+                                <p>Nenhuma modalidade de inscrição cadastrada.</p>
                                 <%} else {%>
-                                <p style="margin-left: 40px;" >Tipo de inscrição:</p><%--Modalidade da inscrição, Estudante ou profissional--%>
+                                <p>Tipo de inscrição:</p><%--Modalidade da inscrição, Estudante ou profissional--%>
                                 <%for (ModalidadeInscricao m : modalidades) {%>
-                                <p style="margin-left: 60px;" ><input class="radio" type="radio" name="tipo_inscricao" value="<%=m.getId()%>" <%if (m.getId().equals(anterior.getModalidade().getId())) {%> checked="checked" <%}%>/> <%=m.getTipo()%></p>
+                                <p><input class="radio" type="radio" name="tipo_inscricao" value="<%=m.getId()%>" <%if (m.getId().equals(anterior.getModalidade().getId())) {%> checked="checked" <%}%>/> <%=m.getTipo()%></p>
                                 <%}%>
                                 <%}%>
                                 

@@ -66,6 +66,7 @@
         <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon"/>
         <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <title>SEven</title>
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
     </head>
     <body>
         <div id="container">
@@ -118,20 +119,20 @@
                                 </div>
                                 <div class="col-lg-5 space-top">      
                                     <div class="form-group">                                        
-                                        <input placeholder="* Rua" type="text" maxlength="50" value="<%=rua%>" name="rua" class="form-control"/>
+                                        <input placeholder="* Rua" type="text" maxlength="50" value="<%=rua%>" name="rua" class="form-control" required/>
                                     </div>
                                     <div class="form-group">
-                                        <input placeholder="* Bairro" type="text" maxlength="50" value="<%=bairro%>" name="bairro" class="form-control"/>
+                                        <input placeholder="* Bairro" type="text" maxlength="50" value="<%=bairro%>" name="bairro" class="form-control" required/>
                                     </div>
 
                                     <div class="form-group">                                        
-                                        <input placeholder="* Número" type="text" maxlength="6" value="<%=numero%>" onkeypress="return validaNumerosSilencioso(event);" name="numero" class="form-control"/>
+                                        <input placeholder="* Número" type="text" maxlength="6" value="<%=numero%>" onkeypress="return validaNumerosSilencioso(event);" name="numero" class="form-control" required/>
                                     </div>
                                     <div class="form-group">                                      
-                                        <input placeholder="* Cidade" type="text" maxlength="50" value="<%=cidade%>" name="cidade" class="form-control"/>
+                                        <input placeholder="* Cidade" type="text" maxlength="50" value="<%=cidade%>" name="cidade" class="form-control" required/>
                                     </div>
                                     <div class="form-group">
-                                        <input placeholder="* UF" type="text" maxlength="50" value="<%=uf%>" name="uf" class="form-control"/>
+                                        <input placeholder="* UF" type="text" maxlength="50" value="<%=uf%>" name="uf" class="form-control" required/>
                                     </div>
                                     <div class="form-group">
                                         <input placeholder="* Senha" type="password" maxlength="50" value="<%=confirSenha%>" name="senha" class="form-control"/>

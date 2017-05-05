@@ -17,7 +17,7 @@ app.controller('MyController', function($scope, $compile,uiCalendarConfig) {
             day.push(tds[i].innerHTML);
         }
     };
-    console.log(day);   
+    //console.log(day);   
     /* config object */
     $scope.uiConfig = {
       calendar:{
@@ -50,16 +50,24 @@ app.controller('MyController', function($scope, $compile,uiCalendarConfig) {
             className: 'gcal-event',           // an option!
             currentTimezone: 'America/Chicago' // an option!
     };
+    
+     var events = [];
+     for(var i = 0; i < title.length; i++){
+           events.push({title: title[i],start: day[i]});
+      }
+     $scope.events = events;
+      console.log($scope.events);
+    /* TODO: SETAR TAMANHO */
     /* event source that contains custom events on the scope */
-    $scope.events = [
+    /*$scope.events = [ 
      
       {title: 'All Day Event',start: new Date(y, m, 1)},
       {title: 'Long Event',start: new Date(y, m, d - 5),end: new Date(y, m, d - 2)},
-      {id: 999,title: title[0],start: new Date(day[0]),allDay: false},
-      {id: 999,title: title[1],start: new Date(day[0]),allDay: false},
+      {id: 999,title: title[0],start: day[0],allDay: false},
+      {id: 999,title: title[1],start: day[0],allDay: false},
       {title: 'Birthday Party',start: new Date(y, m, d + 1, 19, 0),end: new Date(y, m, d + 1, 22, 30),allDay: false},
       {title: 'Click for Google',start: new Date(y, m, 28),end: new Date(y, m, 29),url: 'http://google.com/'}
-    ];
+    ];*/
     /* event source that calls a function on every view switch */
     $scope.eventsF = function (start, end, timezone, callback) {
       var s = new Date(start).getTime() / 1000;

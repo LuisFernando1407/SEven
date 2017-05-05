@@ -65,13 +65,11 @@
         <title>SEven</title>
     </head>
     <body>
-        <div id="container" class="container-fluid">
-            <div id="gerecia_conta">
-                <%@include file="part_menu.jsp" %>
-            </div>
-            <div>
+        <div id="container">
+            <%@include file="part_menu.jsp" %>
+            <div id="content">
                 <h1>Gerenciar Conta</h1>
-                <div class="space-top panel panel-default">
+                <div class="panel panel-default">
                     <div class="panel-heading text-center">Dados Cadastrais</div>
                     <form action="../ServletCentral" method="post">
                         <div class="panel-body">  
@@ -101,7 +99,7 @@
             </div>
         </div>
         <div class="footer-top">        
-             <%@include file="../footer.jsp" %>
+            <%@include file="../footer.jsp" %>
         </div> 
     </body>
 </html>

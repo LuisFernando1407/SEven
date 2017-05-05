@@ -80,81 +80,77 @@
                         <h3><%=mensagem%></h3><br />
                         <% }%>
 
+                        <div class="row">   
 
-                        <div class = "col-lg-12">
                             <form action="../ServletCentral" method="post">
-                                <input type="hidden" name="comando" value="CmdEditarParticipante" />
-                                <%@include file="../error.jsp" %>
-                                <br/><div class="pull-left text-uppercase label label-warning">* Campos obrigatórios</div><br/>
-                                <div class="row center-block">
-                                    <div class="form-group">
-                                        <label>Nome (*):</label><br />
-                                        <input type="text" maxlength="50" class="form-control" value="<%=part.getUsuario().getNome()%>" name="nome" 
+                                <div class="col-lg-offset-1 col-lg-5 space-top"> 
+                                    <input type="hidden" name="comando" value="CmdEditarParticipante" />
+                                    <%@include file="../error.jsp" %>
+                                    <br/><div class="pull-left text-uppercase label label-warning">* Campos obrigatórios</div><br/>
+
+                                    <div class="form-group">                                       
+                                        <input type="text" maxlength="50" class="form-control space-top" value="<%=part.getUsuario().getNome()%>"  name="nome" 
                                                <% if (part.getUsuario().isCertificadoGerado()) {%>   
                                                disabled="disabled"
                                                <% }%> 
                                                />
                                     </div>
                                     <div class="form-group">
-                                        <label>Telefone:</label>
-                                        <input type="text" maxlength="12" value="<%=fone%>" onkeypress="return formataContato(this, event)" name="fone" class="form-control" />
+                                        <input placeholder="Telefone" type="text" maxlength="12" value="<%=fone%>" onkeypress="return formataContato(this, event)" name="fone" class="form-control" />
+                                    </div>
+                                    <div class="form-group">                                       
+                                        <input placeholder="* E-mail" type="text" maxlength="50" value="<%=part.getUsuario().getEmail()%>" name="email" class="form-control"/>
                                     </div>
                                     <div class="form-group">
-                                        <label>E-mail (*):</label>
-                                        <input type="text" maxlength="50" value="<%=part.getUsuario().getEmail()%>" name="email" class="form-control"/>
+                                        <input placeholder="Data de Nascimento" type="text" name="dt_nascimento" value="<%=data%>" onkeypress="return formataData(this, event)" maxlength="10" class="form-control"/>
                                     </div>
-                                    <div class="form-group">
-                                        <label>Data de Nascimento:</label>
-                                        <input type="text" name="dt_nascimento" value="<%=data%>" onkeypress="return formataData(this, event)" maxlength="10" class="form-control"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Sexo (*):</label>
+                                    <div class="form-group">                                      
                                         <select class="form-control" id="sexo" name="sexo">
+                                            <option value="Masculino" selected>* Sexo</option>
                                             <option value="Masculino">Masculino</option>
                                             <option value="Feminino">Feminino</option>
                                         </select>
                                     </div>                          
                                     <div class="form-group">
-                                        <label>Instituição:</label>
-                                        <input type="text" maxlength="50" value="<%=instituicao%>" name="instituicao" class="form-control"/>
+                                        <input placeholder="Instituição" type="text" maxlength="50" value="<%=instituicao%>" name="instituicao" class="form-control"/>
                                     </div>
-                                    <div class="form-group">
-                                        <label>Rua (*):</label>
-                                        <input type="text" maxlength="50" value="<%=rua%>" name="rua" class="form-control"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Bairro (*):</label>
-                                        <input type="text" maxlength="50" value="<%=bairro%>" name="bairro" class="form-control"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Número (*):</label>
-                                        <input type="text" maxlength="6" value="<%=numero%>" onkeypress="return validaNumerosSilencioso(event);" name="numero" class="form-control"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Cidade (*):</label>
-                                        <input type="text" maxlength="50" value="<%=cidade%>" name="cidade" class="form-control"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>UF (*):</label>
-                                        <input type="text" maxlength="50" value="<%=uf%>" name="uf" class="form-control"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Senha (*):</label>
-                                        <input type="password" maxlength="50" value="<%=confirSenha%>" name="senha" class="form-control"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Repita a senha (*):</label>
-                                        <input type="password" maxlength="50" value="<%=confirSenha%>" name="r-senha" class="form-control"/>
-                                    </div>
-                                    <input type="submit" value="Enviar" class="btn btn-default"/>
-                                    <p></p>
+
                                 </div>
+                                <div class="col-lg-5 space-top">      
+                                    <div class="form-group">                                        
+                                        <input placeholder="* Rua" type="text" maxlength="50" value="<%=rua%>" name="rua" class="form-control"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input placeholder="* Bairro" type="text" maxlength="50" value="<%=bairro%>" name="bairro" class="form-control"/>
+                                    </div>
+
+                                    <div class="form-group">                                        
+                                        <input placeholder="* Número" type="text" maxlength="6" value="<%=numero%>" onkeypress="return validaNumerosSilencioso(event);" name="numero" class="form-control"/>
+                                    </div>
+                                    <div class="form-group">                                      
+                                        <input placeholder="* Cidade" type="text" maxlength="50" value="<%=cidade%>" name="cidade" class="form-control"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input placeholder="* UF" type="text" maxlength="50" value="<%=uf%>" name="uf" class="form-control"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input placeholder="* Senha" type="password" maxlength="50" value="<%=confirSenha%>" name="senha" class="form-control"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input placeholder="* Digite a senha novamente" type="password" maxlength="50" value="<%=confirSenha%>" name="r-senha" class="form-control"/>
+                                    </div>
+
+                                    <input type="submit" value="Enviar" class="btn btn-default pull-right"/><br/>
+
+                                </div>                                
                             </form>
                         </div>
+                        <div class="space-top"></div>
                     </div>
                 </div>
-                <a href="" title="" onclick="history.back(); return false;" class="btn btn-default"><span aria-hidden="true">&larr;</span>Voltar</a><br/>
             </div>
+            <a href="" title="" onclick="history.back(); return false;" class="btn btn-default"><span aria-hidden="true">&larr;</span>Voltar</a><br/>
+        </div>
         </div>
         <div class="footer-top">        
             <%@include file="../footer.jsp" %>

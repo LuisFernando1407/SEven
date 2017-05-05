@@ -68,7 +68,7 @@
         <div id="container">
             <%@include file="part_menu.jsp" %>
             <div id="content">
-                <h1>Gerenciar Conta</h1>
+                <h1 class="text-center">Gerenciar Conta</h1>
                 <div class="panel panel-default">
                     <div class="panel-heading text-center">Dados Cadastrais</div>
                     <form action="../ServletCentral" method="post">
@@ -92,8 +92,8 @@
                 <div class="center-block">
                     <form action="../ServletCentral" method="post">
                         <a href="" title="" onclick="history.back(); return false;" class="btn btn-default"><span aria-hidden="true">&larr;</span>Voltar</a>
-                        <a class="btn btn-default" href="part_conta.jsp">Editar Dados</a>
-                        <a class="btn btn-default" href="../ServletCentral?comando=CmdExcluirParticipante" onclick="return confirm('Tem certeza que deseja excluir conta?')" title="">Excluir Conta</a>
+                        <a class="btn btn-default margin-btn-left" href="part_conta.jsp">Editar Dados</a>
+                        <a class="btn btn-default pull-right " href="../ServletCentral?comando=CmdExcluirParticipante" onclick="return confirm('Tem certeza que deseja excluir conta?')" title="">Excluir Conta</a>
                     </form>
                 </div>
             </div>

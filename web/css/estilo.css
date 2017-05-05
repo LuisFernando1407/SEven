@@ -417,6 +417,10 @@ body {
     padding: 0;
 }
 
+.margin-btn-left{
+    margin-left: 4px;
+}
+
 #containerCertificado{
     display:block;
     width: 1200px;

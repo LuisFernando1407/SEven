@@ -5,8 +5,8 @@
 --%>
 <%-- 
     Document   : part_buscar_evento
-    Modified in : 
-    Author     : 
+    Modified in : 04/05/2017, 20:55:07
+    Author     : João Mateus 
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
@@ -27,10 +27,10 @@
     </head>
     <body>
         <div id="container">
-            <div id="top">
+            
                 <%-- Incluindo Menu --%>
                 <%@include file="part_menu.jsp" %>
-            </div>
+            
             <div id="content">
                 <%@include file="/error.jsp"%>
                 <h1 class="titulo">Selecionar Evento para Inscrição</h1>

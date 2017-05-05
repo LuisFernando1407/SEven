@@ -68,7 +68,6 @@
                                 if (count > 0) {%>
                 <!-- Table utilizado para balancear as tabelas, isso é sim uma gambiarra criado por um cara e que a gente não soube resolver-->
                 <table>
-                    <input type="hidden" id="houras"></input>
                 <%}%>
                 <div class="well well-sm text-center"><%=UtilSeven.treatToLongString(h.getDia())%></div>
                 <div class="table-responsive">
@@ -87,9 +86,10 @@
                         }
                         if (a.temHorario(h.getId())) {%>
                         <tr>
-                            <td><%=h.exibirFormatoSimples()%></td>
+                            <td class="hidden"><%=UtilSeven.formtStringDate(h.getDia())%></td>
+                            <td class="hours"><%=h.exibirFormatoSimples()%></td>
                             <% String nome = a.getNome();%>
-                            <td><%=nome%></td>
+                            <td class="name"><%=nome%></td>
                         
                             <% String tipo = a.getTipo().getNome();%>
                             <td><%=tipo%></td>

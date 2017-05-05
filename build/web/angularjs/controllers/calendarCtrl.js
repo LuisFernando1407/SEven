@@ -1,6 +1,23 @@
 var app = angular.module('app', ['ui.calendar', 'ui.bootstrap']);
 
 app.controller('MyController', function($scope, $compile,uiCalendarConfig) {
+    
+    var hours = []; 
+    var title = [];
+    var day = [];
+    var tds = document.getElementsByTagName("td");
+ 
+    for (var i = 0; i < tds.length; i++) {
+    // If it currently has the ColumnHeader class...
+        if (tds[i].className == "hours") {
+            hours.push(tds[i].innerHTML);
+        }else if(tds[i].className == "name"){
+            title.push(tds[i].innerHTML);
+        }else if(tds[i].className == "hidden"){
+            day.push(tds[i].innerHTML);
+        }
+    };
+    console.log(day);   
     /* config object */
     $scope.uiConfig = {
       calendar:{
@@ -35,10 +52,11 @@ app.controller('MyController', function($scope, $compile,uiCalendarConfig) {
     };
     /* event source that contains custom events on the scope */
     $scope.events = [
+     
       {title: 'All Day Event',start: new Date(y, m, 1)},
       {title: 'Long Event',start: new Date(y, m, d - 5),end: new Date(y, m, d - 2)},
-      {id: 999,title: 'Repeating Event',start: new Date(y, m, d - 3, 16, 0),allDay: false},
-      {id: 999,title: 'Repeating Event',start: new Date(y, m, d + 4, 16, 0),allDay: false},
+      {id: 999,title: title[0],start: new Date(day[0]),allDay: false},
+      {id: 999,title: title[1],start: new Date(day[0]),allDay: false},
       {title: 'Birthday Party',start: new Date(y, m, d + 1, 19, 0),end: new Date(y, m, d + 1, 22, 30),allDay: false},
       {title: 'Click for Google',start: new Date(y, m, 28),end: new Date(y, m, 29),url: 'http://google.com/'}
     ];

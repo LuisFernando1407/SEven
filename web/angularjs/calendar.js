@@ -233,10 +233,10 @@ angular.module('ui.calendar', [])
                         0: 'Dom', 1: 'Seg', 2: 'Ter', 3: 'Qua', 4: 'Qui',
                         5: 'Sex', 6: 'Sab'
                     };
-                 
+                    
                     return {
                         monthNames : tValues(monthPTBR),
-                        monthNamesShort : tValues(shortdayPTBR),
+                        monthNamesShort : tValues(monthPTBR),
                         dayNames : tValues(dayPTBR),
                         dayNamesShort : tValues(shortdayPTBR)
                     };

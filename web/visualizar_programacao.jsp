@@ -111,11 +111,12 @@
                 </div>
                 <%}%> 
                 </table>
-            <div align="left"><a href="javascript:history.back();" class="btn btn-default"><span aria-hidden="true">&larr;</span> Voltar</a></div>
-    
             <div style="margin-top:50px ;width:100%;" align="center" class="calendario">
                 <div ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="eventSources" calendar="myCalendar"></div> 
             </div>
+            </br>
+           <div align="left"><a href="javascript:history.back();" class="btn btn-default"><span aria-hidden="true">&larr;</span> Voltar</a></div>
+    
         </div>
         <%@include file="footer.jsp" %>
       

@@ -49,8 +49,9 @@
         <div id="container">
             <%-- Incluindo Menu --%>
             <%@include file="part_menu.jsp" %>
-            <%@include file="/error.jsp"%>
+            
             <div id="content">
+                <%@include file="/error.jsp"%>
                 <div class="panel panel-default">
                     <div class="panel-heading text-center">Visualizar Minhas Inscrições</div>
                     <div class="panel-body">

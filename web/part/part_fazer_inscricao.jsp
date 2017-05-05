@@ -5,8 +5,8 @@
 --%>
 <%-- 
     Document   : part_fazer_inscricao
-    Modified in : 
-    Author     : 
+    Modified in : 04/05/2017, 20:53:43
+    Author     : Joao Mateu, Fagner Pinheiro
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
@@ -209,10 +209,9 @@
                             <center><input type="submit" value="Inscrever-se" class="btn btn-default" /></center><br />
                         </form>
                     </div>
-                </div>
-                <a href="" title="" onclick="history.back(); return false;" class="btn btn-default"><span aria-hidden="true">&larr;</span>Voltar</a>
-            </div>
-        </div>
+                            <a href="" title="" onclick="history.back(); return false;" class="btn btn-default"><span aria-hidden="true">&larr;</span>Voltar</a>
+                </div>                
+           
         <div class="footer-top">        
             <%@include file="../footer.jsp" %>
         </div>

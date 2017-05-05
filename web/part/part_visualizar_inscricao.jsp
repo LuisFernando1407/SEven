@@ -5,8 +5,8 @@
 --%>
 <%-- 
     Document   : part_visualizar_inscricao
-    Modified in : 
-    Author     : 
+    Modified in : 04/05/2017, 21:47:35
+    Author     : João Mateus
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
@@ -25,55 +25,59 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <link href="../css/estilo.css" rel="stylesheet" type="text/css" />
+        <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon"/>
         <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <title>Centro de Controle :: Administrador</title>
+        <title>SEven</title>
     </head>
     <body>
         <div id="container">
-            <div id="top">
+            
                 <%-- Incluindo Menu --%>
                 <%@include file="part_menu.jsp" %>
-            </div>
+            
             <div id="content">
                 <h1 class="titulo">Visualizar Inscrição</h1>
-                <h2 class="titulo" style="margin-bottom: 10px;">Verificação da Inscrição</h2>
-                <br/>
-                <%//formata as datas para exibição em texto
-                            String data = UtilSeven.treatToLongString(i.getDataRealizada());
-                            String datapg = UtilSeven.treatToLongString(i.getDataPagamento());
-                %><fieldset>
-                    <p>Evento: <%=i.getEvento().getNome()%></p>
-                    <p>Participante: <%=i.getParticipante().getUsuario().getNome()%></p>
-                    <p>Modalidade: <%=i.getModalidade().getTipo()%></p>
-                </fieldset>
-                <fieldset>
-                    <p>Data: <%=data%></p>
-                    <p>Prazo de pagamento: Até <%=datapg%></p>
-                </fieldset>
-                <fieldset>
-                    <p>Atividades:</p>
-                    <%for (Atividade a : i.getAtividades()) {%>
-                    <p><%=a.getNome()%>
-                        <%for (Horario h : a.getHorarios()) {%><%--Exibe horários de cada atividade--%>
-                        <br/>
-                        (<%=h.printHorario()%>)
-                        <%}%>
-                    </p>
-                    <%}%>
-                </fieldset>
-                <%
-                            InscricaoService IS = new InscricaoService();
-                            String preco = UtilSeven.precoFormater(IS.getPrecoInscricao(i));
-                %>
-                <fieldset>
-                    <p>Preço: <%=preco%></p>
-                </fieldset>
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">Confirmação da inscrição</div>
+                    <div class="panel-body">  
+                        <div class="col-lg-12 space-top">
+                
+                  <%//formata as datas para exibição em texto
+                                String data = UtilSeven.treatToLongString(i.getDataRealizada());
+                                String datapg = UtilSeven.treatToLongString(i.getDataPagamento());
+                            %>
+                            <p><strong>Evento:</strong> <%=i.getEvento().getNome()%></p>
+                            <p><strong>Participante:</strong> <%=i.getParticipante().getUsuario().getNome()%></p>
+                            <p><strong>Modalidade:</strong> <%=i.getModalidade().getTipo()%></p>
+                            <p><strong>Data: </strong><%=data%></p>
+                            <p><strong>Prazo de pagamento: Até </strong><%=datapg%></p>
+                            <p><strong>Atividades: </strong></p>
+                            <%for (Atividade a : i.getAtividades()) {%>
+                            <p><%=a.getNome()%>
+                                <%for (Horario h : a.getHorarios()) {%><%--Exibe horários de cada atividade--%>
+                                
+                                (<%=h.printHorario()%>)
+                                <%}%>
+                            </p>
+                            <%}%>
+                            <%
+                                InscricaoService IS = new InscricaoService();
+                                String preco = UtilSeven.precoFormater(IS.getPrecoInscricao(i));
+                            %>
+                            <p><strong>Preço: </strong><%=preco%></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
                 <form action="../ServletCentral?comando=CmdEditarInscricao" method="post" class="cadastro">
-                    <input type="submit" value="Editar" class="button" />
-                    <a href="" title="" onclick="history.back(); return false;" class="voltarCadastro">Voltar</a>
+                    <a href="" title="" onclick="history.back(); return false;" class="btn btn-default"><span aria-hidden="true">&larr;</span>Voltar</a>
+                    <input type="submit" value="Editar" class="btn btn-default" />
                 </form>
             </div>
         </div>
-        <%@include file="../footer.jsp" %>
+        <div class="footer-top">        
+            <%@include file="../footer.jsp" %>
+        </div> 
     </body>
 </html>

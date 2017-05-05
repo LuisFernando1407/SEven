@@ -29,12 +29,12 @@
         <div id="container-admin-home">
             <%-- Incluindo o Menu --%>
             <%@include file="admin_menu.jsp" %>
-            <h1 class="titulo">Olá, <%= nomeSaudacao%></h1>
+            <h1 class="titulo space-top">Olá, <%= nomeSaudacao%></h1>
             <p>Esta é a página inicial do Administrador. Quando desejar retornar a esta página, clique na opção <span class="text-uppercase label label-info"><em>Home</em></span> no menu acima.</p>
             <br/>
             <%@include file="/error.jsp" %>
-            <div class="table-responsive">
-                >
+            <div class="table-responsive scroll-table">
+                
                 <table class="table table-hover">
                     <thead>
                         <tr>
@@ -62,7 +62,7 @@
                     </tbody>
                 </table>
             </div>
-            <div align="right"><a class="btn btn-default" href="add_events.jsp" role="button">Criar novo evento</a></div>
+            <div align="right"><a class="btn btn-default space-top" href="add_events.jsp" role="button">Criar novo evento</a></div>
         </div>          
 
         <div class="footer-top">

@@ -26,7 +26,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <title>Boleto</title>
+        <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon"/>
+        <title>SEven</title>
     </head>
     <body>
         <div id="container">

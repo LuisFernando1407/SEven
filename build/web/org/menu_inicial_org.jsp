@@ -3,12 +3,14 @@
     Created on : 14/03/2011, 17:56:46
     Author     : ismaily
 --%>
+<%-- 
+    Document   : menu_inicial_org
+    Modified in : 06/05/2017, 18:48:57
+    Author     : João Mateus
+--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<<<<<<< HEAD
 
-=======
->>>>>>> ed00915c22e0317180ee6723e747191f371146e1
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -16,10 +18,7 @@
                 <img style="width: 78px; margin-top: -10px;" alt="Logo"  src="../imagens/Seven.png"/>
             </a>
         </div>
-<<<<<<< HEAD
-=======
-        
->>>>>>> ed00915c22e0317180ee6723e747191f371146e1
+
         <ul class="nav navbar-nav">
             <li><a href="../ServletCentral?comando=CmdRecarregarEventosOrganizador" title="Página Inicial">Home</a></li>
         </ul>

@@ -66,7 +66,7 @@
                    </div>
                   </div>   
                     <div class="text-center">
-                     <button type="submit" class="btn btn-default">Alterar</button> 
+                     <button type="submit" class="btn btn-default">Incluir organizador</button> 
                     </div>
                 </form> 
                    

@@ -65,8 +65,8 @@ app.controller('MyController', function($scope, $compile,uiCalendarConfig) {
     var events = [];
     for(var i = 0; i < title.length; i++){
         events.push({
-            title: title[i] + "\n * " + local[i] + "\n * " + minister[i]
-            + "\n * " + hours[i].hi +" às "+  hours[i].hf, start: (day[i] + " " + hours[i].hi), end: (day[i] + " " + hours[i].hf)
+            title: title[i] + "\n * " + local[i] + "\n * " + minister[i],
+            start: (day[i] + " " + hours[i].hi), end: (day[i] + " " + hours[i].hf)
         });
     }
     $scope.events = events;

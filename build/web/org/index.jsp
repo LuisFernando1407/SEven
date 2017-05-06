@@ -21,12 +21,23 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <link href="../css/estilo.css" rel="stylesheet" type="text/css" />
+<<<<<<< HEAD
         <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon"/>
         <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <title>SEven</title>
         <script language="javascript" src="../jquery/jquery-1.10.2.js"></script>
         <script language="javascript" src="../jquery/jquery-ui-1.10.4.custom.min.js"></script>
 
+=======
+        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon"/>
+        <title>SEven</title>
+        <script language="javascript" src="../jquery/jquery-1.10.2.js"></script>
+        <script language="javascript" src="../jquery/jquery-ui-1.10.4.custom.min.js"></script>
+        <script type="text/javascript" src="../jquery/jquery.dataTables.js"></script>
+        <script type="text/javascript" src="../jquery/initDataTable.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
+>>>>>>> ed00915c22e0317180ee6723e747191f371146e1
     </head>
     <body>
         <div id="container">
@@ -75,10 +86,14 @@
                     </table>
                 </div>
             </div>
+<<<<<<< HEAD
             </div>
             <div class="footer-top">         
                 <%@include file="../footer.jsp" %>
             </div> 
+=======
+>>>>>>> ed00915c22e0317180ee6723e747191f371146e1
         </div>
+        <%@include file="../footer.jsp" %>
     </body>
 </html>

@@ -23,6 +23,7 @@
         <link href="../css/estilo.css" rel="stylesheet" type="text/css" />
         <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <title>SEven</title> 
+        <script language="javascript" src="../jquery/jquery-1.10.2.js"></script>
         <script src="../bootstrap/js/bootstrap.min.js"></script>
     </head>
     <body>
@@ -31,16 +32,13 @@
           <%-- Incluindo o Menu --%>
           <%@include file="admin_menu.jsp" %>  
            <div id="content">
-           
+             <%@include file="/error.jsp"%>   
              <div class="panel panel-default">
                 <div class="panel-heading text-center"><%=en.getNome()%> <br> Dados do organizador</div>
                 <div class="panel-body"> 
-                    
-               
+                       
             <form action="../ServletCentral" method="post">
-                    <%@include file="/error.jsp"%>                    
-                    <input type="hidden" name="comando" value="CmdAddOrganizadorNovo"/>
-                    
+                <input type="hidden" name="comando" value="CmdAddOrganizadorNovo"/>    
                 <div class="row">   
                      <div class="col-lg-offset-1 col-lg-5 space-top">                 
                          <div class="pull-left text-uppercase label label-warning">* Campos obrigatórios</div><br/>

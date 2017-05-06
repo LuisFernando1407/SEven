@@ -489,6 +489,9 @@ footer img{
     text-align: center;
     margin-top: 15px;
 }
+.text-center-admin-busca-organ{
+    text-align: center !important;
+}
 .btn-default {
     color: #fff !important;
     background-color: #2e8392 !important;
@@ -624,4 +627,12 @@ h1{
 
 .margin-contato{
     margin-top: 90px;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    margin-left: 0px !important;
+    border: 1px solid #ccc !important;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    color: #000;
 }

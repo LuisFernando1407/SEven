@@ -85,7 +85,7 @@ public class CmdEditarParticipante implements Comando {
             EventoService es = new EventoService();
             session.setAttribute("eventosAbertos", es.buscarEventosComInscricoesAbertas());
             session.setAttribute("sucesso", "Dados Editados com Sucesso.");
-            return "/part/index.jsp";
+            return "/part/gerencia_conta.jsp";
         } else {
             session.setAttribute("erro", "Erro ao tentar cadastrar participante.");
             return "/part/part_conta.jsp";

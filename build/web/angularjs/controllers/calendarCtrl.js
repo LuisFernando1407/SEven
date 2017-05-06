@@ -1,97 +1,76 @@
 var app = angular.module('app', ['ui.calendar', 'ui.bootstrap']);
 
-app.controller('MyController', function($scope) {
+app.controller('MyController', function($scope, $compile,uiCalendarConfig) {
+    
+    var hours = []; 
+    var title = [];
+    var day = [];
+    var local = [];
+    var minister =  [];
+    var tds = document.getElementsByTagName("td");
+    
+    function formatHoursToCalendar (hours){
+        var hi0 = hours.substring(0,2);
+        var hf0 = hours.substring(3,5);
+        
+        var hi1 = hours.substring(9,11);
+        var hf1 = hours.substring(12,14);
+        
+        return {hi: hi0 +':'+ hf0, hf: hi1 +':'+ hf1}; 
+    }
+    
+    for (var i = 0; i < tds.length; i++) {
+    // If it currently has the ColumnHeader class...
+        if (tds[i].className == "hours") {
+            hours.push(formatHoursToCalendar(tds[i].innerHTML));
+        }else if(tds[i].className == "name"){
+            title.push(tds[i].innerHTML);
+        }else if(tds[i].className == "hidden"){
+            day.push(tds[i].innerHTML);
+        }else if(tds[i].className == "local"){
+            local.push(tds[i].innerHTML);
+        }else if(tds[i].className == "people"){
+            minister.push(tds[i].innerHTML);
+        }
+    };  
     /* config object */
     $scope.uiConfig = {
       calendar:{
+        eventRender: function( event, element, view ) {
+        element.attr({ 
+            "tooltip-placement":"top", 
+            "uib-tooltip": event.title, 
+            "tooltip-append-to-body": true 
+        });
+        $compile(element)($scope);
+        },
         height: 450,
         editable: false,
-        defaultView: 'agendaWeek',
-        eventClick: $scope.alertEventOnClick,
+        defaultView:'month',
+        header:{
+          left: 'title',
+          center: '',
+          right: 'today month agendaWeek prev,next'
+        },
+        eventClick: $scope.alertOnEventClick,
         eventDrop: $scope.alertOnDrop,
-        eventResize: $scope.alertOnResize
-      }
+        eventResize: $scope.alertOnResize,
+        }
     };
-    // For test events
-    var date = new Date();
-    var d = date.getDate();
-    var m = date.getMonth();
-    var y = date.getFullYear();
-     // Clear events and assign the static events source.
-     $scope.events = [];
-     
-    $scope.staticEvents = [
-     {title: 'Static 1', start: new Date(y, m, 1), allDay: true},
-     {title: 'Static 2', start: new Date(y, m, 8), allDay: true},
-     {title: 'Static 3', start: new Date(y, m, d), allDay: true}
-     ];
-  
-    // Clear events via splice(0) and then push into events source.
-     $scope.getEventsEmptySplice = function () {
-        console.log('Clearing $scope.events via splice(0)');
-        
-    // Clearing in this manner maintains the two-way data bind.
-    // This can be called over and over, with old events cleared,
-    // and new random events displayed. This no longer works
-    // if getEventsEmptyArray is ever called, due to two-way
-    // data bind being broken within that function.
-    $scope.events.splice(0);
-    
-    // Get 3 random days, 1-28
-    var day1 = Math.floor(Math.random() * (28 - 1)) + 1;
-    var day2 = Math.floor(Math.random() * (28 - 1)) + 1;
-    var day3 = Math.floor(Math.random() * (28 - 1)) + 1;
-    
-    // Simulating an AJAX request with $timeout.
-    $timeout(function () {
-      // Create temp events array.
-      var newEvents = [
-        {title: 'Random 1', start: new Date(y, m, day1), allDay: true},
-        {title: 'Random 2', start: new Date(y, m, day2), allDay: true},
-        {title: 'Random 3', start: new Date(y, m, day3), allDay: true}
-      ];
-      // Push newEvents into events, one by one.
-      angular.forEach(newEvents, function (event) {
-        $scope.events.push(event);
-      });
-      console.log('New Events pushed');
-    }, 100);
-  };
-
-  // Clear events via empty array and then push into events source.
-  $scope.getEventsEmptyArray = function () {
-    console.log('Clearing $scope.events via assigning empty array');
-    
-    // Clearing in this manner, assigns a new empty array
-    // to $scope.events, and breaks the two-way data bind.
-    // Once this is called, no update of $scope.events will
-    // change the calendar, because the events array in the controller
-    // scope is different from the events array in the calendar
-    // directive isolate scope.
-    $scope.events = [];
-    
-    // Get 3 random days, 1-28
-    var day1 = Math.floor(Math.random() * (28 - 1)) + 1;
-    var day2 = Math.floor(Math.random() * (28 - 1)) + 1;
-    var day3 = Math.floor(Math.random() * (28 - 1)) + 1;
-    
-    // Simulating an AJAX request with $timeout.
-    $timeout(function () {
-      // Create temp events array.
-      var newEvents = [
-        {title: 'Random 1', start: new Date(y, m, day1), allDay: true},
-        {title: 'Random 2', start: new Date(y, m, day2), allDay: true},
-        {title: 'Random 3', start: new Date(y, m, day3), allDay: true}
-      ];
-      // Push newEvents into events, one by one.
-      angular.forEach(newEvents, function (event) {
-        $scope.events.push(event);
-      });
-      console.log('New Events pushed');
-    }, 100);
-  };
-
-  // Assign the 2 sources to $scope.eventSources for calendar.
-  $scope.eventSources = [$scope.staticEvents, $scope.events];
+    $scope.eventSource = {
+            url: "http://www.google.com/calendar/feeds/usa__en%40holiday.calendar.google.com/public/basic",
+            className: 'gcal-event',           // an option!
+            currentTimezone: 'America/Chicago' // an option!
+    };
+    var events = [];
+    for(var i = 0; i < title.length; i++){
+        events.push({
+            title: title[i] + "\n * " + local[i] + "\n * " + minister[i],
+            start: (day[i] + " " + hours[i].hi), end: (day[i] + " " + hours[i].hf)
+        });
+    }
+    $scope.events = events;
+    /* event sources array*/
+    $scope.eventSources = [$scope.events];
 });
 

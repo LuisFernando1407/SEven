@@ -54,7 +54,15 @@ public class UtilSeven {
         }
         return "";
     }
-
+     
+    public static String formtStringDate(Date param) {
+        if (param != null) {
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+            String data = formatter.format(param);
+            return data;
+        }
+        return "";
+    }
     public static ArrayList<TipoAtividade> getTiposDeAtividade() {
         TipoAtividadeService ts = new TipoAtividadeService();
         return ts.getTiposDeAtividades();

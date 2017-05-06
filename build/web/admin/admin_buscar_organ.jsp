@@ -19,12 +19,13 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <link href="../css/estilo.css" rel="stylesheet" type="text/css" />
         <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon"/>
+        <script type="text/javascript" src="../Script.js"></script>
         <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <title>SEven</title>
         <script language="javascript" src="../jquery/jquery-1.10.2.js"></script>
         <script language="javascript" src="../jquery/jquery-ui-1.10.4.custom.min.js"></script>
-        <script type="text/javascript" src="../jquery/jquery.dataTables.js"></script>
-        <script type="text/javascript" src="../jquery/initDataTable.js"></script>
+        <script language="javascript" src="../jquery/jquery.dataTables.js"></script>
+        <script language="javascript" src="../jquery/initDataTable.js"></script>
     </head>
     <body>
         <div id="container">
@@ -35,10 +36,8 @@
          
             <div id="content">
                 <h1 class="titulo">Adicionar organizador ao evento <%=event.getNome()%></h1>
-                <p style="font-size: medium;">Você pode tornar organizador um usuário já cadastrado ou cadastrar um novo organizador.</p>
-                <div id="content_right">
-                  
-                </div>
+                <p class="text-center-admin-busca-organ">Você pode tornar organizador um usuário já cadastrado ou cadastrar um novo organizador.</p>
+
                 <div id="content">
                     <div class="panel panel-default">
                         <div class="panel-heading text-center">Busca de usuários pelo nome ou parte do nome</div>
@@ -83,12 +82,12 @@
 
                         </table>
                      
-                            <p><a href="" title=""  class="btn btn-default" onclick="history.back(); return false;" class="voltarCadastro">← Voltar</a></p>
+                            <a href="" title="" onclick="history.back(); return false;" class="btn btn-default"><span aria-hidden="true">&larr;</span> Voltar</a><br/>
                
             </div>
-            <div class="footer-top">              
-              <%@include file="../footer.jsp" %>
-            </div>
-    </div>         
+        </div>  
+        <div class="footer-top">              
+            <%@include file="../footer.jsp" %>
+        </div>
     </body>
 </html>

@@ -3,8 +3,40 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/admin/admin_add_organ_novo.jsp</file>
             <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/part/part_conta.jsp</file>
+=======
+            <file>file:/C:/Users/luis1/Documents/SEven/web/error.jsp</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/web/visualizar_programacao.jsp</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/src/java/br/ufc/pet/comandos/administrador/CmdEncerrarEvento.java</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/web/admin/admin_add_organ_novo.jsp</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/web/part/part_conta.jsp</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/web/admin/add_events.jsp</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/src/java/br/ufc/pet/comandos/participante/CmdEditarParticipante.java</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/web/admin/edit_events.jsp</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/web/index.jsp</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/src/java/br/ufc/pet/servlets/ServletCentral.java</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/web/part/gerencia_conta.jsp</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/web/css/estilo.css</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/web/part/part_fazer_inscricao.jsp</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/src/java/br/ufc/pet/comandos/administrador/CmdAlterarEvento.java</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/web/jquery/initDataTable.js</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/src/java/br/ufc/pet/comandos/administrador/CmdAdicionarEvento.java</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/web/angularjs/fullcalendar.min.js</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/web/part/part_buscar_evento.jsp</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/src/java/br/ufc/pet/util/UtilSeven.java</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/web/part/visualizar_dados_participante.jsp</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/web/admin/editar_organ.jsp</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/src/java/SqlMapConfig.xml</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/web/part/part_visualizar_inscricoes.jsp</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/src/java/br/ufc/pet/conexao/ConnectionFactory.java</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/src/java/br/ufc/pet/comandos/administrador/CmdExcluirEvento.java</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/web/angularjs/controllers/calendarCtrl.js</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/web/jquery/jquery.dataTables.js</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/web/part/index.jsp</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/web/admin/admin_buscar_organ.jsp</file>
+>>>>>>> ed00915c22e0317180ee6723e747191f371146e1
         </group>
     </open-files>
 </project-private>

@@ -21,7 +21,7 @@ $(document).ready(function () {
             "sZeroRecords": "<b>Nenhum registro</b>",
             "sInfoEmpty": "Nenhum registro",
             "sInfoFiltered": "",
-            "sSearch": "<span style='color: #0E464E; font-family: Verdana, Tahoma, Arial;'>Pesquisar</span>",
+            "sSearch": "<span style='color: #fff; font-family: Verdana, Tahoma, Arial;'></span>",
             "sInfoPostFix": "",
             "sUrl": "",
             "oPaginate": {

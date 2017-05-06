@@ -46,12 +46,16 @@ app.controller('MyController', function($scope, $compile,uiCalendarConfig) {
         },
         height: 450,
         editable: false,
-        defaultView:'month'
+        defaultView:'month',
+        header:{
+          left: 'title',
+          center: '',
+          right: 'today month agendaWeek prev,next'
         },
         eventClick: $scope.alertOnEventClick,
         eventDrop: $scope.alertOnDrop,
         eventResize: $scope.alertOnResize,
-        eventRender: $scope.eventRender
+        }
     };
     $scope.eventSource = {
             url: "http://www.google.com/calendar/feeds/usa__en%40holiday.calendar.google.com/public/basic",

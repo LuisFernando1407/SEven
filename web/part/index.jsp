@@ -5,8 +5,8 @@
 --%>
 <%-- 
     Document   : index
-    Modified in : 
-    Author     : 
+    Modified in : 04/05/2017, 21:40:57
+    Author     : João Mateus
 --%>
 <%@page import="br.ufc.pet.evento.Participante"%>
 <%

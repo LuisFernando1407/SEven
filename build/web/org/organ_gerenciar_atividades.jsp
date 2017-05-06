@@ -1,7 +1,12 @@
 <%--
-    Document   : index
+    Document   : organ_gerenciar_atividades
     Created on : 26/03/2010, 16:35:48
     Author     : fernando
+--%>
+<%-- 
+    Document   : organ_gerenciar_atividades
+    Modified in : 06/05/2017, 19:49:57
+    Author     : João Mateus
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.ArrayList" %>
@@ -12,11 +17,12 @@
     <head>      
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <link href="../css/estilo.css" rel="stylesheet" type="text/css" />
-        <title>Centro de Controle :: Organizador</title>
+        <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon"/>
+        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <title>SEven</title>
         <script language="javascript" src="../jquery/jquery-1.10.2.js"></script>
         <script language="javascript" src="../jquery/jquery-ui-1.10.4.custom.min.js"></script>
-        <script type="text/javascript" src="../jquery/jquery.dataTables.js"></script>
-        <script type="text/javascript" src="../jquery/initDataTable.js"></script>
+
     </head>
     <body>
         <%            br.ufc.pet.evento.Evento e = (br.ufc.pet.evento.Evento) session.getAttribute("evento");
@@ -24,32 +30,58 @@
             ArrayList<Atividade> ats = e.getAtividades();
         %>
         <div id="container">
-            <div id="top">
-                <%-- Incluindo o Menu --%>
-                <%@include file="organ_menu.jsp"%>
-            </div>
+            <%-- Incluindo o Menu --%>
+            <%@include file="organ_menu.jsp"%>
             <div id="content">
                 <h1 class="titulo">Gerenciar as Atividades do evento <%=e.getNome()%></h1>
                 <%@include file="/error.jsp" %>
                 <% if (organizador.recuperarOrganizaçãoByEvendoId(e.getId()).getManterAtividade()) {%>
-                <h2 class="titulo">Gerenciar Período de Inscrição e do Evento</h2>
-                <p><a href="organ_periodos_inscricao_e_evento.jsp" title="Gerenciar Periodo de Inscricao e do Evento">Gerenciar os periodos da inscrição e evento</a></p>
-                <h2 class="titulo"> Gerenciamento dos Horários</h2>
-                <p><a href="../ServletCentral?comando=CmdListarHorarios" title="Gerencia atributos do Horario">Gerenciar os Horarios que estarão disponíveis às atividades</a></p>
-                <h2 class="titulo"> Gerenciamento dos Tipos de Atividade</h2>
-                <p><a href="../ServletCentral?comando=CmdListarTipoAtividade" title="Gerencia Tipo de Atividade">Gerenciar os Tipos de Atividades que o evento possui</a></p>
-                <h2 class="titulo">Gerenciamento das Modalidades de Inscrição no evento</h2>
-                <p><a href="../ServletCentral?comando=CmdListarTipoModalidade" title="Insere uma nova modalidade de Inscrição ao evento">Gerenciar as Modalidades de inscrição deste evento</a></p>
-                <h2 class="titulo"> Gerenciamento de Atividades</h2>
-                <p><a href="../ServletCentral?comando=CmdMontarPaginaAdicaoAtividade" title="Adicionar uma nova Atividade">Adicionar Atividade</a></p>
-                <h2 class="titulo">Gerenciar emissão de certificados</h2>
-                <p><a href="../ServletCentral?comando=CmdGerenciarUploadCertificados" title="Gerenciar upload de certificados">Gerenciar upload de certificados</a></p>
-                <p><a href="../ServletCentral?comando=CmdGerenciarEmissaoCertificados" title="Gerenciar emissão de certificados">Gerenciar emissão de certificados</a></p>
+                <div class="col-lg-6">
+                    <div class="panel panel-default space-top">
+                        <div class="panel-cor panel-heading text-center">Gerenciar Período de Inscrição e do Evento</div>
+                        <div class="panel-body">
+                            <p class="text-center"><a href="organ_periodos_inscricao_e_evento.jsp" title="Gerenciar Periodo de Inscricao e do Evento">Gerenciar os periodos da inscrição e evento</a></p>
+                        </div>
+                    </div>
+                    <div class="panel panel-default space-top">
+                        <div class="panel-cor panel-heading text-center">Gerenciar os Horarios que estarão disponíveis às atividades</div>
+                        <div class="panel-body">
+                            <p class="text-center"><a href="../ServletCentral?comando=CmdListarHorarios" title="Gerencia atributos do Horario">Gerenciar os Horarios que estarão disponíveis às atividades</a></p>
+                        </div>
+                    </div>
+                    <div class="panel panel-default space-top">
+                        <div class="panel-cor panel-heading text-center">Gerenciamento dos Tipos de Atividade</div>
+                        <div class="panel-body">
+                            <p class="text-center"><a href="../ServletCentral?comando=CmdListarTipoAtividade" title="Gerencia Tipo de Atividade">Gerenciar os Tipos de Atividades que o evento possui</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 ">
+                    <div class="panel panel-default space-top">
+                        <div class="panel-cor panel-heading text-center">Gerenciamento das Modalidades de Inscrição no evento</div>
+                        <div class="panel-body">
+                            <p class="text-center"><a href="../ServletCentral?comando=CmdListarTipoModalidade" title="Insere uma nova modalidade de Inscrição ao evento">Gerenciar as Modalidades de inscrição deste evento</a></p>
+                        </div>
+                    </div>
+                    <div class="panel panel-default space-top">
+                        <div class="panel-cor panel-heading text-center">Gerenciamento de Atividades</div>
+                        <div class="panel-body">
+                            <p class="text-center"><a href="../ServletCentral?comando=CmdMontarPaginaAdicaoAtividade" title="Adicionar uma nova Atividade">Adicionar Atividade</a></p>
+                        </div>
+                    </div>
+                    <div class="panel panel-default space-top">
+                        <div class="panel-cor panel-heading text-center">Gerenciar emissão de certificados</div>
+                        <div class="panel-body">
+                            <p class="text-center"><a href="../ServletCentral?comando=CmdGerenciarUploadCertificados" title="Gerenciar upload de certificados">Gerenciar upload de certificados</a></p>
+                            <p class="text-center"><a href="../ServletCentral?comando=CmdGerenciarEmissaoCertificados" title="Gerenciar emissão de certificados">Gerenciar emissão de certificados</a></p>
+                        </div>
+                    </div>
+                </div>
                 <%}%>
                 <%if (ats == null || ats.size() == 0) {%>
                 <center><label>Sem atividades no momento</label></center>
                     <%} else {%>
-                <table id="data_table">
+                <table id="data_table" class="table table-hover">
                     <thead>
                         <tr>
                             <th>Nome</th>
@@ -63,7 +95,7 @@
                     </thead>
                     <tbody>
                         <%for (Atividade a : ats) {%>
-                        <tr>
+                        <tr class="text-center">
                             <td><%=a.getNome()%></td>
                             <td><%=a.getTipo().getNome()%></td>
                             <td><%=a.getVagas()%></td>
@@ -86,7 +118,9 @@
                 </table>
                 <% }%>
             </div>
-            <div id="footer"></div>
+            <div class="footer-top">
+                <%@include file="../footer.jsp" %>
+            </div>
         </div>
     </body>
 </html>

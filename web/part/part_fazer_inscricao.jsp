@@ -6,7 +6,7 @@
 <%-- 
     Document   : part_fazer_inscricao
     Modified in : 04/05/2017, 20:53:43
-    Author     : Joao Mateu, Fagner Pinheiro
+    Author     : Joao Mateus, Fagner Pinheiro
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
@@ -76,12 +76,12 @@
                         session.setAttribute("erro", "Atenção: erro interno - não foram recuperados os tipos de atividade com sucesso.");
                     }
                 %>
-             
-                
-                 <h1 class="titulo"><%=e.getNome()%></h1>
-                  <%@include file="/error.jsp"%>
-                 <div class="panel panel-default space-top">
-                      <div class="panel-cor panel-heading text-center">Tabela de preços</div>
+
+
+                <h1 class="titulo"><%=e.getNome()%></h1>
+                <%@include file="/error.jsp"%>
+                <div class="panel panel-default space-top">
+                    <div class="panel-cor panel-heading text-center">Tabela de preços</div>
                     <div class="panel-body">                       
                         <table class="data_table table table-hover text-center">
                             <thead>
@@ -106,98 +106,98 @@
                                 <%}%>
                             </tbody>
                         </table>
-                     </div> 
+                    </div> 
                 </div>                   
-                
-                
-                        <form action="../ServletCentral?comando=CmdMontarInscricao" method="post" class="">
-                            
-                             <div class="panel panel-default space-top text-center">
-                                     <div class="panel-cor panel-heading">Personalização da inscrição</div>
-                              <div class="panel-body"> 
-                                <p class="space-top">Atividades atualmente selecionadas (não conflitantes):</p>
-                                <%if (arrayDeSelecionadas.isEmpty()) {%><%--Utiliza o array de selecionadas--%>
-                                <p>Nenhuma atividade selecionada</p>
-                                <%} else {%>
-                                <table class="data_table table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>Nome da Atividade</th>
-                                            <th>Remover</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <%for (Atividade a : arrayDeSelecionadas) {%><%--Exibindo as atividades selecionadas--%>
-                                        <tr>
-                                            <td><%=a.getNome()%></td>
-                                            <td><a href="../ServletCentral?comando=CmdRemoverAtividade&ativ=<%=a.getId()%>" title="RemoverAtividade">Remover</a></td>
-                                        </tr>
-                                        <%}%>
-                                    </tbody>
-                                </table>
-                                <%}%>
-                                <hr style="height: 10px; border: 0; box-shadow: 0 10px 10px -10px #8c8b8b inset;"/>
 
-                                <%if (oferta == null || oferta.isEmpty()) {%>
-                                <p>Este evento não contém atividades selecionáveis.</p>
-                                <%} else {%>
-                                <p>Oferta de atividades opcionais:</p>
-                           
-                                
-                                <table class="data_table table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>Nome da Atividade</th>
-                                            <th>Horários</th>
-                                            <th>Tipo</th>
-                                            <th>Selecionar</th>
-                                            <th>Vagas</th>
-                                            <th>Vagas Disponíveis</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <%for (Atividade a : oferta) {%> <%--Exibindo elementos do array de oferta--%>
-                                        <tr>
-                                            <td><%=a.getNome()%></td>
-                                            <td>
-                                                <%for (Horario h : a.getHorarios()) {%>
-                                                (<%=h.printHorario()%>)
-                                                <%}%>
-                                            </td>
-                                            <td><%=a.getTipo().getNome()%></td>
-                                            <td><a href="../ServletCentral?comando=CmdSelecionarAtividade&ativ=<%=a.getId()%>" title="SelecionarAtividade">Selecionar</a></td>
-                                            <%int vagas = a.getVagas();
-                                                br.ufc.pet.services.InscricaoService IS = new br.ufc.pet.services.InscricaoService();
-                                                long vagasOcupadas = IS.getInscritosByAtividadeId(a.getId());
-                                            %>
-                                            <td><%=vagas%>
-                                            </td>
-                                            <td><%=vagas - vagasOcupadas%>
-                                            </td>
-                                            <%--O link redireciona ao comando, que por sua vez pega o id da atividade em questão e insere a mesma no array das atividades selecionadas--%>
-                                        </tr>
-                                        <%}%>
-                                    </tbody>
-                                </table>
-                                <%}%>
-                                <hr style="height: 10px; border: 0; box-shadow: 0 10px 10px -10px #8c8b8b inset;"/>
 
-                                <%if (modalidades.isEmpty()) {%>
-                                <p>Nenhuma modalidade de inscrição cadastrada.</p>
-                                <%} else {%>
-                                <p>Tipo de inscrição:</p><%--Modalidade da inscrição, Estudante ou profissional--%>
-                                <%for (ModalidadeInscricao m : modalidades) {%>
-                                <p><input class="radio" type="radio" name="tipo_inscricao" value="<%=m.getId()%>" <%if (m.getId().equals(anterior.getModalidade().getId())) {%> checked="checked" <%}%>/> <%=m.getTipo()%></p>
-                                <%}%>
-                                <%}%>
-                                
-                                </div>
-                              </div>    
-                            
-                            
-                            <div class="panel panel-default space-top text-center">
-                            <div class="panel-cor panel-heading text-center">Preços para seleção atual</div>
-                            <div class="panel-body"> 
+                <form action="../ServletCentral?comando=CmdMontarInscricao" method="post" class="">
+
+                    <div class="panel panel-default space-top text-center">
+                        <div class="panel-cor panel-heading">Personalização da inscrição</div>
+                        <div class="panel-body"> 
+                            <p class="space-top">Atividades atualmente selecionadas (não conflitantes):</p>
+                            <%if (arrayDeSelecionadas.isEmpty()) {%><%--Utiliza o array de selecionadas--%>
+                            <p>Nenhuma atividade selecionada</p>
+                            <%} else {%>
+                            <table class="data_table table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Nome da Atividade</th>
+                                        <th>Remover</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <%for (Atividade a : arrayDeSelecionadas) {%><%--Exibindo as atividades selecionadas--%>
+                                    <tr>
+                                        <td><%=a.getNome()%></td>
+                                        <td><a href="../ServletCentral?comando=CmdRemoverAtividade&ativ=<%=a.getId()%>" title="RemoverAtividade">Remover</a></td>
+                                    </tr>
+                                    <%}%>
+                                </tbody>
+                            </table>
+                            <%}%>
+                            <hr style="height: 10px; border: 0; box-shadow: 0 10px 10px -10px #8c8b8b inset;"/>
+
+                            <%if (oferta == null || oferta.isEmpty()) {%>
+                            <p>Este evento não contém atividades selecionáveis.</p>
+                            <%} else {%>
+                            <p>Oferta de atividades opcionais:</p>
+
+
+                            <table class="data_table table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Nome da Atividade</th>
+                                        <th>Horários</th>
+                                        <th>Tipo</th>
+                                        <th>Selecionar</th>
+                                        <th>Vagas</th>
+                                        <th>Vagas Disponíveis</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <%for (Atividade a : oferta) {%> <%--Exibindo elementos do array de oferta--%>
+                                    <tr>
+                                        <td><%=a.getNome()%></td>
+                                        <td>
+                                            <%for (Horario h : a.getHorarios()) {%>
+                                            (<%=h.printHorario()%>)
+                                            <%}%>
+                                        </td>
+                                        <td><%=a.getTipo().getNome()%></td>
+                                        <td><a href="../ServletCentral?comando=CmdSelecionarAtividade&ativ=<%=a.getId()%>" title="SelecionarAtividade">Selecionar</a></td>
+                                        <%int vagas = a.getVagas();
+                                            br.ufc.pet.services.InscricaoService IS = new br.ufc.pet.services.InscricaoService();
+                                            long vagasOcupadas = IS.getInscritosByAtividadeId(a.getId());
+                                        %>
+                                        <td><%=vagas%>
+                                        </td>
+                                        <td><%=vagas - vagasOcupadas%>
+                                        </td>
+                                        <%--O link redireciona ao comando, que por sua vez pega o id da atividade em questão e insere a mesma no array das atividades selecionadas--%>
+                                    </tr>
+                                    <%}%>
+                                </tbody>
+                            </table>
+                            <%}%>
+                            <hr style="height: 10px; border: 0; box-shadow: 0 10px 10px -10px #8c8b8b inset;"/>
+
+                            <%if (modalidades.isEmpty()) {%>
+                            <p>Nenhuma modalidade de inscrição cadastrada.</p>
+                            <%} else {%>
+                            <p>Tipo de inscrição:</p><%--Modalidade da inscrição, Estudante ou profissional--%>
+                            <%for (ModalidadeInscricao m : modalidades) {%>
+                            <p><input class="radio" type="radio" name="tipo_inscricao" value="<%=m.getId()%>" <%if (m.getId().equals(anterior.getModalidade().getId())) {%> checked="checked" <%}%>/> <%=m.getTipo()%></p>
+                            <%}%>
+                            <%}%>
+
+                        </div>
+                    </div>    
+
+
+                    <div class="panel panel-default space-top text-center">
+                        <div class="panel-cor panel-heading text-center">Preços para seleção atual</div>
+                        <div class="panel-body"> 
                             <%
                                 String preco;
                                 for (ModalidadeInscricao m : modalidades) {
@@ -205,13 +205,13 @@
                             %>
                             <p class="space-top text-bold"> <%=m.getTipo()%> : <%=preco%></p>
                             <%}%>
-                            </div></div>
-                            <center><input type="submit" value="Inscrever-se" class="btn btn-default" /></center><br />
-                        </form>
-                    </div>
-                            <a href="" title="" onclick="history.back(); return false;" class="btn btn-default"><span aria-hidden="true">&larr;</span>Voltar</a>
-                </div>                
-           
+                        </div></div>
+                    <center><input type="submit" value="Inscrever-se" class="btn btn-default" /></center><br />
+                </form>
+            </div>
+            <a href="" title="" onclick="history.back(); return false;" class="btn btn-default"><span aria-hidden="true">&larr;</span>Voltar</a>
+        </div>                
+
         <div class="footer-top">        
             <%@include file="../footer.jsp" %>
         </div>

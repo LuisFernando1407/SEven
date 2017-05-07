@@ -29,9 +29,7 @@
     <body>
         <div id="container">
             <%-- Incluindo o Menu --%>
-            <div id="top">
-                <%@include file="organ_menu.jsp" %>
-            </div>
+            <%@include file="organ_menu.jsp" %>
             <div id="content">
                 <h1 class="titulo">Gerenciar atividades de evento e suas características</h1>
                 <p class="text-center">Selecione o evento do qual deseja gerenciar as atividades:</p>

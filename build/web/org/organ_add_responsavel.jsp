@@ -3,7 +3,11 @@
     Created on : 15/07/2010, 16:52:42
     Author     : Escritorio projetos
 --%>
-
+<%-- 
+    Document   : orga_add_responsavel
+    Modified in : 07/05/2017, 04:02:57
+    Author     : João Mateus
+--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
@@ -15,71 +19,77 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <link href="../css/estilo.css" rel="stylesheet" type="text/css" />
-        <title>Centro de Controle :: Administrador</title>
+        <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon"/>
+        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <title>SEven</title>
         <script language="javascript" src="../jquery/jquery-1.10.2.js"></script>
         <script language="javascript" src="../jquery/jquery-ui-1.10.4.custom.min.js"></script>
-        <script type="text/javascript" src="../jquery/jquery.dataTables.js"></script>
-        <script type="text/javascript" src="../jquery/initDataTable.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
     </head>
     <body>
         <% ArrayList<Usuario> us = (ArrayList<Usuario>) session.getAttribute("usuarios");
-                    session.removeAttribute("usuarios");
-                    //recuperar dados do formulario que ja foram preenchidos para que nao sejam perdidos
-                    String nome = request.getParameter("nome_atividade");
-                    String local = request.getParameter("local");
-                    String vagas = request.getParameter("vagas");
-                    //String tipo = request.getParameter("tipo_id");
+            session.removeAttribute("usuarios");
+            //recuperar dados do formulario que ja foram preenchidos para que nao sejam perdidos
+            String nome = request.getParameter("nome_atividade");
+            String local = request.getParameter("local");
+            String vagas = request.getParameter("vagas");
+            //String tipo = request.getParameter("tipo_id");
 
-                    Atividade ativTemp = new Atividade();
-                    if (nome != null) {
-                        ativTemp.setNome(nome);
-                    } else {
-                        ativTemp.setNome("");
-                    }
-                    if (local != null) {
-                        ativTemp.setLocal(local);
-                    } else {
-                        ativTemp.setLocal("");
-                    }
-                    try {
-                        ativTemp.setVagas(Integer.parseInt(vagas));
-                    } catch (Exception e) {
-                        ativTemp.setVagas(0);
-                    }
-                    if (nome != null || local != null || vagas != null) {
-                        session.setAttribute("atividadeTemp", ativTemp);
-                    }
+            Atividade ativTemp = new Atividade();
+            if (nome != null) {
+                ativTemp.setNome(nome);
+            } else {
+                ativTemp.setNome("");
+            }
+            if (local != null) {
+                ativTemp.setLocal(local);
+            } else {
+                ativTemp.setLocal("");
+            }
+            try {
+                ativTemp.setVagas(Integer.parseInt(vagas));
+            } catch (Exception e) {
+                ativTemp.setVagas(0);
+            }
+            if (nome != null || local != null || vagas != null) {
+                session.setAttribute("atividadeTemp", ativTemp);
+            }
         %>
         <div id="container">
-            <div id="top">
-                <%-- Incluindo o Menu --%>
-                <%@include file="organ_menu.jsp" %>
-            </div>
+            <%-- Incluindo o Menu --%>
+            <%@include file="organ_menu.jsp" %>
+
             <div id="content">
+                <%@include file="/error.jsp"%>
                 <h1 class="titulo">Adicionar um responsável à Atividade</h1>
                 <p style="font-size: medium;">Você pode tornar responsável um usuário já cadastrado ou cadastrar um novo responsável.</p>
-                <%@include file="/error.jsp"%>
-                <div id="content_right">
-                    <p style="margin-top: 5px;"><a style="font-size: medium; color: #0E464E;" href="organ_add_novo_responsavel.jsp" title="Adicionar Responsavel" >Clique aqui para cadastrar um novo responsavel!</a></p>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">Busca de usuários pelo nome ou parte do nome</div>
+                    <div class="panel-body">  
+                        <div class="col-lg-12 space-top">
+                            <form name="formAddResponsavel" action="../ServletCentral" method="POST">
+                                <input type="hidden" name="comando" value="CmdBuscarUsuarioResponsavel">
+                                <div class="form-group form-inline">
+                                    <input type="text" name="nome_busca" placeholder="Nome" class="form-control"/>
+                                    <input type="submit" name="btnBuscar" value="Buscar" class="btn btn-default">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <div id="content_left">
-                    <h2 class="titulo" style="margin-bottom: 10px;">Busca de usuários pelo nome ou parte do nome:</h2>
-                <form name="formAddResponsavel" action="../ServletCentral" method="POST">
-                    <input type="hidden" name="comando" value="CmdBuscarUsuarioResponsavel">
-                    <label>Nome: </label><input type="text" name="nome_busca">
-                    <input type="submit" name="btnBuscar" value="Buscar" class="button"><br><br>
-                </form>
+                <a href="organ_add_novo_responsavel.jsp" title="Adicionar Responsavel" class="btn btn-default">Cadastrar um novo responsável</a>
                 <% if (us != null && us.size() > 0) {%>
-                <table id="data_table" border="1" align="left">
+                <table id="data_table" class="table table-hover text-center space-top">
                     <thead>
                         <tr>
-                            <th>NOME</th>
+                            <th>Nome</th>
                             <th>Email</th>
-                            <th>INCLUIR</th>
+                            <th>Incluir</th>
                         </tr>
                     </thead>
                     <tbody>
-                            <% for (Usuario u : us) {%>
+                        <% for (Usuario u : us) {%>
                         <tr>
                             <td><%=u.getNome()%></td>
                             <td><%=u.getEmail()%></td>
@@ -89,10 +99,12 @@
                     </tbody>
                 </table><br><br>
                 <% }%>
-                <p><a href="" title="" onclick="history.back(); return false;" class="voltar">Voltar</a></p>
+                <a href="" title="" onclick="history.back(); return false;" class="btn btn-default"><span aria-hidden="true">&larr;</span> Voltar</a>
+
             </div>
+            <div class="footer-top">
+                <%@include file="../footer.jsp" %>
             </div>
-            <div id="footer"></div>
         </div>
     </body>
 </html>

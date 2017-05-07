@@ -94,7 +94,7 @@
                 </div>
                 <div class="center-block">
                     <form action="../ServletCentral" method="post">
-                        <a href="" title="" onclick="history.back(); return false;" class="btn btn-default"><span aria-hidden="true">&larr;</span>Voltar</a>
+                        <a href="" title="" onclick="history.back(); return false;" class="btn btn-default"><span aria-hidden="true">&larr;</span> Voltar</a>
                         <a class="btn btn-default margin-btn-left" href="part_conta.jsp">Editar Dados</a>
                         <a class="btn btn-default pull-right " href="../ServletCentral?comando=CmdExcluirParticipante" onclick="return confirm('Tem certeza que deseja excluir conta?')" title="">Excluir Conta</a>
                     </form>

@@ -3,6 +3,11 @@
     Created on : 03/09/2010, 15:44:32
     Author     : Escritorio projetos
 --%>
+<%-- 
+    Document   : organ_gerenciar_tipo_ativ
+    Modified in : 07/05/2017, 16:23:57
+    Author     : João Mateus
+--%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.ArrayList" %>
@@ -13,11 +18,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <link href="../css/estilo.css" rel="stylesheet" type="text/css" />
-        <title>Centro de Controle :: Administrador</title>
+        <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon"/>
+        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <title>SEven</title>
         <script language="javascript" src="../jquery/jquery-1.10.2.js"></script>
         <script language="javascript" src="../jquery/jquery-ui-1.10.4.custom.min.js"></script>
-        <script type="text/javascript" src="../jquery/jquery.dataTables.js"></script>
-        <script type="text/javascript" src="../jquery/initDataTable.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
     </head>
     <body>
         <%            br.ufc.pet.evento.Evento e = (br.ufc.pet.evento.Evento) session.getAttribute("evento");
@@ -25,19 +31,15 @@
             session.removeAttribute("tipoAtividade");
         %>
         <div id="container">
-            <div id="top">
                 <%-- Incluindo o Menu --%>
                 <%@include file="organ_menu.jsp"%>
-            </div>
+                
             <div id="content">
-                <h1 class="titulo">Gerenciar os Tipos de Atividades do evento <%=e.getNome()%></h1>
                 <%@include file="/error.jsp"%>
+                <h1 class="titulo">Gerenciar os Tipos de Atividades do evento <%=e.getNome()%></h1>
 
-
-                <p><a href="organ_add_tipo_ativ.jsp" title="Adicionar um novo Tipo de Atividade">Adicionar Tipo Atividade</a></p>
-                <center>
-                    <div style="width: 50%; ">
-                        <table id="data_table">
+                    <div>
+                        <table id="data_table" class="table table-hover text-center">
                             <%if (tipoAtivs == null || tipoAtivs.size() == 0) {%>
                             <center><label>Sem Tipos de Atividade Cadastrados no momento</label></center>
                                 <%} else {%>
@@ -62,10 +64,12 @@
 
                         </table>
                     </div>
-                </center>
-                <p><a href="../ServletCentral?comando=CmdListarAtividades" title="" class="voltar">Voltar</a></p>
+                <a href="../ServletCentral?comando=CmdListarAtividades" title="" class="btn btn-default"><span aria-hidden="true">&larr;</span> Voltar</a>
+                <a href="organ_add_tipo_ativ.jsp" title="Adicionar um novo Tipo de Atividade" class="btn btn-default">Adicionar Tipo Atividade</a>
             </div>
-            <div id="footer"></div>
+            <div class="footer-top">
+                <%@include file="../footer.jsp" %>
+            </div>
         </div>
     </body>
 </html>

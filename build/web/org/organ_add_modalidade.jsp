@@ -3,7 +3,11 @@
     Created on : 21/09/2010, 15:27:53
     Author     : Franklin
 --%>
-
+<%-- 
+    Document   : organ_gerenciar_modalidade
+    Modified in : 07/05/2017, 15:02:57
+    Author     : João Mateus
+--%>
 <%@page import="br.ufc.pet.evento.PrecoAtividade"%>
 <%@page import="br.ufc.pet.evento.ModalidadeInscricao"%>
 <%@page import="br.ufc.pet.util.UtilSeven"%>
@@ -18,11 +22,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <link href="../css/estilo.css" rel="stylesheet" type="text/css" />
-        <title>Centro de Controle :: Administrador</title>
+        <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon"/>
+        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <title>SEven</title>
         <script language="javascript" src="../jquery/jquery-1.10.2.js"></script>
         <script language="javascript" src="../jquery/jquery-ui-1.10.4.custom.min.js"></script>
-        <script type="text/javascript" src="../jquery/jquery.dataTables.js"></script>
-        <script type="text/javascript" src="../jquery/initDataTable.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="../Script.js"></script>
     </head>
     <body>
@@ -39,20 +44,15 @@
             }
         %>
         <div id="container">
-            <div id="top">
                 <%-- Incluindo o Menu --%>
                 <%@include file="organ_menu.jsp" %>
-            </div>
+                
             <div id="content">
-                <h1 class="titulo">Adicionar Modalidade</h1>
                 <%@include file="/error.jsp" %>
-                <form action="../ServletCentral?comando=CmdAdicionarModalidade&id_atualizar=<%=id%>" method="post" class="cadastro">
-                    <fieldset>
-                        <label >Modalidade:</label><br>
-                        <input type="text" name="nomeModalidade" value="<%=nome%>"/><br
-                    </fieldset>
-                    <br><br>
-                    <table id="data_table" border="1">
+                <h1 class="titulo">Adicionar Modalidade</h1>
+                <form action="../ServletCentral?comando=CmdAdicionarModalidade&id_atualizar=<%=id%>" method="post">
+                    <div class="form-group"><input type="text" name="nomeModalidade" value="<%=nome%>" placeholder="Modalidade" class="form-control"/></div>
+                    <table id="data_table" class="table table-hover text-center form-group">
                         <thead>
                             <tr>
                                 <th>Tipo de Atividade</th>
@@ -72,21 +72,22 @@
                                     }%>
                                 <td><%=tp.getNome()%></td>
                                 <%if (e.isGratuito()) {%>
-                                <td><input type="text" name="preco_<%=tp.getId()%>" value="<%=valor%>" size="10"  disabled="disabled"/></td>
+                                <td><div class="form-group"><input type="text" name="preco_<%=tp.getId()%>" value="<%=valor%>" size="10"  disabled="disabled" class="form-control"/></div></td>
                                     <%} else {%>
-                                <td><input type="text" name="preco_<%=tp.getId()%>" value="<%=valor%>" size="10" /></td>
+                                <td><div class="form-group"><input type="text" name="preco_<%=tp.getId()%>" value="<%=valor%>" size="10" class="form-control "/></div></td>
                                     <%}%>
                             </tr>
                             <%valor = 0.0;
                             }%>
                         </tbody>
                     </table>
-                    <input type="submit" value="Enviar" class="button" onclick="return confirm('Deseja realmente enviar esses dados?')" />
-                    <a href="" title="" onclick="history.back();
-                            return false;" class="voltarCadastro">Voltar</a>
+                    <a href="" title="" onclick="history.back();return false;" class="btn btn-default"><span aria-hidden="true">&larr;</span> Voltar</a>
+                    <input type="submit" value="Enviar" class="btn btn-default" onclick="return confirm('Deseja realmente enviar esses dados?')" />
                 </form>
             </div>
-            <div id="footer"></div>
+            <div class="footer-top">        
+                <%@include file="../footer.jsp" %>
+            </div>
         </div>
     </body>
 </html>

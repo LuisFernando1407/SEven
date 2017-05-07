@@ -40,8 +40,8 @@
                         session.removeAttribute("todosPagamentosRecebidos");%>
                         <div class="panel panel-default space-top">
                         <div class="panel-cor panel-heading text-center">Movimentação Finaceira</div>
-                        <div class="panel-body">
-                            <p><a href="../ServletCentral?comando=CmdListarMovimentacaoFinanceira" title="">Movimentação Financeira</a></p>
+                        <div class="panel-body text-center">
+                            <label><a href="../ServletCentral?comando=CmdListarMovimentacaoFinanceira" title="">Movimentação Financeira</a></label>
                         </div>
                     </div>
                    
@@ -50,15 +50,15 @@
                     <h1 class="titulo">Pagamentos</h1>
                     <div class="panel panel-default space-top">
                         <div class="panel-cor panel-heading text-center">Receber Individual</div>
-                        <div class="panel-body">
-                            <p><a href="organ_listar_pagamento.jsp" title="">Receber Pagamento de Inscrição Por Inscrição</a></p>
-                            <p><a href="organ_listar_pagamento_part.jsp" title="">Receber Pagamento de Inscrição Por Participante</a></p>
+                        <div class="panel-body text-center">
+                            <label><a href="organ_listar_pagamento.jsp" title="">Receber Pagamento de Inscrição Por Inscrição</a></label><br/>
+                            <label><a href="organ_listar_pagamento_part.jsp" title="">Receber Pagamento de Inscrição Por Participante</a></label>
                         </div>
                     </div>
                     <div class="panel panel-default space-top">
                         <div class="panel-cor panel-heading text-center">Receber Todos</div>
-                        <div class="panel-body">
-                            <p><a href="../ServletCentral?comando=CmdReceberPagamentoTodasInscricoes" title="" class="button2" onclick="return confirm('Deseja realmente efetuar esta operacao?')">Receber Pagamento de todas as Inscrições</a></p>
+                        <div class="panel-body text-center">
+                            <label><a href="../ServletCentral?comando=CmdReceberPagamentoTodasInscricoes" title="" class="button2" onclick="return confirm('Deseja realmente efetuar esta operacao?')">Receber Pagamento de todas as Inscrições</a></label> 
                         </div>
                     </div>
 

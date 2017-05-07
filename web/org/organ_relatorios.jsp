@@ -33,11 +33,11 @@
                 <div class="panel panel-default space-top">
                     <div class="panel-cor panel-heading text-center">Relatórios</div>
                     <div class="panel-body text-center">
-                        <p><a href="../ServletCentral?comando=CmdListarAtividadesDownload" title="">Relatório de Participante por Atividade</a></p>
-                        <p><a href="../ServletCentral?comando=CmdListarAtividadeFrequencia" title="">Gerar Lista de Presença em Atividades</a></p>
-                        <p><a href="../ServletCentral?comando=CmdRelatorioParticipantesQuites" title="">Relatório de Participante Quites</a></p>
-                        <p><a href="../ServletCentral?comando=CmdListarParticipantes" title="">Listar Participantes</a></p>
-                        <p><a href="" title="">Relatório de Movimento do Caixa</a></p>
+                        <label><a href="../ServletCentral?comando=CmdListarAtividadesDownload" title="">Relatório de Participante por Atividade</a></label><br/>
+                        <label><a href="../ServletCentral?comando=CmdListarAtividadeFrequencia" title="">Gerar Lista de Presença em Atividades</a></label><br/>
+                        <label><a href="../ServletCentral?comando=CmdRelatorioParticipantesQuites" title="">Relatório de Participante Quites</a></label><br/>
+                        <label><a href="../ServletCentral?comando=CmdListarParticipantes" title="">Listar Participantes</a></label><br/>
+                        <label><a href="" title="">Relatório de Movimento do Caixa</a></label><br/>
                     </div>
                 </div>
                 <div id="list">

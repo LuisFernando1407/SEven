@@ -1,7 +1,12 @@
 <%--
-    Document   : index
+    Document   : organ_listar_pagamento_part
     Created on : 26/03/2010, 16:35:48
     Author     : fernando
+--%>
+<%-- 
+    Document   : organ_listar_pagamento_part
+    Modified in : 06/05/2017, 00:08:39
+    Author     : João Mateus
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="br.ufc.pet.evento.Inscricao"%>
@@ -28,26 +33,24 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <link href="../css/estilo.css" rel="stylesheet" type="text/css" />
-        <title>Centro de Controle :: Administrador</title>
+        <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon"/>
+        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <title>SEven</title>
         <script type="text/javascript" src="../Script.js"></script>
     </head>
     <body>
         <div id="container">
-            <div id="top">
                 <%-- Incluindo o Menu --%>
                 <%@include file="organ_menu.jsp" %>
-            </div>
+                
             <div id="content">
                  <%@include file="/error.jsp" %>
                 <h1 class="titulo">Recebimento de Pagamentos de Inscrição</h1>
-                <form style="width: 290px;" action="../ServletCentral?comando=CmdBuscarParticipantePorEmail" method="post" class="box_destaque cadastro">
-
-
-                    <fieldset>
-                        <label>Email do Participante</label><br />
-                        <input type="text" name="email" class="buscar"/>
-                        <input type="submit" value="Buscar" class="button" /><br />
-                    </fieldset>
+                <form style="width: 290px;" action="../ServletCentral?comando=CmdBuscarParticipantePorEmail" method="post" class="center-block form-inline">
+                    <div class="form-group">
+                        <input type="text" name="email" class="form-control" placeholder="E-mail do participante"/>
+                        <input type="submit" value="Buscar" class="btn btn-default form-control" /><br/>
+                    </div>
                 </form>
                 <%if (mensagem == "naoencontrado") {%>
                 <h6 style=" color: red; "align="center">Inscrição não encontrada</h6>
@@ -55,7 +58,7 @@
                 <h6 style=" color: red; "align="center">Preencha o número da Inscricao</h6>
                 <%} else {%>
                 <%if (participanteinscrito != null) {%>
-                <table>
+                <table class="table table-hover space-top">
                     <tr>
                         <th>Inscrição</th>
                         <th>Nome</th>
@@ -75,9 +78,11 @@
                 </table>
                 <%}%>
                 <%}%>
-                <p><a href="organ_financeiro.jsp" title=""  class="voltar">Voltar</a></p><!--onclick="history.back(); return false;"-->
+                <a href="organ_financeiro.jsp" title="" class="btn btn-default"><span aria-hidden="true">&larr;</span> Voltar</a><!--onclick="history.back(); return false;"-->
             </div>
-            <div id="footer"></div>
+            <div class="footer-top">
+                <%@include file="../footer.jsp" %>
+            </div>
         </div>
     </body>
 </html>

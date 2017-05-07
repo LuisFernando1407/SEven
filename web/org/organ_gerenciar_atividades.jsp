@@ -22,6 +22,7 @@
         <title>SEven</title>
         <script language="javascript" src="../jquery/jquery-1.10.2.js"></script>
         <script language="javascript" src="../jquery/jquery-ui-1.10.4.custom.min.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
 
     </head>
     <body>
@@ -39,41 +40,41 @@
                 <div class="col-lg-6">
                     <div class="panel panel-default space-top">
                         <div class="panel-cor panel-heading text-center">Gerenciar Período de Inscrição e do Evento</div>
-                        <div class="panel-body">
-                            <p class="text-center"><a href="organ_periodos_inscricao_e_evento.jsp" title="Gerenciar Periodo de Inscricao e do Evento">Gerenciar os periodos da inscrição e evento</a></p>
+                        <div class="panel-body text-center">
+                            <label><a href="organ_periodos_inscricao_e_evento.jsp" title="Gerenciar Periodo de Inscricao e do Evento">Gerenciar os periodos da inscrição e evento</a></label>
                         </div>
                     </div>
                     <div class="panel panel-default space-top">
                         <div class="panel-cor panel-heading text-center">Gerenciar os Horarios que estarão disponíveis às atividades</div>
-                        <div class="panel-body">
-                            <p class="text-center"><a href="../ServletCentral?comando=CmdListarHorarios" title="Gerencia atributos do Horario">Gerenciar os Horarios que estarão disponíveis às atividades</a></p>
+                        <div class="panel-body text-center">
+                            <label><a href="../ServletCentral?comando=CmdListarHorarios" title="Gerencia atributos do Horario">Gerenciar os Horarios que estarão disponíveis às atividades</a></label>
                         </div>
                     </div>
                     <div class="panel panel-default space-top">
                         <div class="panel-cor panel-heading text-center">Gerenciamento dos Tipos de Atividade</div>
-                        <div class="panel-body">
-                            <p class="text-center"><a href="../ServletCentral?comando=CmdListarTipoAtividade" title="Gerencia Tipo de Atividade">Gerenciar os Tipos de Atividades que o evento possui</a></p>
+                        <div class="panel-body text-center">
+                            <label><a href="../ServletCentral?comando=CmdListarTipoAtividade" title="Gerencia Tipo de Atividade">Gerenciar os Tipos de Atividades que o evento possui</a></label>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 ">
                     <div class="panel panel-default space-top">
                         <div class="panel-cor panel-heading text-center">Gerenciamento das Modalidades de Inscrição no evento</div>
-                        <div class="panel-body">
-                            <p class="text-center"><a href="../ServletCentral?comando=CmdListarTipoModalidade" title="Insere uma nova modalidade de Inscrição ao evento">Gerenciar as Modalidades de inscrição deste evento</a></p>
+                        <div class="panel-body text-center">
+                            <label><a href="../ServletCentral?comando=CmdListarTipoModalidade" title="Insere uma nova modalidade de Inscrição ao evento">Gerenciar as Modalidades de inscrição deste evento</a></label>
                         </div>
                     </div>
                     <div class="panel panel-default space-top">
                         <div class="panel-cor panel-heading text-center">Gerenciamento de Atividades</div>
-                        <div class="panel-body">
-                            <p class="text-center"><a href="../ServletCentral?comando=CmdMontarPaginaAdicaoAtividade" title="Adicionar uma nova Atividade">Adicionar Atividade</a></p>
+                        <div class="panel-body text-center">
+                            <label><a href="../ServletCentral?comando=CmdMontarPaginaAdicaoAtividade" title="Adicionar uma nova Atividade">Adicionar Atividade</a></label>
                         </div>
                     </div>
                     <div class="panel panel-default space-top">
                         <div class="panel-cor panel-heading text-center">Gerenciar emissão de certificados</div>
-                        <div class="panel-body">
-                            <p class="text-center"><a href="../ServletCentral?comando=CmdGerenciarUploadCertificados" title="Gerenciar upload de certificados">Gerenciar upload de certificados</a></p>
-                            <p class="text-center"><a href="../ServletCentral?comando=CmdGerenciarEmissaoCertificados" title="Gerenciar emissão de certificados">Gerenciar emissão de certificados</a></p>
+                        <div class="panel-body text-center">
+                            <label><a href="../ServletCentral?comando=CmdGerenciarUploadCertificados" title="Gerenciar upload de certificados">Gerenciar upload de certificados</a></label><br/>
+                            <label><a href="../ServletCentral?comando=CmdGerenciarEmissaoCertificados" title="Gerenciar emissão de certificados">Gerenciar emissão de certificados</a></label>
                         </div>
                     </div>
                 </div>

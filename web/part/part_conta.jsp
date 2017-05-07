@@ -150,7 +150,7 @@
                     </div>
                 </div>
             </div>
-            <a href="" title="" onclick="history.back(); return false;" class="btn btn-default"><span aria-hidden="true">&larr;</span>Voltar</a><br/>
+            <a href="" title="" onclick="history.back(); return false;" class="btn btn-default"><span aria-hidden="true">&larr;</span> Voltar</a><br/>
         </div>
         </div>
         <div class="footer-top">        

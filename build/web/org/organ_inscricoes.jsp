@@ -32,8 +32,7 @@
             <%-- Incluindo o Menu --%>
             <%@include file="organ_menu.jsp" %>
             <div id="content">
-                <h1 class="titulo">Gerenciar inscrições em um evento</h1>
-                <p class="text-center">Selecione o evento do qual deseja gerenciar as inscrições:</p>
+                <h1 class="titulo">Gerenciar inscrições em um evento</h1><br>
                 <table id="data_table" class="table table-hover">
                     <thead>
                         <tr>

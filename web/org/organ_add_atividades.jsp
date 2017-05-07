@@ -20,7 +20,8 @@
         <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <title>SEven</title>
         <script language="javascript" src="../jquery/jquery-1.10.2.js"></script>
-        <script language="javascript" src="../jquery/jquery-ui-1.10.4.custom.min.js"></script>
+        <script language="javascript" src="../jquery/jquery-ui-1.10.4.custom.min.js"></script>        
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
         <script type="text/javascript">
             function forceSubmitListarRelatoriosAtividades(formName) {
                 document.forms[formName].action = "organ_add_responsavel.jsp";
@@ -60,9 +61,8 @@
             <%@include file="organ_menu.jsp" %>
 
             <div id="content">
-                <%@include file="/error.jsp" %>
                 <h1 class="titulo">Atividade</h1>
-
+                <%@include file="/error.jsp" %>
                 <form name="formAddAtividade" action="../ServletCentral?comando=CmdAdicionarAtividade" method="post">
 
                     <div class="panel panel-default space-top">

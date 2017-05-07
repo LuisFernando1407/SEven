@@ -37,6 +37,7 @@
                 <h1 class="titulo">Gerenciar as Atividades do evento <%=e.getNome()%></h1>
                 <%@include file="/error.jsp" %>
                 <% if (organizador.recuperarOrganizaçãoByEvendoId(e.getId()).getManterAtividade()) {%>
+                <div style="margin-top: 70px;">
                 <div class="col-lg-6">
                     <div class="panel panel-default space-top">
                         <div class="panel-cor panel-heading text-center">Gerenciar Período de Inscrição e do Evento</div>
@@ -78,9 +79,10 @@
                         </div>
                     </div>
                 </div>
+                </div>
                 <%}%>
                 <%if (ats == null || ats.size() == 0) {%>
-                <center><label>Sem atividades no momento</label></center>
+                <div style="margin-top: -50px; width: 96.5%; margin-left: 15px;"><div class="alert alert-warning text-center" role="alert">Sem atividades no momento</div></div>
                     <%} else {%>
                 <table id="data_table" class="table table-hover">
                     <thead>

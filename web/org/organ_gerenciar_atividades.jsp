@@ -34,10 +34,10 @@
             <%-- Incluindo o Menu --%>
             <%@include file="organ_menu.jsp"%>
             <div id="content">
-                <h1 class="titulo">Gerenciar as Atividades do evento <%=e.getNome()%></h1>
                 <%@include file="/error.jsp" %>
+                <h1 class="titulo">Gerenciar as Atividades do evento <%=e.getNome()%></h1>
                 <% if (organizador.recuperarOrganizaçãoByEvendoId(e.getId()).getManterAtividade()) {%>
-                <div style="margin-top: 70px;">
+                <div>
                 <div class="col-lg-6">
                     <div class="panel panel-default space-top">
                         <div class="panel-cor panel-heading text-center">Gerenciar Período de Inscrição e do Evento</div>

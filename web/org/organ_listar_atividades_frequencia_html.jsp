@@ -1,9 +1,13 @@
 <%--
-    Document   : organ_listar_atividades_download_html
+    Document   : organ_listar_atividades_frequencia_html
     Created on : 03/02/2011, 10:28:50
     Author     : Welligton Abreu
 --%>
-
+<%-- 
+    Document   : organ_listar_atividades_frequencia_html
+    Modified in : 07/05/2017, 23:18:57
+    Author     : João Mateus
+--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="br.ufc.pet.evento.Atividade" %>
 <%@page import="br.ufc.pet.evento.Participante" %>
@@ -27,96 +31,87 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="../css/estilo.css" rel="stylesheet" type="text/css" />
-        <title>Centro de Controle :: Administrador</title>
+        <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon"/>
+        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <title>SEven</title>
         <script language="javascript" src="../jquery/jquery-1.10.2.js"></script>
         <script language="javascript" src="../jquery/jquery-ui-1.10.4.custom.min.js"></script>
-        <script type="text/javascript" src="../jquery/jquery.dataTables.js"></script>
-        <script type="text/javascript" src="../jquery/initDataTable.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js"></script>>
     </head>
     <body>
         <div id="container">
-            <div id="top">
-                <%-- Incluindo o Menu --%>
-                <%@include file="organ_menu.jsp" %>
-            </div>
+            <%-- Incluindo o Menu --%>
+            <%@include file="organ_menu.jsp" %>
+
             <div id="content">
                 <h1 class="titulo">Lista de Frequência</h1>
 
-                <table class="extend">
-                    <tr>
-                        <td>Cod.:<%=at.getId()%></td>
-                        <td>Local:<%=at.getLocal()%></td>
-                        <td>Evento:<%=at.getEvento().getNome()%></td>
-                    </tr>
-                    <tr>
-                        <td>Vagas:<%=at.getVagas()%></td>
-                        <td>Tipo:<%=at.getTipo().getNome()%></td>
-                        <td>Nome:<%=at.getNome()%></td>
-                    </tr>
-                </table>
-                <table class="extend">
-                    <%
-                        for (int i = 0; i < horario; i++) {
-                            String data = UtilSeven.treatToString(horarios.get(i).getDia());
-                            int hInicial = horarios.get(i).getHoraInicial();
-                            String horaInicial = "" + hInicial;
-                            if (hInicial <= 9 && hInicial >= 0) {
-                                horaInicial = "0" + hInicial;
-                            }
-                            int hFinal = horarios.get(i).getHoraFinal();
-                            String horaFinal = "" + hFinal;
-                            if (hFinal <= 9 && hFinal >= 0) {
-                                horaFinal = "0" + hFinal;
-                            }
-                            int mInicial = horarios.get(i).getMinutoInicial();
-                            String minInicial = "" + mInicial;
-                            if (mInicial <= 9 && mInicial >= 0) {
-                                minInicial = "0" + mInicial;
-                            }
-                            int mFinal = horarios.get(i).getMinutoFinal();
-                            String minFinal = "" + mFinal;
-                            if (mFinal <= 9 && mFinal >= 0) {
-                                minFinal = "0" + minFinal;
-                            }
+                <div class="panel panel-default center-block" style="width: 50%">
+                    <div class="panel-heading text-center">Dados do evento: <%=at.getEvento().getNome()%> </div>
+                    <div class="panel-body text-center"> 
+                        <label>Cod:</label><%=at.getId()%><br/>
+                        <label>Local:</label><%=at.getLocal()%><br/>
+                        <label>Vagas:</label><%=at.getVagas()%><br/>
+                        <label>Tipo:</label><%=at.getTipo().getNome()%><br/>
+                        <label>Nome:</label><%=at.getNome()%><br/>
+                        <%
+                            for (int i = 0; i < horario; i++) {
+                                String data = UtilSeven.treatToString(horarios.get(i).getDia());
+                                int hInicial = horarios.get(i).getHoraInicial();
+                                String horaInicial = "" + hInicial;
+                                if (hInicial <= 9 && hInicial >= 0) {
+                                    horaInicial = "0" + hInicial;
+                                }
+                                int hFinal = horarios.get(i).getHoraFinal();
+                                String horaFinal = "" + hFinal;
+                                if (hFinal <= 9 && hFinal >= 0) {
+                                    horaFinal = "0" + hFinal;
+                                }
+                                int mInicial = horarios.get(i).getMinutoInicial();
+                                String minInicial = "" + mInicial;
+                                if (mInicial <= 9 && mInicial >= 0) {
+                                    minInicial = "0" + mInicial;
+                                }
+                                int mFinal = horarios.get(i).getMinutoFinal();
+                                String minFinal = "" + mFinal;
+                                if (mFinal <= 9 && mFinal >= 0) {
+                                    minFinal = "0" + minFinal;
+                                }
 
 
-                    %>
-                    <tr>
-                        <td>Data:<%=data%></td>
-                        <td>Horário:<%=horaInicial + ":" + minInicial + " às " + horaFinal + ":" + minFinal%></td>
-                    </tr>
-                    <%}%>
-                </table>
-                <center>
-                    <div style="width: 80%;">
-                         <table id="data_table" class="extend">
-                            <thead>
-                                <tr>
-                                    <th width="50px">N°</th>
-                                    <th>Nome</th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <%for (int i = 0; parts != null && i < parts.size(); i++) {%>
-                                <tr>
-                                    <td><%=i + 1%></td>
-                                    <%
-                                        Participante p = parts.get(i);
-                                    %>
-                                    <td><%=p.getUsuario().getNome()%></td>
-                                </tr>
-                                <%}%>
-                            </tbody>
-                        </table>
+                        %>
+                        <label>Data:</label><%=data%><br/>
+                        <label>Horário:</label><%=horaInicial + ":" + minInicial + " às " + horaFinal + ":" + minFinal%>
+                        <%}%><br/>
                     </div>
-                </center>
-                <a href=""  style="float: left; margin-bottom: 10px"
-                   title="" onclick="history.back();
-                           return false;" class="voltarCadastro">Voltar</a>
+                </div>
+
+                <table id="data_table" class="extend table table-hover text-center">
+                    <thead>
+                        <tr>
+                            <th width="50px">N°</th>
+                            <th>Nome</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%for (int i = 0; parts != null && i < parts.size(); i++) {%>
+                        <tr>
+                            <td><%=i + 1%></td>
+                            <%
+                                Participante p = parts.get(i);
+                            %>
+                            <td><%=p.getUsuario().getNome()%></td>
+                        </tr>
+                        <%}%>
+                    </tbody>
+                </table>
+                <a href="" title="" onclick="history.back(); return false;" class="btn btn-default"><span aria-hidden="true">&larr;</span> Voltar</a>
 
             </div>
-            <div id="footer"></div>
+            <div class="footer-top">
+                <%@include file="../footer.jsp" %>
+            </div>
         </div>
     </body>
 </html>

@@ -82,7 +82,9 @@
                     <input type="submit" value="Enviar" class="btn btn-default" onclick="return confirm('Deseja realmente enviar esses dados?')" />
                 </form>
             </div>
-            <div id="footer"></div>
+            <div class="footer-top">
+                <%@include file="../footer.jsp" %>
+            </div>
         </div>
     </body>
 </html>

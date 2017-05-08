@@ -47,22 +47,27 @@
             <%@include file="organ_menu.jsp"%>
 
             <div id="content">
-                <h1 class="titulo">Gerenciar emissão de certificados <%=e.getNome()%></h1>
+                <h1 class="titulo">Gerenciar emissão de certificados<br/><%=e.getNome()%></h1>
+                <div class="panel panel-warning">
+                    <div class="panel-heading text-center">Atenção!<br/>Deve ser feito o upload de um template seguindo os passos abaixo</div>
+                    <div class="panel-body">
+                        <ol>
+                            <li>Faça o download do template de exemplo <a href="../resources/template.pptx"><span class="label label-info">AQUI</span></a><br/></li>
+                            <li>Abra com o Power Point</li>
+                            <li>Edite o modelo de certificado ao seu gosto, porém deixe as caixas pretas como estão.</li>
+                            <li>Depois apague as caixas pretas. (O sistema irá preencher esses espaços com informações do participante)</li>
+                            <li>Salve o tempate em formato <em>.jpg</em></li>
+                            <li>Faça o upload do template.</li>
+                        </ol>
+                    </div>
+                </div>  
                 <form action="../ServletCentral?comando=CmdUploadModeloCertificado&id_evento=<%=e.getId()%>" method="post" enctype="multipart/form-data" onsubmit="return checkFile();">
                     <div class="form-group">
                         <input type="file" name="arquivo" id="uploadFile"/>
                     </div>
                     <input type="submit" value="Enviar" class="btn btn-default"/>
                 </form>
-                <div class="info space-top text-info ">
-                    <label>Deve ser feito o upload de um template seguindo os passos abaixo:</label><br/>
-                    1º Faça o download do template de exemplo <a href="../resources/template.pptx"><b>AQUI</b></a>.<br/>
-                    2º Abra com o Power Point<br/>
-                    3º Edite o modelo de certificado ao seu gosto, porém deixe as caixas pretas como estão.<br/>
-                    4º Depois apague as caixas pretas. (O sistema irá preencher esses espaços com informações do participante)<br/>
-                    5º Salve o tempate em formato .jpg<br/>
-                    6º Faça o upload do template.<br/>
-                </div>  
+               
             </div>
             <div class="footer-top">
                 <%@include file="../footer.jsp" %>

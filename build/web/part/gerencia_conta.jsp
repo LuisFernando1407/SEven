@@ -77,17 +77,17 @@
                     <form action="../ServletCentral" method="post">
                         <div class="panel-body">  
                             <div class="col-lg-12 space-top">
-                                <label>Nome: </label><%=part.getUsuario().getNome()%><br/>
-                                <label>Telefone: </label><%=fone%><br/>
-                                <label>E-mail: </label><%=part.getUsuario().getEmail()%><br/>
-                                <label>Nascimento: </label><%=data%><br/>
-                                <label>Sexo: </label><%=sexo%><br/>
-                                <label>Instituição: </label><%=instituicao%><br/>
-                                <label>Rua: </label><%=rua%><br/>
-                                <label>Bairro: </label><%=bairro%><br/>
-                                <label>Número: </label><%=numero%><br/>
-                                <label>Cidade: </label><%=cidade%><br/>
-                                <label>UF: </label><%=uf%><br/>
+                                <label>Nome: </label> <%=part.getUsuario().getNome()%><br/>
+                                <label>Telefone: </label> <%=fone%><br/>
+                                <label>E-mail: </label> <%=part.getUsuario().getEmail()%><br/>
+                                <label>Nascimento: </label> <%=data%><br/>
+                                <label>Sexo: </label> <%=sexo%><br/>
+                                <label>Instituição: </label> <%=instituicao%><br/>
+                                <label>Rua: </label> <%=rua%><br/>
+                                <label>Bairro: </label> <%=bairro%><br/>
+                                <label>Número: </label> <%=numero%><br/>
+                                <label>Cidade: </label> <%=cidade%><br/>
+                                <label>UF: </label> <%=uf%><br/>
                             </div>
                         </div>
                     </form>

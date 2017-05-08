@@ -36,7 +36,7 @@
                 <%@include file="organ_menu.jsp"%>
                 
             <div id="content">
-                <h1 class="titulo">Gerenciar Modalidades de Inscriçao do evento <%= e.getNome()%></h1>
+                <h1 class="titulo">Gerenciar Modalidades de Inscriçao do evento<br/> <%= e.getNome()%></h1>
                 <%@include file="/error.jsp"%>
                 <div>
 

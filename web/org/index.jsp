@@ -26,6 +26,7 @@
         <title>SEven</title>
         <script language="javascript" src="../jquery/jquery-1.10.2.js"></script>
         <script language="javascript" src="../jquery/jquery-ui-1.10.4.custom.min.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
     </head>
     <body>
         <div id="container">
@@ -38,8 +39,8 @@
                         <div class="col-lg-12 jumbotron">
                             <h1 class="text-center text-bold">Olá, <%= nomeSaudacao%></h1>
                             <h5 class="text-center">Esta é a página inicial do Organizador de eventos. Quando desejar retornar a esta página, 
-                                clique na opção <span class="label label-info text-uppercase"><em>Home</em></span> no menu acima.</h><br/>
-                                <%@include file="../error.jsp" %>
+                                clique na opção <span class="label label-info text-uppercase"><em>Home</em></span> no menu acima.</h><br/><br/> 
+                            <%@include file="../error.jsp" %>
                         </div>
                     </div>              
                 </div>

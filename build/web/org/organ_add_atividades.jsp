@@ -140,16 +140,15 @@
                         <div class="panel-cor panel-heading text-center">Tipo da atividade</div>
                         <div class="panel-body">
                             <div class="col-lg-12 space-top">
-                                <label>Tipo:</label><br />
-                                <div class="radio-inline">
+                                <div>
                                     <% for (TipoAtividade ta : tas) {%>
                                     <% if (a != null && (a.getTipo().getId().compareTo(ta.getId()) == 0)) {%>
-                                    <input type="radio" name="tipo_id" value="<%=ta.getId()%>" class="radio" checked="checked"/><label><%=ta.getNome()%></label>
+                                    <input type="radio" name="tipo_id" value="<%=ta.getId()%>" class="radio radio-inline" checked="checked"/><label><%=ta.getNome()%></label>
                                         <%} else {%>
-                                    <input type="radio" name="tipo_id" value="<%=ta.getId()%>" class="radio"/><label><%=ta.getNome()%></label>
+                                    <input type="radio" name="tipo_id" value="<%=ta.getId()%>" class="radio radio-inline"/><label><%=ta.getNome()%></label>
                                         <%}
                                             }%>
-                                </div>
+                                </div><br/>
                             </div>
                         </div>
                     </div>
@@ -157,7 +156,6 @@
                         <div class="panel-cor panel-heading text-center">Horários da atividade</div>
                         <div class="panel-body">
                             <div class="col-lg-12 space-top">
-                                <label>Horários:</label><br />
                                 <table class="table table-hover text-center">
                                     <thead> 
                                         <tr>

@@ -3,7 +3,11 @@
     Created on : 23/07/2013, 15:35:29
     Author     : Mardson
 --%>
-
+<%-- 
+    Document   : organ_gerenciar_inscricoes
+    Modified in : 07/05/2017, 22:42:34
+    Author     : João Mateus
+--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
 <%@page import="br.ufc.pet.evento.Atividade"%>
@@ -16,60 +20,62 @@
 <html>
     <%@include file="../ErroAutenticacaoUser.jsp" %>
     <%          //pega inscrição que foi montada pelo comando MontarInscricao
-                Inscricao i = (Inscricao) session.getAttribute("inscricao");
+        Inscricao i = (Inscricao) session.getAttribute("inscricao");
     %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <link href="../css/estilo.css" rel="stylesheet" type="text/css" />
-        <title>Centro de Controle :: Administrador</title>
+        <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon"/>
+        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <title>SEven</title>
     </head>
     <body>
         <div id="container">
-            <div id="top">
-                <%-- Incluindo Menu --%>
-                <%@include file="organ_menu.jsp" %>
-            </div>
+            <%-- Incluindo Menu --%>
+            <%@include file="organ_menu.jsp" %>
+
             <div id="content">
-                <h1 class="titulo">Atualizar Inscrição</h1>
-                <p>Confirmação da Inscrição:</p>
-                <br/>
-                <%//formata as datas para exibição em texto
-                            String data = UtilSeven.treatToLongString(i.getDataRealizada());
-                            String datapg = UtilSeven.treatToLongString(i.getDataPagamento());
-                %>
-                <fieldset>
-                    <p>Evento: <%=i.getEvento().getNome()%></p>
-                    <p>Participante: <%=i.getParticipante().getUsuario().getNome()%></p>
-                    <p>Modalidade: <%=i.getModalidade().getTipo()%></p>
-                </fieldset>
-                <fieldset>
-                    <p>Data: <%=data%></p>
-                    <p>Prazo de pagamento: Até <%=datapg%></p>
-                </fieldset>
-                <fieldset>
-                    <p>Atividades:</p>
-                    <%for (Atividade a : i.getAtividades()) {%>
-                    <p><%=a.getNome()%>
-                        <%for (Horario h : a.getHorarios()) {%><%--Exibe horários de cada atividade--%>
-                        <br/>
-                        (<%=h.printHorario()%>)
-                        <%}%>
-                    </p>
-                    <%}%>
-                </fieldset>
-                <%
-                            InscricaoService IS = new InscricaoService();
-                            String preco = UtilSeven.precoFormater(IS.getPrecoInscricao(i));
-                %>
-                <fieldset>
-                    <p>Preço: <%=preco%></p>
-                </fieldset>
-                <form action="../ServletCentral?comando=CmdOrgSubmeterInscricao" method="post" class="cadastro">
-                    <input type="submit" value="Submeter" class="button" onclick="return confirm('Deseja realmente submeter essa inscrição?')" />
-                    <a href="" title="" onclick="history.back(); return false;" class="voltarCadastro">Voltar</a>
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">Atualizar Inscrição</div>
+                    <div class="panel-body">
+                        <div class="col-lg-12 space-top">
+                            <label>Confirmação da Inscrição:</label>
+
+                            <%//formata as datas para exibição em texto
+                                String data = UtilSeven.treatToLongString(i.getDataRealizada());
+                                String datapg = UtilSeven.treatToLongString(i.getDataPagamento());
+                            %>
+                            <br/>
+                            <label>Evento: </label><%=i.getEvento().getNome()%><br/>
+                            <label>Participante: </label><%=i.getParticipante().getUsuario().getNome()%><br/>
+                            <label>Modalidade: </label><%=i.getModalidade().getTipo()%><br/>
+                                <label>Data: </label><%=data%><br/>
+                                <label>Prazo de pagamento: </label>Até <%=datapg%><br/>
+                                <label>Atividades:</label>
+                                <%for (Atividade a : i.getAtividades()) {%>
+                                <label><%=a.getNome()%></label>
+                                    <%for (Horario h : a.getHorarios()) {%><%--Exibe horários de cada atividade--%>
+                                    <br/>
+                                    (<%=h.printHorario()%>)
+                                    <%}%>
+                                
+                                <%}%><br/>
+                            <%
+                                InscricaoService IS = new InscricaoService();
+                                String preco = UtilSeven.precoFormater(IS.getPrecoInscricao(i));
+                            %>
+                            <label>Preço: </label><%=preco%><br/>
+                        </div>
+                    </div>
+                </div>
+                <form action="../ServletCentral?comando=CmdOrgSubmeterInscricao" method="post">
+                    <a href="" title="" onclick="history.back(); return false;" class="btn btn-default"><span aria-hidden="true">&larr;</span> Voltar</a>
+                    <input type="submit" value="Submeter" class="btn btn-default" onclick="return confirm('Deseja realmente submeter essa inscrição?')" />
                 </form>
             </div>
-            <div id="footer"></div>
+            <div class="footer-top">
+                <%@include file="../footer.jsp" %>
+            </div>
         </div>
     </body>
 </html>

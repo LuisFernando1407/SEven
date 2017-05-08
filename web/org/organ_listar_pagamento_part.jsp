@@ -37,6 +37,8 @@
         <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <title>SEven</title>
         <script type="text/javascript" src="../Script.js"></script>
+        <script language="javascript" src="../jquery/jquery-1.10.2.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
     </head>
     <body>
         <div id="container">
@@ -45,17 +47,38 @@
                 
             <div id="content">
                  <%@include file="/error.jsp" %>
-                <h1 class="titulo">Recebimento de Pagamentos de Inscrição</h1>
-                <form style="width: 290px;" action="../ServletCentral?comando=CmdBuscarParticipantePorEmail" method="post" class="center-block form-inline">
-                    <div class="form-group">
-                        <input type="text" name="email" class="form-control" placeholder="E-mail do participante"/>
-                        <input type="submit" value="Buscar" class="btn btn-default form-control" /><br/>
-                    </div>
-                </form>
+                 <h1 class="titulo">Recebimento de Pagamentos de Inscrição</h1></br>
+                <div align="center">
+                 <div class="row"> 
+                    <form style="width: 80%;" action="../ServletCentral?comando=CmdBuscarParticipantePorEmail" method="post">
+                        <div class="input-group">
+                            <input type="text" name="email" class="form-control" placeholder="E-mail do participante"/>
+                            <span class="input-group-btn">
+                              <button type="submit" class="btn btn-default">Buscar</button>
+                            </span>
+                        </div>
+                    </form>
+                 </div>
+                </div>
+                <br>
                 <%if (mensagem == "naoencontrado") {%>
-                <h6 style=" color: red; "align="center">Inscrição não encontrada</h6>
+                <div align="center">
+                    <div style="width: 83%;" class="alert alert-danger alert-dismissable">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                        <span class="sr-only">Error:</span> 
+                        Inscrição não encontrada
+                    </div>
+                </div>
                 <%} else if (mensagem == "vazio") {%>
-                <h6 style=" color: red; "align="center">Preencha o número da Inscricao</h6>
+                <div align="center">
+                    <div style="width: 83%;" class="alert alert-danger alert-dismissable">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                        <span class="sr-only">Error:</span> 
+                        Preencha o email do participante
+                   </div>
+                </div>
                 <%} else {%>
                 <%if (participanteinscrito != null) {%>
                 <table class="table table-hover space-top">

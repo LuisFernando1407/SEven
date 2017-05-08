@@ -19,6 +19,8 @@
         <link href="../css/estilo.css" rel="stylesheet" type="text/css" />
         <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon"/>
         <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script language="javascript" src="../jquery/jquery-1.10.2.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
         <title>SEven</title>
     </head>
     <body>
@@ -35,7 +37,12 @@
                 <div class="col-lg-6 ">
                     <h1 class="titulo">Movimentações</h1>
                     <%if (session.getAttribute("todosPagamentosRecebidos") != null) {%>
-                    <h4>Todas as inscrições tiveram seu pagamento realizado com sucesso.</h4>
+                       <div class="alert alert-success alert-dismissable">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                        <span class="sr-only">Success:</span> 
+                        Todas as inscrições tiveram seu pagamento realizado com sucesso.
+                       </div>
                     <%}
                         session.removeAttribute("todosPagamentosRecebidos");%>
                         <div class="panel panel-default space-top">

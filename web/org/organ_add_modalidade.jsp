@@ -48,10 +48,11 @@
                 <%@include file="organ_menu.jsp" %>
                 
             <div id="content">
-                <%@include file="/error.jsp" %>
+               
                 <h1 class="titulo">Adicionar Modalidade</h1>
+                <%@include file="/error.jsp" %>
                 <form action="../ServletCentral?comando=CmdAdicionarModalidade&id_atualizar=<%=id%>" method="post">
-                    <div class="form-group"><input type="text" name="nomeModalidade" value="<%=nome%>" placeholder="Modalidade" class="form-control"/></div>
+                    <div class="form-group"><input type="text" name="nomeModalidade" value="<%=nome%>" placeholder="Modalidade" class="form-control" required/></div>
                     <table id="data_table" class="table table-hover text-center form-group">
                         <thead>
                             <tr>

@@ -47,8 +47,7 @@
         <title>SEven</title>
         <script language="javascript" src="../jquery/jquery-1.10.2.js"></script>
         <script language="javascript" src="../jquery/jquery-ui-1.10.4.custom.min.js"></script>
-
-
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
     </head>
     <body>
         <div id="container">
@@ -59,11 +58,26 @@
             <div id="content">
                 <h1 class="titulo">Movimentações Financeiras</h1>
                 <%if (estado == "atualizado") {%>
-                <h3>Atualização realizada com sucesso</h3>
+                  <div class="alert alert-success alert-dismissable">
+                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                     <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                     <span class="sr-only">Success:</span> 
+                        Atualização realizada com sucesso
+                   </div>
                 <%} else if (estado == "excluido") {%>
-                <h3>Exclusão realizada com sucesso</h3>
+                  <div class="alert alert-success alert-dismissable">
+                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                     <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                     <span class="sr-only">Success:</span> 
+                        Exclusão realizada com sucesso
+                   </div>
                 <%} else if (estado == "adicionado") {%>
-                <h3>Adição realizada com sucesso</h3>
+                    <div class="alert alert-success alert-dismissable">
+                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                     <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                     <span class="sr-only">Success:</span> 
+                        Adição realizada com sucesso
+                   </div>
                 <%}%>
                 <div>
                     <table id="data_table" class="table table-hover">
@@ -73,7 +87,8 @@
                                 <th>Tipo</th>
                                 <th>Data</th>
                                 <th>Valor</th>
-                                <th>Alterar / Excluir</th>
+                                <th>Alterar</th>
+                                <th>Excluir</th>
                             </tr>
                         </thead>
                         <tbody class="text-center">
@@ -83,8 +98,8 @@
                                 <td><%=mov.getTipo()%></td>
                                 <td><%=UtilSeven.treatToString(mov.getData())%></td>
                                 <td><%=mov.getValor()%></td>
-                                <td><a href="../ServletCentral?comando=CmdUpdateMovimentacaoFinanceira&id_mf=<%=mov.getId()%>" title="Alterar" onclick="return permissao()" >Alterar</a> |
-                                    <a href="../ServletCentral?comando=CmdExcluirMovimentacaoFinanceira&id_mf=<%=mov.getId()%>" title="Excluir"  onclick="return confirmar()">Excluir</a></td>
+                                <td><a href="../ServletCentral?comando=CmdUpdateMovimentacaoFinanceira&id_mf=<%=mov.getId()%>" title="Alterar" onclick="return permissao()"><span class="text-uppercase label label-success">Alterar</span></a></td>
+                                <td><a href="../ServletCentral?comando=CmdExcluirMovimentacaoFinanceira&id_mf=<%=mov.getId()%>" title="Excluir"  onclick="return confirmar()"><span class="text-uppercase label label-danger">Excluir</span></a></td>
                             </tr>
                             <%}%>
                             <%session.setAttribute("alteradomovfinan", "sem_alteracao");%>

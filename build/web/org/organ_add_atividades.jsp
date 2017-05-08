@@ -73,8 +73,8 @@
                                 <thead>
                                     <tr>
                                         <th>Nome</th>
-                                        <th>Remover</th>
                                         <th>Alterar</th>
+                                        <th>Remover</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -82,8 +82,8 @@
                                         for (ResponsavelAtividade resp : resps) {%>
                                     <tr class="text-center">
                                         <td><label><%=resp.getUsuario().getNome()%></label></td>
-                                        <td><a href="../ServletCentral?comando=CmdRemoverResponsavelAtividade&usuario_id=<%=resp.getUsuario().getId()%>" onclick="return confirm('Tem certeza que deseja excluir esse responsavel?')">Excluir</a></td>
-                                        <td><a href="../ServletCentral?comando=CmdSelecionarResponsavelEdicao&usuario_id=<%=resp.getUsuario().getId()%>">Editar</a></td>
+                                        <td><a href="../ServletCentral?comando=CmdSelecionarResponsavelEdicao&usuario_id=<%=resp.getUsuario().getId()%>"><span class="text-uppercase label label-success">Editar</span></a></td>
+                                        <td><a href="../ServletCentral?comando=CmdRemoverResponsavelAtividade&usuario_id=<%=resp.getUsuario().getId()%>" onclick="return confirm('Tem certeza que deseja excluir esse responsavel?')"><span class="text-uppercase label label-danger">Excluir</span></a></td>
                                     </tr>
                                     <%}
                                     %>

@@ -33,12 +33,12 @@
                 <%-- Incluindo o Menu --%>
                 <%@include file="organ_menu.jsp"%>
                 
-            <div id="content">
+            <div id="content">     
+                <h1 class="titulo">Gerenciar Horários para atividades do evento <%=e.getNome()%></h1>
                 <%@include file="/error.jsp"%>
-                <h1 class="titulo">Gerenciar Horários para atividades do evento <%=e.getNome()%></h1> 
                 <table id="data_table" class="table table-hover text-center">
                     <%if (horarios == null || horarios.size() == 0) {%>
-                    <label>Sem horarios no momento</label>
+                    <div class="alert alert-warning text-center" role="alert">Sem horarios no momento</div>
                         <%} else {%>
                     <thead>
                         <tr>

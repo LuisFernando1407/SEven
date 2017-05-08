@@ -29,6 +29,8 @@
         <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <title>SEven</title>
         <script type="text/javascript" src="../Script.js"></script>
+        <script language="javascript" src="../jquery/jquery-1.10.2.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
     </head>
     <body>
         <div id="container">
@@ -36,18 +38,38 @@
             <%@include file="organ_menu.jsp" %>
 
             <div id="content">
-                <h1 class="titulo">Recebimento de Pagamentos de Inscrição</h1>
+                <h1 class="titulo">Recebimento de Pagamentos de Inscrição</h1><br>
+                <div align="center">
                 <div class="row"> 
-                    <form style="width: 290px;" action="../ServletCentral?comando=CmdBuscarParticipantedeEvento" method="post" class="center-block form-inline">
-                        <div class="form-group"><input type="text" onkeypress="return validaNumerosSilencioso(event)" name="inscricaobuscar" class="form-control" placeholder="Número da inscrição"/></div>
-                        <div class="form-group"><input type="submit" value="Buscar" class="btn btn-default" /></div>
+                    <form style="width: 80%;" action="../ServletCentral?comando=CmdBuscarParticipantedeEvento" method="post">
+                            <div class="input-group">
+                                <input type="text" onkeypress="return validaNumerosSilencioso(event)" name="inscricaobuscar" class="form-control" placeholder="Número da inscrição"/>
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-default">Buscar</button>
+                                </span>
+                            </div>    
                     </form>
                     <br/>
                 </div>
+                </div>
                 <%if (mensagem == "naoencontrado") {%>
-                <h6 style=" color: red; "align="center">Inscrição não encontrada</h6>
+                <div align="center">
+                    <div style="width: 83%;" class="alert alert-danger alert-dismissable">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                        <span class="sr-only">Error:</span> 
+                        Inscrição não encontrada
+                   </div>
+                </div>
                 <%} else if (mensagem == "vazio") {%>
-                <h6 style=" color: red; "align="center">Preencha o número da Inscricao</h6>
+                <div align="center">
+                   <div style="width: 83%;" class="alert alert-danger alert-dismissable">
+                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                     <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                     <span class="sr-only">Error:</span> 
+                        Preencha o número da Inscrição
+                   </div>
+                </div>
                 <%} else {%>
                 <%if (participanteinscrito != null) {%>
                 <table class="table table-hover">

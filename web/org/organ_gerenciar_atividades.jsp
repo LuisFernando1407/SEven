@@ -34,10 +34,10 @@
             <%-- Incluindo o Menu --%>
             <%@include file="organ_menu.jsp"%>
             <div id="content">
-                <%@include file="/error.jsp" %>
                 <h1 class="titulo">Gerenciar as Atividades do evento <%=e.getNome()%></h1>
+                 <%@include file="/error.jsp" %>
                 <% if (organizador.recuperarOrganizaçãoByEvendoId(e.getId()).getManterAtividade()) {%>
-                <div>
+                <div style="margin-top: 70px;">
                 <div class="col-lg-6">
                     <div class="panel panel-default space-top">
                         <div class="panel-cor panel-heading text-center">Gerenciar Período de Inscrição e do Evento</div>
@@ -92,7 +92,8 @@
                             <th>Capacidade</th>
                             <th>Local</th>
                             <th>Responsável</th>
-                            <th>Alterar | Excluir</th>
+                            <th>Alterar</th>
+                            <th>Excluir</th>
                             <th>Visualizar</th>
                         </tr>
                     </thead>
@@ -112,7 +113,8 @@
                             <% if (organizador.recuperarOrganizaçãoByEvendoId(e.getId()).getManterAtividade()) {%>
                             <td><a href="../ServletCentral?comando=CmdEditarAtividade&ativ_id=<%=a.getId()%>" title="Alterar Atividade">Alterar</a> | <a href="../ServletCentral?comando=CmdExcluirAtividade&ativ_id=<%=a.getId()%>" title="Excluir Atividade" onclick="return confirm('Tem certeza que deseja excluir essa atividade?')">Excluir</a></td>
                             <% } else {%>
-                            <td><label title="Alterar Atividade">Alterar</label> | <label title="Excluir">Excluir</label></td>
+                            <td><label title="Alterar Atividade"><span class="text-uppercase label label-success">Alterar</span></label></td>
+                            <td><label title="Excluir"><span class="text-uppercase label label-danger">Excluir</span></label></td>
                             <%}%>
                             <td><a href="../ServletCentral?comando=CmdVisualizarAtividade&ativ_id=<%=a.getId()%>" title="Visualizar Atividade">Visualizar</a></td>
                         </tr>

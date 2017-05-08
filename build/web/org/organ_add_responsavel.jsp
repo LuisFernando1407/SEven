@@ -60,8 +60,8 @@
             <%@include file="organ_menu.jsp" %>
 
             <div id="content">
-                <%@include file="/error.jsp"%>
                 <h1 class="titulo">Adicionar um responsável à Atividade</h1>
+                <%@include file="/error.jsp"%>
                 <p style="font-size: medium;">Você pode tornar responsável um usuário já cadastrado ou cadastrar um novo responsável.</p>
 
                 <div class="panel panel-default">
@@ -93,7 +93,7 @@
                         <tr>
                             <td><%=u.getNome()%></td>
                             <td><%=u.getEmail()%></td>
-                            <td><a href="../ServletCentral?comando=CmdIncluirResponsavel&usuario_id=<%=u.getId()%>" >Incluir</a> </td>
+                            <td><a href="../ServletCentral?comando=CmdIncluirResponsavel&usuario_id=<%=u.getId()%>" ><span class="text-uppercase label label-success">Incluir</span></a> </td>
                         </tr>
                         <%}%>
                     </tbody>

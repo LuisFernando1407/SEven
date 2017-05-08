@@ -57,8 +57,8 @@
                 <%@include file="organ_menu.jsp" %>
                 
                 <div id="content">
-                <%@include file="/error.jsp" %>
                 <h1 class="titulo"><%=titulo%> Horario</h1>
+                 <%@include file="/error.jsp" %>
                 <form action="../ServletCentral?comando=CmdAdicionarHorario" method="post" class="text-center">
                     <div class="form-group form-inline">
                         <label>Hora inicial:</label><br/>

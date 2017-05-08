@@ -36,27 +36,27 @@
                 <%@include file="organ_menu.jsp"%>
                 
             <div id="content">
-                <%@include file="/error.jsp"%>
                 <h1 class="titulo">Gerenciar Modalidades de Inscriçao do evento <%= e.getNome()%></h1>
-
+                <%@include file="/error.jsp"%>
                 <div>
 
                     <table id="data_table" class="table table-hover text-center">
                         <%if (modalidades == null || modalidades.size() == 0) {%>
-                        <center><label>Sem Modalidades Cadastradas no momento.</label></center>
+                        <div class="alert alert-warning text-center" role="alert">Sem Modalidades Cadastradas no momento.</div>
                             <%} else {%>
                         <thead>
                             <tr>
                                 <th>Nome</th>
-                                <th>Alterar | Excluir</th>
+                                <th>Alterar</th>
+                                <th>Excluir</th>
                             </tr>                   
                         </thead>
                         <tbody>
                             <%for (ModalidadeInscricao modalidade : modalidades) {%>
                             <tr>
                                 <td ><label><%=modalidade.getTipo()%></label></td>
-                                <td><a href="../ServletCentral?comando=CmdAtualizarModalidade&mod_id=<%=modalidade.getId()%>" title="Alterar Tipo Modalidade">Alterar</a> |
-                                    <a href="../ServletCentral?comando=CmdExcluirModalidade&mod_id=<%=modalidade.getId()%>" title="Excluir Tipo Modalidade" onclick="return confirm('Tem certeza que deseja excluir essa de Modalidade?')">Excluir</a></td>
+                                <td><a href="../ServletCentral?comando=CmdAtualizarModalidade&mod_id=<%=modalidade.getId()%>" title="Alterar Tipo Modalidade"><span class="text-uppercase label label-success">Alterar</span></a></td>
+                                <td><a href="../ServletCentral?comando=CmdExcluirModalidade&mod_id=<%=modalidade.getId()%>" title="Excluir Tipo Modalidade" onclick="return confirm('Tem certeza que deseja excluir essa de Modalidade?')"><span class="text-uppercase label label-danger">Excluir</span></a></td>
                             </tr>
                             <%}%>
                         </tbody>

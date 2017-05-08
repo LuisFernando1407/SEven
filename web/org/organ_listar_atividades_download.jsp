@@ -33,15 +33,15 @@
             <%@include file="organ_menu.jsp" %>
 
             <div id="content">
-                <%@include file="/error.jsp"%>
                 <h1 class="titulo">Lista de Atividades do Evento</h1>
-
+                <%@include file="/error.jsp"%>
                 <form action="" >
                     <input type="hidden" name="comando"/>
                     <input type="hidden" name="idAtv"/>
 
                     <%if (ats == null || ats.size() == 0) {%>
-                    <label><center>Sem Atividades no momento</center></label><br />
+                    <div class="alert alert-warning text-center" role="alert">Sem Atividades no momento</div>
+                    <br/>
                             <%} else {%>
                     <table id="data_table" class="table table-hover text-center">
                         <thead>

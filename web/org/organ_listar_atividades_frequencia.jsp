@@ -42,9 +42,9 @@
                     <input type="hidden" name="idAtv"/>
 
 
-                    <%if (ats == null || ats.size() == 0) {%>
-                    <label><center>Sem Atividades no momento</center></label><br />
-                            <%} else {%>
+                    <%if (ats == null || ats.size() == 0) {%> 
+                    <div class="alert alert-warning text-center" role="alert">Sem atividades no momento</div><br/>
+                    <%} else {%>
                     <table id="data_table" class="table table-hover text-center">
                         <thead>
                             <tr>

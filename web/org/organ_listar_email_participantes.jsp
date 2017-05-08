@@ -49,7 +49,6 @@
                         <%}
                             }%>
                     </select>
-                    <a href="../org/organ_listar_participantes.jsp" class="btn btn-default space-top"><span aria-hidden="true">&larr;</span> Voltar</a>
                 </form>
                 <br/>
                 <div class="text-center center-block">
@@ -70,6 +69,7 @@
                     </table>
                 </div>
             </div>
+            <a href="../org/organ_listar_participantes.jsp" class="btn btn-default space-top"><span aria-hidden="true">&larr;</span> Voltar</a>
             <div class="footer-top">
                 <%@include file="../footer.jsp" %>
             </div>

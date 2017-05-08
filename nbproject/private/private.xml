@@ -3,39 +3,26 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/luis1/Documents/SEven/web/admin/admin_menu.jsp</file>
             <file>file:/C:/Users/luis1/Documents/SEven/src/java/br/ufc/pet/comandos/administrador/CmdAdicionarEvento.java</file>
-            <file>file:/C:/Users/luis1/Documents/SEven/web/part/part_visualizar_inscricao.jsp</file>
-            <file>file:/C:/Users/luis1/Documents/SEven/web/org/organ_add_atividades.jsp</file>
             <file>file:/C:/Users/luis1/Documents/SEven/web/visualizar_programacao.jsp</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/web/org/organ_listar_pagamento.jsp</file>
             <file>file:/C:/Users/luis1/Documents/SEven/src/java/br/ufc/pet/comandos/administrador/CmdEncerrarEvento.java</file>
-            <file>file:/C:/Users/luis1/Documents/SEven/web/angularjs/fullcalendar.min.js</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/web/org/organ_gerenciar_upload_certificados.jsp</file>
             <file>file:/C:/Users/luis1/Documents/SEven/web/org/index.jsp</file>
             <file>file:/C:/Users/luis1/Documents/SEven/web/admin/add_events.jsp</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/web/org/organ_listar_pagamento_part.jsp</file>
             <file>file:/C:/Users/luis1/Documents/SEven/web/admin/edit_events.jsp</file>
             <file>file:/C:/Users/luis1/Documents/SEven/web/org/organ_gerenciar_atividades.jsp</file>
             <file>file:/C:/Users/luis1/Documents/SEven/web/admin/editar_organ.jsp</file>
             <file>file:/C:/Users/luis1/Documents/SEven/web/admin/index.jsp</file>
             <file>file:/C:/Users/luis1/Documents/SEven/src/java/SqlMapConfig.xml</file>
-            <file>file:/C:/Users/luis1/Documents/SEven/web/part/part_visualizar_inscricoes.jsp</file>
             <file>file:/C:/Users/luis1/Documents/SEven/src/java/br/ufc/pet/conexao/ConnectionFactory.java</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/web/org/organ_gerenciar_modalidade.jsp</file>
             <file>file:/C:/Users/luis1/Documents/SEven/src/java/br/ufc/pet/comandos/administrador/CmdExcluirEvento.java</file>
             <file>file:/C:/Users/luis1/Documents/SEven/web/org/menu_inicial_org.jsp</file>
             <file>file:/C:/Users/luis1/Documents/SEven/web/css/estilo.css</file>
-            <file>file:/C:/Users/luis1/Documents/SEven/web/angularjs/controllers/calendarCtrl.js</file>
-            <file>file:/C:/Users/luis1/Documents/SEven/web/org/organ_selecionar_evento.jsp</file>
+            <file>file:/C:/Users/luis1/Documents/SEven/web/part/gerencia_conta.jsp</file>
             <file>file:/C:/Users/luis1/Documents/SEven/src/java/br/ufc/pet/comandos/administrador/CmdAlterarEvento.java</file>
-            <file>file:/C:/Users/luis1/Documents/SEven/web/org/organ_inscricoes.jsp</file>
-=======
-            <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/org/organ_add_horario.jsp</file>
-            <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/org/organ_gerenciar_tipo_ativ.jsp</file>
-            <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/org/organ_gerenciar_atividades.jsp</file>
-            <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/org/organ_add_tipo_ativ.jsp</file>
-            <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/org/organ_gerenciar_horario.jsp</file>
-            <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/org/organ_gerenciar_upload_certificados.jsp</file>
-            <file>file:/C:/Users/J.Mateus/Documents/UFC/PET-SI/SEven/web/part/gerencia_conta.jsp</file>
->>>>>>> 07c4205b21247704d7141d4ea99f892b0bd753db
         </group>
     </open-files>
 </project-private>

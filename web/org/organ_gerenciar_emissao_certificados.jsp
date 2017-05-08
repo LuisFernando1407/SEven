@@ -36,7 +36,7 @@
 
                 <%}%>
                 <%if (ats == null || ats.size() == 0) {%>
-                <center><label>Sem atividades no momento</label></center>
+                 <div class="alert alert-warning text-center" role="alert">Sem atividades no momento</div>
                     <%} else {%>
                 <table id="data_table">
                     <thead>

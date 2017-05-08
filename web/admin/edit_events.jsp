@@ -105,7 +105,7 @@
            
                 <h1 class="title-register"> <%=comando%> Evento</h1><hr>
                 <%if (men != null) {%>
-                <center style="color: red"><label><%=men%></label></center>
+                <div class="alert alert-danger text-center" role="alert"><%=men%></div>
                 <%}%>
                  <%@include file="/error.jsp" %>
                 <div class="row">

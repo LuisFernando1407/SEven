@@ -41,7 +41,7 @@
             <%@include file="organ_menu.jsp" %>
 
             <div id="content">
-                <h1 class="titulo">Visualizar as Inscrições do Evento <%=e.getNome()%></h1>
+                <h1 class="titulo">Visualizar as Inscrições do Evento<br/> <%=e.getNome()%></h1>
                 <div class="panel panel-default">
                     <div class="panel-heading text-center">Lista de todos os inscritos no evento</div>
                     <div class="panel-body">  
@@ -79,8 +79,8 @@
                                             }
                                         %>
                                         <td><%=estado%></td>
-                                        <td><a href="../ServletCentral?comando=CmdBuscarInscricao&id=<%=i.getId()%>" title="Visualizar/Editar">Visualizar/Editar</a></td>
-                                        <td><a href="../ServletCentral?comando=CmdOrganExcluirInscricao&iId=<%=i.getId()%>" onclick="return confirm('ATENÇÃO: Se você excluir uma inscrição que já foi paga ela não estará mais no sistema e não será possível recuperar a quantia paga. Também poderá causar a perda das vagas e dos certificados relacionados com esta inscrição. Tem certeza que dejesa excluir esta inscrição?');" title="Excluir">Excluir</a></td>
+                                        <td><a href="../ServletCentral?comando=CmdBuscarInscricao&id=<%=i.getId()%>" title="Visualizar/Editar"><span class="text-uppercase label label-success">Visualizar/Editar</span></a></td>
+                                        <td><a href="../ServletCentral?comando=CmdOrganExcluirInscricao&iId=<%=i.getId()%>" onclick="return confirm('ATENÇÃO: Se você excluir uma inscrição que já foi paga ela não estará mais no sistema e não será possível recuperar a quantia paga. Também poderá causar a perda das vagas e dos certificados relacionados com esta inscrição. Tem certeza que dejesa excluir esta inscrição?');" title="Excluir"><span class="text-uppercase label label-danger">Excluir</span></a></td>
                                         <td><a href="../ServletCentral?comando=CmdGerarCertificado&insc_id=<%=i.getId()%>" title="Gerar">Gerar</a></td>
                                     </tr>
                                     <%}%>

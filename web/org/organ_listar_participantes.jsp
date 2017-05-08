@@ -81,7 +81,8 @@
                         </tr>
                         <%}
                             } else {%>
-                    <p>Nenhuma inscricao para essa atividade no momento!</p>
+                    <br/>
+                    <div class="alert alert-warning text-center" role="alert">Nenhuma inscricao para essa atividade no momento</div>
 
                     <%}%>
                     </tbody>

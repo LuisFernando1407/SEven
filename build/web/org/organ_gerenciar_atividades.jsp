@@ -37,7 +37,7 @@
                 <h1 class="titulo">Gerenciar as Atividades do evento<br/> <%=e.getNome()%></h1>
                  <%@include file="/error.jsp" %>
                 <% if (organizador.recuperarOrganizaçãoByEvendoId(e.getId()).getManterAtividade()) {%>
-                <div style="margin-top: 70px;">
+                <div style="margin-top: 30px;">
                 <div class="col-lg-6">
                     <div class="panel panel-default space-top">
                         <div class="panel-cor panel-heading text-center">Gerenciar período de inscrição e do evento</div>

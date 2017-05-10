@@ -130,7 +130,7 @@
                                     <%for (Atividade a : arrayDeSelecionadas) {%><%--Exibindo as atividades selecionadas--%>
                                     <tr>
                                         <td><%=a.getNome()%></td>
-                                        <td><a href="../ServletCentral?comando=CmdRemoverAtividade&ativ=<%=a.getId()%>" title="RemoverAtividade">Remover</a></td>
+                                        <td><a href="../ServletCentral?comando=CmdRemoverAtividade&ativ=<%=a.getId()%>" title="RemoverAtividade"><span class="text-uppercase label label-danger">Remover</span></a></td>
                                     </tr>
                                     <%}%>
                                 </tbody>
@@ -187,7 +187,9 @@
                             <%} else {%>
                             <p>Tipo de inscrição:</p><%--Modalidade da inscrição, Estudante ou profissional--%>
                             <%for (ModalidadeInscricao m : modalidades) {%>
-                            <p><input class="radio" type="radio" name="tipo_inscricao" value="<%=m.getId()%>" <%if (m.getId().equals(anterior.getModalidade().getId())) {%> checked="checked" <%}%>/> <%=m.getTipo()%></p>
+                            <div style="margin-left: 18px;" class="radio text-left">
+                                <label><input class="radio" type="radio" name="tipo_inscricao" value="<%=m.getId()%>" <%if (m.getId().equals(anterior.getModalidade().getId())) {%> checked="checked" <%}%>/><%=m.getTipo()%></label>
+                            </div>
                             <%}%>
                             <%}%>
 

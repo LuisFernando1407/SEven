@@ -57,7 +57,7 @@
                                         <tr class="text-center">
                                             <td><%= e.getSigla()%></td>
                                             <td><a href="../ServletCentral?comando=CmdSelecionarEvento&id=<%=e.getId()%>" title=""><%= e.getNome()%></a></td>
-                                            <td> <a href="../ServletCentral?comando=CmdVisualizarProgramacao&id=<%=e.getId()%>" title="Programacao" ><span class="text-uppercase label label-info">Visualizar</span></a> </td>
+                                            <td> <a href="../ServletCentral?comando=CmdVisualizarProgramacao&id=<%=e.getId()%>" title="Programacao" >Visualizar</a> </td>
                                         </tr>
                                         <%}%>
                                     </tbody>

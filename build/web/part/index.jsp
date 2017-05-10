@@ -49,7 +49,7 @@
                     <h1 style="text-align: center; margin-top: 8.5px; font-size: 18px;"class="titulo">Tentando se inscrever em um evento? </h1>
                     <p class="text-center">Utilize o menu no topo da página ou solicite rapidamente uma nova inscrição clicando nos links rápidos abaixo!</p>
                     <%if (eventos == null || eventos.size() == 0) {%>
-                    <h5 class="text-center text-bold">Sem eventos abertos no momento!</h5>
+                     <div class="alert alert-warning text-center" role="alert">Sem eventos abertos no momento!</div>
                     <%} else {%>
                     <table id="data_table" class="table table-hover">
                         <thead>
@@ -64,7 +64,7 @@
                             <tr class="text-center">
                                 <td> <%= e.getSigla()%> </td>
                                 <td> <a href="../ServletCentral?comando=CmdSelecionarEvento&id=<%=e.getId()%>"><%= e.getNome()%></a>  </td>
-                                <td> <a href="../ServletCentral?comando=CmdVisualizarProgramacao&id=<%=e.getId()%>" title="Programacao" > Visualizar</a> </td>
+                                <td> <a href="../ServletCentral?comando=CmdVisualizarProgramacao&id=<%=e.getId()%>" title="Programacao" >Visualizar</a> </td>
                             </tr>
                             <% }%>
                         </tbody>

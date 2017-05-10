@@ -40,7 +40,7 @@
                     <div>
                         <table id="data_table" class="table table-hover text-center">
                             <%if (tipoAtivs == null || tipoAtivs.size() == 0) {%>
-                            <center><label>Sem Tipos de Atividade Cadastrados no momento</label></center>
+                            <div class="alert alert-warning text-center" role="alert">Sem Tipos de Atividade Cadastrados no momento</div>
                                 <%} else {%>
                             <thead>
                                 <tr>                        

@@ -24,7 +24,7 @@
             <h1 class="title-register">Recuperar Senha</h1><hr>
             <form action="ServletCentral?comando=CmdRecuperarSenha" method="POST">
                 <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Email cadastrado" name="email" required/>
+                    <input type="text" class="form-control" placeholder="Email cadastrado" name="email" required/>
                 </div>
                 <div align="center"><button type="submit" class="btn btn-default ">Submeter</button></div>
             </form>

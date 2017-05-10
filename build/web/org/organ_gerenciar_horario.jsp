@@ -45,7 +45,8 @@
                             <th>Hora Inicial</th>
                             <th>Hora Final</th>                       
                             <th>Dia</th>
-                            <th>Alterar | Excluir</th>
+                            <th>Alterar</th> 
+                            <th>Excluir</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -54,8 +55,8 @@
                             <td><label><%=String.format("%02d", horario.getHoraInicial()) + " : " + String.format("%02d", horario.getMinutoInicial())%></label></td>
                             <td><label><%=String.format("%02d", horario.getHoraFinal()) + " : " + String.format("%02d", horario.getMinutoFinal())%></label></td>
                             <td><label><%=UtilSeven.treatToLongString(horario.getDia())%></label></td>
-                            <td><a href="../ServletCentral?comando=CmdEditarHorario&hor_id=<%=horario.getId()%>" title="Alterar Atividade">Alterar</a> |
-                                <a href="../ServletCentral?comando=CmdExcluirHorario&hor_id=<%=horario.getId()%>" title="Excluir Horario" onclick="return confirm('Tem certeza que deseja excluir esse horario?')">Excluir</a></td>
+                            <td><a href="../ServletCentral?comando=CmdEditarHorario&hor_id=<%=horario.getId()%>" title="Alterar Atividade"><span class="text-uppercase label label-success">Alterar</span></a></td>
+                            <td><a href="../ServletCentral?comando=CmdExcluirHorario&hor_id=<%=horario.getId()%>" title="Excluir Horario" onclick="return confirm('Tem certeza que deseja excluir esse horario?')"><span class="text-uppercase label label-danger">Excluir</span></a></td>
                         </tr>
                         <%}%>
                     </tbody>

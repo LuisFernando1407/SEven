@@ -78,8 +78,8 @@
                                         }
                                     %>
                                     <td><%=estado%></td>
-                                    <td><a href="" title="Visualizar/Editar">Visualizar/Editar</a></td>
-                                    <td><a href="../ServletCentral?comando=CmdOrganExcluirInscricao&iId=<%=i.getId()%>" onclick="return confirm('ATENÇÃO: Se você excluir uma inscrição que já foi paga ela não estará mais no sistema e não será possível recuperar a quantia paga. Também poderá causar a perda das vagas e dos certificados relacionados com esta inscrição. Tem certeza que dejesa excluir esta inscrição?');" title="Excluir">Excluir Inscrição</a></td>
+                                    <td><a href="" title="Visualizar/Editar"><span class="text-uppercase label label-success">Visualizar / Editar</span></a></td>
+                                    <td><a href="../ServletCentral?comando=CmdOrganExcluirInscricao&iId=<%=i.getId()%>" onclick="return confirm('ATENÇÃO: Se você excluir uma inscrição que já foi paga ela não estará mais no sistema e não será possível recuperar a quantia paga. Também poderá causar a perda das vagas e dos certificados relacionados com esta inscrição. Tem certeza que dejesa excluir esta inscrição?');" title="Excluir"><span class="text-uppercase label label-danger">Excluir Inscrição</span></a></td>
                                 </tr>
                                 <%}%>
                             </tbody>

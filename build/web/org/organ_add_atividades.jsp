@@ -143,9 +143,13 @@
                                 <div>
                                     <% for (TipoAtividade ta : tas) {%>
                                     <% if (a != null && (a.getTipo().getId().compareTo(ta.getId()) == 0)) {%>
-                                    <input type="radio" name="tipo_id" value="<%=ta.getId()%>" class="radio radio-inline" checked="checked"/><label><%=ta.getNome()%></label>
+                                    <div class="radio">
+                                        <label><input type="radio" name="tipo_id" value="<%=ta.getId()%>"  checked="checked"/><strong><%=ta.getNome()%></strong></label>
+                                    </div>
                                         <%} else {%>
-                                    <input type="radio" name="tipo_id" value="<%=ta.getId()%>" class="radio radio-inline"/><label><%=ta.getNome()%></label>
+                                        <div class="radio">
+                                            <label><input type="radio" name="tipo_id" value="<%=ta.getId()%>"/><label><strong><%=ta.getNome()%></strong></label>
+                                        </div>
                                         <%}
                                             }%>
                                 </div><br/>

@@ -62,7 +62,7 @@
             <div id="content">
                 <h1 class="titulo">Adicionar um responsável à Atividade</h1>
                 <%@include file="/error.jsp"%>
-                <p style="font-size: medium;">Você pode tornar responsável um usuário já cadastrado ou cadastrar um novo responsável.</p>
+                <p style="font-size: medium; margin-left: -20px;">Você pode tornar responsável um usuário já cadastrado ou cadastrar um novo responsável.</p>
 
                 <div class="panel panel-default">
                     <div class="panel-heading text-center">Busca de usuários pelo nome ou parte do nome</div>
@@ -78,6 +78,7 @@
                         </div>
                     </div>
                 </div>
+                <a href="" title="" onclick="history.back(); return false;" class="btn btn-default"><span aria-hidden="true">&larr;</span> Voltar</a>
                 <a href="organ_add_novo_responsavel.jsp" title="Adicionar Responsavel" class="btn btn-default">Cadastrar um novo responsável</a>
                 <% if (us != null && us.size() > 0) {%>
                 <table id="data_table" class="table table-hover text-center space-top">
@@ -99,7 +100,7 @@
                     </tbody>
                 </table><br><br>
                 <% }%>
-                <a href="" title="" onclick="history.back(); return false;" class="btn btn-default"><span aria-hidden="true">&larr;</span> Voltar</a>
+                
 
             </div>
             <div class="footer-top">

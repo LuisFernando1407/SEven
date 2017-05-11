@@ -16,8 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- *
- * @author luis1
+   @Created on : 11/05/2017, 00:41:14
+ * @author luisfernando
  */
 
 public class CmdCheckUserLogged implements Comando{

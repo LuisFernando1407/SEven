@@ -1,6 +1,7 @@
 package br.ufc.pet.servlets;
 
 import br.ufc.pet.comandos.CmdCadastrarParticipante;
+import br.ufc.pet.comandos.CmdCheckUserLogged;
 import br.ufc.pet.comandos.CmdLogin;
 import br.ufc.pet.comandos.CmdLogout;
 import br.ufc.pet.comandos.CmdRecuperarSenha;
@@ -137,6 +138,8 @@ public class ServletCentral extends HttpServlet {
     public void init() {
         Comando cmdo;
         comandos = new Hashtable();
+        cmdo = new CmdCheckUserLogged();
+        comandos.put("CmdCheckLogged", cmdo);
         cmdo = new CmdLogin();
         comandos.put("CmdLogin", cmdo);
         cmdo = new CmdAdicionarEvento();

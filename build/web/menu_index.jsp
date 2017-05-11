@@ -17,7 +17,8 @@
         </div>
         
         <ul class="nav navbar-nav">
-            <li><a href="index.jsp" title="Página Inicial">Home</a></li>
+            <li><a href="ServletCentral?comando=CmdCheckLogged" title="Página Inicial">Home</a></li>
+           
             <!-- <li><a href="ServletCentral?comando=CmdVisualizarTodasProgramacoes">Programação</a></li>-->
             <li><a href="validacao_documento.jsp" title="Validar Documento">Validar Documento</a></li>
             <li><a href="contato.jsp" title="Contato">Contato</a></li>

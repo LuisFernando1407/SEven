@@ -31,18 +31,13 @@ public class CmdCheckUserLogged implements Comando{
             if (perfil == null) {
                 return "/index.jsp";
             } else if (perfil instanceof Participante) {
-                session.setAttribute("user", perfil);
-                EventoService es = new EventoService();
-                session.setAttribute("eventosAbertos", es.buscarEventosComInscricoesAbertas());
                 return "/part/index.jsp";
             } else if (perfil instanceof Organizador) {
-                session.setAttribute("user", perfil);
                 return "/org/index.jsp";
             } else if (perfil instanceof Administrador) {
-                session.setAttribute("user", perfil);
                 return "/admin/index.jsp";
             }
-            
+           
          return "/index.jsp";
     }
 

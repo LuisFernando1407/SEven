@@ -10,7 +10,6 @@ import br.ufc.pet.evento.Organizador;
 import br.ufc.pet.evento.Participante;
 import br.ufc.pet.evento.Perfil;
 import br.ufc.pet.interfaces.Comando;
-import br.ufc.pet.services.EventoService;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
